@@ -16,7 +16,7 @@ const Container = styled.div`
 `;
 
 const Card = styled.div`
-  width: 200px;
+  width: 250px;
   height: 100%;
   padding: 30px;
   border: 1px solid #ccc;
@@ -45,10 +45,9 @@ const CardContent = styled.div`
 `;
 
 const IconLink = styled.a`
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
+  display: inline; /* Change the display property to inline */
+  margin-right: 10px; /* Add some spacing between the icons */
+  text-decoration: none; /* Correct the property name to 'none' */
   color: #333; /* Change the color as needed */
 `;
 
@@ -58,7 +57,7 @@ const IconText = styled.span`
 
 const CardContainer = () => {
   return (
-    <section>
+    <section style={{ height: "120vh" }}>
       <Navbar />
       <Container>
         <Card>
@@ -68,6 +67,7 @@ const CardContainer = () => {
           />
           <CardContent>
             <h2>EnsoIII, Jose</h2>
+            <p>Mern Stack Developer</p>
             <p>Owner of this Website and the frontend</p>
             <div>
               <IconLink
@@ -76,7 +76,7 @@ const CardContainer = () => {
                 rel="noopener noreferrer"
               >
                 <FaGithub size={20} />
-                <IconText>GitHub</IconText>
+
               </IconLink>
               <IconLink
                 href="https://facebook.com/yourfacebookprofile"
@@ -84,7 +84,7 @@ const CardContainer = () => {
                 rel="noopener noreferrer"
               >
                 <FaFacebook size={20} />
-                <IconText>Facebook</IconText>
+
               </IconLink>
               <IconLink
                 href="https://linkedin.com/in/yourlinkedinprofile"
@@ -92,7 +92,7 @@ const CardContainer = () => {
                 rel="noopener noreferrer"
               >
                 <FaLinkedin size={20} />
-                <IconText>LinkedIn</IconText>
+
               </IconLink>
             </div>
           </CardContent>
@@ -112,7 +112,7 @@ const CardContainer = () => {
                 rel="noopener noreferrer"
               >
                 <FaGithub size={20} />
-                <IconText>GitHub</IconText>
+
               </IconLink>
               <IconLink
                 href="https://facebook.com/yourfacebookprofile"
@@ -120,7 +120,7 @@ const CardContainer = () => {
                 rel="noopener noreferrer"
               >
                 <FaFacebook size={20} />
-                <IconText>Facebook</IconText>
+
               </IconLink>
               <IconLink
                 href="https://linkedin.com/in/yourlinkedinprofile"
@@ -128,7 +128,7 @@ const CardContainer = () => {
                 rel="noopener noreferrer"
               >
                 <FaLinkedin size={20} />
-                <IconText>LinkedIn</IconText>
+
               </IconLink>
             </div>
           </CardContent>
@@ -148,7 +148,7 @@ const CardContainer = () => {
                 rel="noopener noreferrer"
               >
                 <FaGithub size={20} />
-                <IconText>GitHub</IconText>
+
               </IconLink>
               <IconLink
                 href="https://facebook.com/yourfacebookprofile"
@@ -156,7 +156,7 @@ const CardContainer = () => {
                 rel="noopener noreferrer"
               >
                 <FaFacebook size={20} />
-                <IconText>Facebook</IconText>
+
               </IconLink>
               <IconLink
                 href="https://linkedin.com/in/yourlinkedinprofile"
@@ -164,11 +164,11 @@ const CardContainer = () => {
                 rel="noopener noreferrer"
               >
                 <FaLinkedin size={20} />
-                <IconText>LinkedIn</IconText>
+
               </IconLink>
             </div>
           </CardContent>
-        </Card> 
+        </Card>
         {/* ... other cards */}
       </Container>
       <PopUpAds />

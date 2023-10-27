@@ -1,5 +1,5 @@
-import React from 'react';
-import Navbar from "../components/Header/navbar";
+import React ,{useEffect} from 'react';
+import Navbar from "../components/Header/navbar1";
 import Footer from '../components/Footer/footer';
 import styled from 'styled-components';
 import Ads from "../components/Ads/bottom-ads";
@@ -7,13 +7,14 @@ import PopUpAds from "../components/Ads/popup-ads";
 
 const PageContainer = styled.div`
   background-color: #212016;
-  height:700px;
+  height:100vh;
 `;
 
 const ContentContainer = styled.div`
   max-width: 700px;
   margin: 0 auto;
   padding: 20px;
+  height:100vh;
 `;
 
 const Title = styled.h1`

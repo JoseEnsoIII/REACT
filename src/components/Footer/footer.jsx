@@ -1,12 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 
-import backgroundImage from '/images/op1.jpg';
-
+import backgroundImage from "/images/op1.jpg";
 
 const Container = styled.div`
-margin-top: -60px;
+  margin-top: -60px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -17,7 +16,6 @@ margin-top: -60px;
   background-position: 80% center; /* Move the image to the right end and center vertically */
   background-repeat: no-repeat;
   background-color: black;
-
 
   @media (max-width: 300px) {
     flex-direction: row;
@@ -33,7 +31,7 @@ margin-top: -60px;
     flex-wrap: wrap;
     height: 130px;
   }
-`;;
+`;
 
 const Column = styled.div`
   flex: 1;
@@ -45,7 +43,7 @@ const Column = styled.div`
   &:first-child {
     margin-left: 30px; /* Add left margin to the first column */
   }
-  
+
   h2,
   h3 {
     font-size: 18px;
@@ -61,18 +59,15 @@ const Column = styled.div`
   li {
     margin-bottom: 15px;
     color: black;
-   
-}
+  }
 
-p {
+  p {
     color: black;
-   
-}
+  }
 
-a {
+  a {
     text-decoration: none;
     color: black;
-   
 
     &:hover {
       text-decoration: underline green;
@@ -83,28 +78,28 @@ a {
     max-width: 100%; /* Remove max-width to fit all columns in the same line */
     width: 100%;
     margin: -10px;
-    
+
     h2 {
       font-size: 5px; /* Adjust the font size for h2 on smaller screens */
-      margin-top:10px;
+      margin-top: 10px;
     }
     h3 {
       font-size: 6px; /* Adjust font size for h2 and h3 on smaller screens */
       margin-bottom: -25px;
       margin-top: 10px;
-    
+
       &:last-child {
         margin-right: 20px; /* Corrected the property name */
       }
     }
-    
-   li{
-    margin-bottom: -10px;
-   }
+
+    li {
+      margin-bottom: -10px;
+    }
     p {
       font-size: 5px; /* Adjust font size for p on smaller screens */
     }
-    a{
+    a {
       font-size: 5px;
     }
   }
@@ -112,7 +107,7 @@ a {
     max-width: 100%;
     width: 100%;
     margin: -10px;
-    margin-right:-15px;
+    margin-right: -15px;
 
     h2 {
       font-size: 5px;
@@ -138,43 +133,44 @@ a {
       font-size: 5px;
     }
   }
-  
 `;
-
 const SocialMediaList = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex; /* Display icons in a row */
+  flex-wrap: wrap; /* Allow icons to wrap to the next line on smaller screens */
+  justify-content: space-between; /* Create two columns */
 
   @media (max-width: 400px) {
-    display: flex;
-    flex-direction: row; /* Display icons horizontally on small screens */
-    align-items: center; /* Center-align icons vertically */
-    margin-top: 5px;
+    flex-direction: row; /* Display icons in a single row on very small screens */
+    justify-content: center; /* Center-align icons horizontally */
   }
 
   @media (min-width: 600px) and (max-width: 800px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 5px;
+    flex-direction: row; /* Display icons in a single row on medium screens */
+    justify-content: center; /* Center-align icons horizontally */
   }
 `;
 
-
 const SocialMediaItem = styled.li`
-  margin-bottom: 10px; /* Add spacing between icons */
+  font-size: 20px;
+  flex: 1; /* Distribute icons equally in the two columns */
 
   @media (max-width: 400px) {
-    margin-bottom: 5px; 
-    margin-right:35px;
+    margin-bottom: 5px;
+    margin-right: 5px; /* Adjust spacing between icons on very small screens */
   }
 
   &:first-child {
-    margin-top: 25px;
-     /* Add margin-top to the first social media icon */
+    margin-top: 0; /* Remove margin-top for the first social media icon */
+  }
+
+  @media (min-width: 600px) and (max-width: 800px) {
+    margin-right: 5px; /* Adjust spacing between icons on medium screens */
   }
 `;
+
 function App() {
   // Define social media URLs
   const facebookUrl = "https://www.facebook.com/";
@@ -185,7 +181,9 @@ function App() {
   return (
     <Container>
       <Column>
-        <h2 style={{ fontSize: "30px" }}><strong>ReactFlix</strong></h2>
+        <h2 style={{ fontSize: "30px" }}>
+          <strong>ReactFlix</strong>
+        </h2>
         <p>
           <strong>ReactFlix</strong> is a Free Movies streaming app with zero
           ads. We let you watch movies online without having to register or pay,
@@ -194,37 +192,72 @@ function App() {
         </p>
       </Column>
       <Column>
-        <h3><strong>ABOUT</strong></h3>
+        <h3>
+          <strong>ABOUT</strong>
+        </h3>
         <ul>
-          <li><a href="/about">About ReactFlix</a></li>
-          <li><a href="/term">Terms & Conditions</a></li>
-          <li><a href="/legal">Legal</a></li>
-          <li><a href="/faq">FAQs</a></li>
+          <li>
+            <a href="/about">About ReactFlix</a>
+          </li>
+          <li>
+            <a href="/term">Terms & Conditions</a>
+          </li>
+          <li>
+            <a href="/legal">Legal</a>
+          </li>
+          <li>
+            <a href="/contact">Contact us:</a>
+          </li>
+          <li>
+            <a href="/faq">FAQs</a>
+          </li>
         </ul>
       </Column>
       <Column>
-        <h3><strong>SHOW</strong></h3>
+        <h3>
+          <strong>SHOW</strong>
+        </h3>
         <ul>
-          <li><a href="/movie">Movies</a></li>
-          <li><a href="/series">TV Shows</a></li>
-          <li><a href="/anime">Anime</a></li>
+          <li>
+            <a href="/movie">Movies</a>
+          </li>
+          <li>
+            <a href="/series">TV Shows</a>
+          </li>
+          <li>
+            <a href="/anime">Anime</a>
+          </li>
         </ul>
       </Column>
       <Column>
-        <h3><strong>GENRE</strong></h3>
+        <h3>
+          <strong>GENRE</strong>
+        </h3>
         <ul>
-          <li><a href="/horror">Horror</a></li>
-          <li><a href="/sci-fi">Sci-Fi</a></li>
-          <li><a href="/romance">Romance</a></li>
-          <li><a href="/actions">Actions</a></li>
-          <li><a href="/adventure">Adventure</a></li>
+          <li>
+            <a href="/horror">Horror</a>
+          </li>
+          <li>
+            <a href="/sci-fi">Sci-Fi</a>
+          </li>
+          <li>
+            <a href="/romance">Romance</a>
+          </li>
+          <li>
+            <a href="/actions">Actions</a>
+          </li>
+          <li>
+            <a href="/adventure">Adventure</a>
+          </li>
         </ul>
       </Column>
       <Column>
-        <h3><strong>SOCIAL MEDIA</strong></h3>
+        <h3>
+          <strong>SOCIAL MEDIA</strong>
+        </h3>
         <SocialMediaList>
           <SocialMediaItem>
-          <li></li>  <a href={facebookUrl} target="_blank" rel="noopener noreferrer">
+            <a href={facebookUrl} target="_blank" rel="noopener noreferrer">
               <FaFacebook />
             </a>
           </SocialMediaItem>
@@ -238,6 +271,7 @@ function App() {
               <FaInstagram />
             </a>
           </SocialMediaItem>
+          <br/>
           <SocialMediaItem>
             <a href={linkedinUrl} target="_blank" rel="noopener noreferrer">
               <FaLinkedin />
@@ -246,9 +280,13 @@ function App() {
         </SocialMediaList>
       </Column>
       <Column>
-        <h3><strong>CREDIT</strong></h3>
+        <h3>
+          <strong>CREDIT</strong>
+        </h3>
         <ul>
-          <li><a href="/credit">About My Team</a></li>
+          <li>
+            <a href="/credit">About My Team</a>
+          </li>
         </ul>
       </Column>
     </Container>

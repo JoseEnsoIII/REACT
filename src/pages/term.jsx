@@ -1,5 +1,5 @@
-import React from 'react';
-import Navbar from '../components/Header/navbar';
+import React ,{useEffect} from 'react';
+import Navbar from '../components/Header/navbar1';
 import Footer from '../components/Footer/footer';
 import styled from 'styled-components';
 import Ads from "../components/Ads/bottom-ads";
@@ -7,12 +7,14 @@ import PopUpAds from "../components/Ads/popup-ads";
 
 const PageContainer = styled.div`
   background-color: #212016;
+ 
 `;
 
 const ContentContainer = styled.div`
   max-width: 700px;
   margin: 0 auto;
   padding: 20px;
+   height:100vh;
 `;
 
 const Title = styled.h1`
@@ -22,6 +24,7 @@ const Title = styled.h1`
 const Paragraph = styled.p`
   color: #fff;
   line-height: 1.6;
+  font-size:10px;;
 `;
 
 const TermsOfServicePage = () => {
