@@ -138,7 +138,7 @@ function Card() {
 
   return (
     <section>
-    <div style={{ height: "120vh", width: "100vw", backgroundColor: "white" }}>
+    <div style={{ height: "130vh", width: "100vw", backgroundColor: "white" }}>
     <Heading>| Similar </Heading>
     <FlexContainer>
       {displayedCards.map((card, index) => (

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaFacebook, FaTwitter, FaWhatsapp, FaFacebookMessenger, FaTelegram,FaTimes } from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaWhatsapp, FaFacebookMessenger, FaTelegram, FaTimes } from "react-icons/fa";
 import styled from "styled-components";
 
 const PopupContainer = styled.div`
@@ -79,12 +79,20 @@ const PopupAdComponent = () => {
 
   const handleCloseClick = () => {
     setIsOpen(false);
+
+    fetch("/api/close-ad", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ adName: "Special Offer Ad" }), // Change the ad name as needed
+    });
   };
 
   return (
     <PopupContainer isOpen={isOpen}>
       <PopupAd>
-      <CloseButton style={{backgroundColor:"transparent",color:"white"}} onClick={handleCloseClick}>
+        <CloseButton style={{ backgroundColor: "transparent", color: "white" }} onClick={handleCloseClick}>
           <FaTimes />
         </CloseButton>
         <Image src="images/lou.jpg" alt="Advertisement Image" />
@@ -106,7 +114,7 @@ const PopupAdComponent = () => {
             <FaTelegram />
           </Icon>
         </SocialIcons>
-       
+
       </PopupAd>
     </PopupContainer>
   );

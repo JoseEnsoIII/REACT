@@ -102,7 +102,7 @@ export default class SwipeToSlide extends Component {
   componentDidUpdate() {
     AOS.refresh();
   }
-  
+
   render() {
     const settings = {
       className: "center",
@@ -135,37 +135,37 @@ export default class SwipeToSlide extends Component {
           <Slide>
             <SlideImage src="/images/saw.jpg" alt="number 1" />
             <a href="/player" className="play-button">
-            <CustomIcon src="/images/play.svg" alt="Play Icon" />  Watch 
+              <CustomIcon src="/images/play.svg" alt="Play Icon" />  Watch
             </a>
           </Slide>
           <Slide>
             <SlideImage src="/images/mi.jpg" alt="number 1" />
             <a href="/player" className="play-button">
-            <CustomIcon src="/images/play.svg" alt="Play Icon" />  Watch 
+              <CustomIcon src="/images/play.svg" alt="Play Icon" />  Watch
             </a>
           </Slide>
           <Slide>
             <SlideImage src="/images/gt.jpg" alt="number 1" />
             <a href="/player" className="play-button">
-            <CustomIcon src="/images/play.svg" alt="Play Icon" />  Watch 
+              <CustomIcon src="/images/play.svg" alt="Play Icon" />  Watch
             </a>
           </Slide>
           <Slide>
             <SlideImage src="/images/sm.jpg" alt="number 1" />
             <a href="/player" className="play-button">
-            <CustomIcon src="/images/play.svg" alt="Play Icon" />  Watch 
+              <CustomIcon src="/images/play.svg" alt="Play Icon" />  Watch
             </a>
           </Slide>
           <Slide>
             <SlideImage src="/images/fc.jpg" alt="number 1" />
             <a href="/player" className="play-button">
-            <CustomIcon src="/images/play.svg" alt="Play Icon" />  Watch 
+              <CustomIcon src="/images/play.svg" alt="Play Icon" />  Watch
             </a>
           </Slide>
           <Slide>
             <SlideImage src="/images/lou.jpg" alt="number 1" />
             <a href="/player" className="play-button">
-            <CustomIcon src="/images/play.svg" alt="Play Icon" />  Watch 
+              <CustomIcon src="/images/play.svg" alt="Play Icon" />  Watch
             </a>
           </Slide>
         </Slider>
