@@ -5,13 +5,13 @@ import "slick-carousel/slick/slick-theme.css";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import Navbar from "../components/Header/navbar1";
-import SideBar from "../components/Header/sidenav"
-import Hand from "../components/Hand/hand"
+import SideBar from "../components/Header/sidenav";
+
 import Carousel from "../components/compo/nukacarousel";
 import TabbedHome from "../components/compo/TabbedHome";
 import FlexWrap from "../components/Cards/multiplecard";
-import Similar from "../components/Section/Similar"
-import Anime from "../components/Section/anime_section"
+import Similar from "../components/Section/Similar";
+import Anime from "../components/Section/anime_section";
 import Footer from "../components/Footer/footer";
 import Ads from "../components/Ads/bottom-ads";
 import PopUpAds from "../components/Ads/popup-ads";
@@ -46,12 +46,12 @@ const Home = () => {
   return (
     <section
       className="slider4 mbr-embla cid-tEzwvrEiry"
-      style={{ backgroundColor: "#8E95A5",width:"100vw", }}
+      style={{ backgroundColor: "#8E95A5", width: "100vw" }}
       id="slider4-2j"
     >
       <Navbar />
-      <SideBar/>
-      <Hand/>
+      <SideBar />
+
       <Carousel
         autoplay={true}
         wrapAround={true}
@@ -60,9 +60,9 @@ const Home = () => {
       ></Carousel>
       <TabbedHome />
       <FlexWrap />
-      <Similar/>
-      <SectionAds/>
-      <Anime/>
+      <Similar />
+      <SectionAds />
+      <Anime />
       <PopUpAds />
       <Ads />
       <Footer />
