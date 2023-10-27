@@ -141,8 +141,8 @@ const ThreeCardsComponent = () => {
           </ButtonContainer>
           <Modal isOpen={isModalOpen}>
             <CloseButton onClick={toggleModal}>&times;</CloseButton>
-            <CardParagraph>For $5</CardParagraph>
-            <SubscribeButton>Subscribe Now</SubscribeButton>
+            <CardParagraph>for 1$ no ads 1 month <br/> for 10$ 1 year</CardParagraph>
+            <SubscribeButton><a href="/payment">Subscribe Now</a></SubscribeButton>
           </Modal>
         </Card>
         <Card data-aos="fade-up">
@@ -151,14 +151,17 @@ const ThreeCardsComponent = () => {
           <CardParagraph>Send Request to our Social Media</CardParagraph>
           <CardParagraph>Send Request to our Social Media</CardParagraph>
           <ButtonContainer>
-            <button onClick={toggleModal} style={{ backgroundColor: "#e50914", border: "none", borderRadius: "5px", color: "white", fontSize: "16px", padding: "10px 20px", cursor: "pointer", margin: "5px" }}>
+            <button  style={{ backgroundColor: "blue", border: "none", borderRadius: "5px", color: "white", fontSize: "16px", padding: "10px 20px", cursor: "pointer", margin: "5px" }}>
               <FaFacebook />
             </button>
-            <button onClick={toggleModal} style={{ backgroundColor: "#e50914", border: "none", borderRadius: "5px", color: "white", fontSize: "16px", padding: "10px 20px", cursor: "pointer", margin: "5px" }}>
+            <button  style={{ backgroundColor: "skyblue", border: "none", borderRadius: "5px", color: "white", fontSize: "16px", padding: "10px 20px", cursor: "pointer", margin: "5px" }}>
               <FaInstagram />
             </button>
-            <button onClick={toggleModal} style={{ backgroundColor: "#e50914", border: "none", borderRadius: "5px", color: "white", fontSize: "16px", padding: "10px 20px", cursor: "pointer", margin: "5px" }}>
+            <button  style={{ backgroundColor: "gray", border: "none", borderRadius: "5px", color: "white", fontSize: "16px", padding: "10px 20px", cursor: "pointer", margin: "5px" }}>
               <FaTelegram />
+            </button>
+            <button  style={{ backgroundColor: "black", border: "none", borderRadius: "5px", color: "white", fontSize: "16px", padding: "10px 20px", cursor: "pointer", margin: "5px" }}>
+              <FaTwitter />
             </button>
           </ButtonContainer>
         </Card>

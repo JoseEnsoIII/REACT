@@ -10,6 +10,7 @@ const CenteredContainer = styled.div`
   justify-content: center;
   height: 170vh;
   width: 100vw;
+  background-color:gray;
 `;
 
 const PaymentForm = styled.div`
@@ -17,8 +18,10 @@ const PaymentForm = styled.div`
   background-color: #f2f2f2;
   padding: 20px;
   border-radius: 8px;
-  width: 400px;
-  margin: 50px;
+  width: 500px;
+  height: 100%;
+  margin-top: 15px;
+  margin-bottom: 100px;
 `;
 
 const Title = styled.h1`
