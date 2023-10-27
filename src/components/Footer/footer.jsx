@@ -6,7 +6,7 @@ import backgroundImage from '/images/op1.jpg';
 
 
 const Container = styled.div`
-margin-top: 20px;
+margin-top: -60px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

@@ -5,7 +5,7 @@ import { FaAd } from "react-icons/fa";
 const AdContainer = styled.div`
   width: 100%;
   max-width: 1000px; /* Limit maximum width */
-  height: 150px;
+  height: 180px;
   background-color: #f0f0f0;
   position: fixed;
   bottom: 0;
@@ -127,7 +127,8 @@ function Ad() {
             <CloseButton onClick={handleCloseClick}>X</CloseButton>
           </AdContent>
           <AdImage
-            src="https://via.placeholder.com/900X100"
+          href="/"
+            src="https://3.imimg.com/data3/AM/KK/IMFCP-2767301/excelsoft-banners-solution-implementation.jpg"
             alt="Advertisement"
           />
         </AdContainer>

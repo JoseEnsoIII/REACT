@@ -42,9 +42,12 @@ const AppContainer = styled.div`
 `;
 
 const Heading = styled.h1`
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 20px;
+  text-align: center;
+  font-fapeacemakerly: 'Gotham', sans-serif;
+  color: black;
+  font-size: 40px; /* Set the font size */
+  margin-left: -70%;
+  font-weight:bold;
 `;
 
 // Styled component for the PieGraph div

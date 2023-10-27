@@ -4,46 +4,40 @@ import styled from 'styled-components';
 const SectionAds = () => {
   return (
     <AdsSection>
-      <AdContainer>
-        <AdImage src="/images/lou.jpg" alt="Ad 1" />
-      </AdContainer>
-      <AdContainer>
-        <AdText>Check out our amazing products!</AdText>
-        <AdParagraph>
-          Here is a brief description of our amazing products. You can learn more about our high-quality items and how they can benefit you.
-        </AdParagraph>
-        <button>Visit Now</button>
-      </AdContainer>
+      <AdTextContainer>
+        <Button href="/" target="_blank" style={{ marginTop: "150px" }}>Visit Now</Button>
+      </AdTextContainer>
     </AdsSection>
   );
 };
 
 const AdsSection = styled.section`
+  background: url('https://mjminnovations.com/wp-content/uploads/2016/10/Management_Solutions-1.png') center/cover no-repeat; /* Use the image as the background */
   height: 50vh;
-  background-color: #f0f0f0;
-  padding: 20px;
   display: flex;
-  justify-content: space-around;
-`;
-
-const AdContainer = styled.div`
-  flex: 1;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  margin-top: -20px;
+`;
+
+const AdTextContainer = styled.div`
+  background-color: transparent;
   padding: 20px;
+  border-radius: 5px;
 `;
 
-const AdImage = styled.img`
-  max-width: 100%;
-  height: 40vh;
-`;
-
-const AdText = styled.p`
-  margin-top: 10px;
-  font-weight: bold;
-`;
-
-const AdParagraph = styled.p`
-  margin-top: 10px;
+const Button = styled.button`
+display: inline-block;
+padding: 10px 10px;
+border: 2px solid #000; /* Add a 2px border */
+border-radius: 15px; /* Add border radius */
+font-family: 'Gotham', sans-serif; /* Use the Gotham font */
+text-decoration: none;
+color: #000; /* Set the text color */
+font-weight:bold;
+font-size:15px;
+margin:10px;
 `;
 
 export default SectionAds;

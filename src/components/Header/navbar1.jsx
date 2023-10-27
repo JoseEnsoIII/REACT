@@ -210,7 +210,7 @@ class Navbar extends Component {
             </ul>
           </NavButton>
           <LoginLink href="/login">
-            <FaUser className="user-icon" style={{ margin: "10px" }} />
+            <FaUser className="user-icon" style={{ margin: "5px" }} />
             <span>Login</span>
           </LoginLink>
         </SidebarMenuBg>

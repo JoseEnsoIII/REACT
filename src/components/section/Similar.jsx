@@ -5,10 +5,12 @@ import { FaPlay } from 'react-icons/fa'; // Import the play icon
 
 const Heading = styled.h1`
   text-align: center;
-  font-family: 'Gotham', sans-serif;
-  color: black;
-  font-size: 40px; /* Set the font size */
-  margin-left: -70%;
+  font-fapeacemakerly: 'Gotham', sans-serif;
+  color: white;
+  font-size: 30px; /* Set the font size */
+  margin-left: -79%;
+  font-weight:bold;
+  margin-top : 40px;
 `;
 const CardWrapper = styled.div`
   position: relative;
@@ -17,7 +19,7 @@ const CardWrapper = styled.div`
   background: url(${(props) => props.imageUrl}) no-repeat center/cover;
   border-radius: 10px;
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);
-  margin: 5px;
+  margin: 10px;
   transition: 0.5s;
 
   &:hover {
@@ -112,7 +114,7 @@ const PageButton = styled.button`
 
 function Card() {
   const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 18; // Number of cards to display per page
+  const cardsPerPage = 16; // Number of cards to display per page
 
   // Sample card data (contains 14 cards)
   const cardData = [
@@ -220,7 +222,7 @@ function Card() {
   };
 
   return (
-    <div style={{ height: "120vh", width: "100vw", backgroundColor: "white" }}>
+    <div style={{ height: "90vh", width: "100vw", backgroundColor: "black",marginTop:"-40px" }}>
     <Heading>| Similar </Heading>
     <FlexContainer>
       {displayedCards.map((card, index) => (

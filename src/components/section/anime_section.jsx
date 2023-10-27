@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import styled from 'styled-components';
 import { FaPlay } from 'react-icons/fa'; // Import the play icon
 
@@ -7,7 +7,7 @@ const Heading = styled.h1`
   font-fapeacemakerly: 'Gotham', sans-serif;
   color: white;
   font-size: 30px; /* Set the font size */
-  margin-left: -65%;
+  margin-left: -75%;
   font-weight:bold;
 `;
 const CardWrapper = styled.div`
@@ -17,7 +17,7 @@ const CardWrapper = styled.div`
   background: url(${(props) => props.imageUrl}) no-repeat center/cover;
   border-radius: 10px;
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);
-  margin: 15px;
+  margin: 10px;
   transition: 0.5s;
 
   &:hover {
@@ -83,6 +83,7 @@ const Pagination = styled.div`
 
 `;
 
+
 const PageButton = styled.button`
   background-color: white;
   border: 1px solid white;
@@ -107,125 +108,76 @@ const PageButton = styled.button`
     color: blue;
   `}
 `;
-
-function Card() {
+function App() {
   const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 21; // Number of cards to display per page
+  const cardsPerPage = 16; // Number of cards to display per page
 
   // Sample card data (contains 14 cards)
   const cardData = [
     
     {
-        title: 'FullMetal Alchemist',
-        imageUrl: 'images/fmab.jpg',
+        title: 'Stranger Things 1',
+        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
       },
       {
-        title: 'FullMetal Alchemist',
-        imageUrl: 'images/fmab.jpg',
+        title: 'Card 2',
+        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
       },
       {
-        title: 'FullMetal Alchemist',
-        imageUrl: 'images/fmab.jpg',
+        title: 'Stranger Things 1',
+        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
       },
       {
-        title: 'FullMetal Alchemist',
-        imageUrl: 'images/fmab.jpg',
+        title: 'Card 2',
+        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
       },
       {
-        title: 'FullMetal Alchemist',
-        imageUrl: 'images/fmab.jpg',
+        title: 'Stranger Things 1',
+        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
       },
       {
-        title: 'FullMetal Alchemist',
-        imageUrl: 'images/fmab.jpg',
+        title: 'Card 2',
+        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
       },
       {
-        title: 'FullMetal Alchemist',
-        imageUrl: 'images/fmab.jpg',
+        title: 'Stranger Things 1',
+        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
       },
       {
-        title: 'FullMetal Alchemist',
-        imageUrl: 'images/fmab.jpg',
+        title: 'Card 2',
+        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
       },
       {
-        title: 'FullMetal Alchemist',
-        imageUrl: 'images/fmab.jpg',
+        title: 'Stranger Things 1',
+        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
       },
       {
-        title: 'FullMetal Alchemist',
-        imageUrl: 'images/fmab.jpg',
+        title: 'Card 2',
+        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
       },
       {
-        title: 'FullMetal Alchemist',
-        imageUrl: 'images/fmab.jpg',
+        title: 'Stranger Things 1',
+        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
       },
       {
-        title: 'FullMetal Alchemist',
-        imageUrl: 'images/fmab.jpg',
+        title: 'Card 2',
+        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
       },
       {
-        title: 'FullMetal Alchemist',
-        imageUrl: 'images/fmab.jpg',
+        title: 'Stranger Things 1',
+        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
       },
       {
-        title: 'FullMetal Alchemist',
-        imageUrl: 'images/fmab.jpg',
+        title: 'Card 2',
+        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
       },
       {
-        title: 'FullMetal Alchemist',
-        imageUrl: 'images/fmab.jpg',
+        title: 'Stranger Things 1',
+        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
       },
       {
-        title: 'FullMetal Alchemist',
-        imageUrl: 'images/fmab.jpg',
-      },
-      {
-        title: 'FullMetal Alchemist',
-        imageUrl: 'images/fmab.jpg',
-      },
-      {
-        title: 'FullMetal Alchemist',
-        imageUrl: 'images/fmab.jpg',
-      },
-      {
-        title: 'FullMetal Alchemist',
-        imageUrl: 'images/fmab.jpg',
-      },
-      {
-        title: 'FullMetal Alchemist',
-        imageUrl: 'images/fmab.jpg',
-      },
-      {
-        title: 'FullMetal Alchemist',
-        imageUrl: 'images/fmab.jpg',
-      },
-      {
-        title: 'FullMetal Alchemist',
-        imageUrl: 'images/fmab.jpg',
-      },
-      {
-        title: 'FullMetal Alchemist',
-        imageUrl: 'images/fmab.jpg',
-      },
-      {
-        title: 'FullMetal Alchemist',
-        imageUrl: 'images/fmab.jpg',
-      },
-      {
-        title: 'FullMetal Alchemist',
-        imageUrl: 'images/fmab.jpg',
-      },
-      {
-        title: 'FullMetal Alchemist',
-        imageUrl: 'images/fmab.jpg',
-      },
-      {
-        title: 'FullMetal Alchemist',
-        imageUrl: 'images/fmab.jpg',
-      },
-      {
-        title: 'FullMetal Alchemist',
-        imageUrl: 'images/fmab.jpg',
+        title: 'Card 2',
+        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
       },
   ];
 
@@ -240,8 +192,8 @@ function Card() {
   };
 
   return (
-    <div style={{height:"120vh",width:"100vw",backgroundColor:"transparent",marginTop:"-6%",marginLeft:"-2%"}}>
-        <Heading>| Trending Anime</Heading>
+    <div style={{backgroundColor: "black",height:"95vh" ,marginTop:"-15px" ,width:"100vw"}}>
+        <Heading>| New Animes</Heading>
       <FlexContainer>
         {displayedCards.map((card, index) => (
           <CardWrapper key={index} imageUrl={card.imageUrl}>
@@ -267,4 +219,4 @@ function Card() {
   );
 }
 
-export default Card;
+export default App;

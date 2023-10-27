@@ -4,10 +4,11 @@ import { FaPlay } from 'react-icons/fa'; // Import the play icon
 
 const Heading = styled.h1`
   text-align: center;
-  font-family: 'Gotham', sans-serif;
+  font-fapeacemakerly: 'Gotham', sans-serif;
   color: white;
-  font-size: 40px; /* Set the font size */
-  margin-left: -70%;
+  font-size: 30px; /* Set the font size */
+  margin-left: -65%;
+  font-weight:bold;
 `;
 const CardWrapper = styled.div`
   position: relative;

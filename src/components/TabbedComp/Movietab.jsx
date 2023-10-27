@@ -6,8 +6,9 @@ const Heading = styled.h1`
   text-align: center;
   font-fapeacemakerly: 'Gotham', sans-serif;
   color: white;
-  font-size: 40px; /* Set the font size */
-  margin-left: -70%;
+  font-size: 30px; /* Set the font size */
+  margin-left: -65%;
+  font-weight:bold;
 `;
 const CardWrapper = styled.div`
   position: relative;
@@ -240,7 +241,8 @@ function Card() {
 
   return (
     <div style={{height:"120vh",width:"100vw",backgroundColor:"transparent",marginTop:"-6%",marginLeft:"-2%"}}>
-        <Heading>| Trending Movies</Heading>
+       <Heading className="card-heading">| Trending Movies</Heading>
+
       <FlexContainer>
         {displayedCards.map((card, index) => (
           <CardWrapper key={index} imageUrl={card.imageUrl}>

@@ -10,10 +10,12 @@ import Hand from "../components/Hand/hand"
 import Carousel from "../components/compo/nukacarousel";
 import TabbedHome from "../components/compo/TabbedHome";
 import FlexWrap from "../components/Cards/multiplecard";
-import NewSeries from "../components/section/Credit";
+import Similar from "../components/Section/Similar"
+import Anime from "../components/Section/anime_section"
 import Footer from "../components/Footer/footer";
 import Ads from "../components/Ads/bottom-ads";
 import PopUpAds from "../components/Ads/popup-ads";
+import SectionAds from "../components/Ads/section-ads";
 
 const MySlider = () => {
   // Renamed the locally defined Slider component
@@ -44,7 +46,7 @@ const Home = () => {
   return (
     <section
       className="slider4 mbr-embla cid-tEzwvrEiry"
-      style={{ backgroundColor: "#8E95A5",width:"100vw" }}
+      style={{ backgroundColor: "#8E95A5",width:"100vw", }}
       id="slider4-2j"
     >
       <Navbar />
@@ -58,7 +60,9 @@ const Home = () => {
       ></Carousel>
       <TabbedHome />
       <FlexWrap />
-      <NewSeries />
+      <Similar/>
+      <SectionAds/>
+      <Anime/>
       <PopUpAds />
       <Ads />
       <Footer />
