@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 const Slide = styled.div`
   width: 350px;
@@ -74,10 +77,11 @@ const SectionWrapper = styled.section`
 const Heading = styled.h2`
   color: white;
   font-family: "Gotham", sans-serif;
+    font-weight: bold;
   text-align: center;
   font-size: 50px;
   position: absolute;
-  top: 20px;
+  top: 50px;
   left: 0;
   right: 0;
   z-index: 1;
@@ -88,7 +92,17 @@ const CustomIcon = styled.img`
   margin-right: 5px;
   color:white;
 `;
+
 export default class SwipeToSlide extends Component {
+  componentDidMount() {
+    AOS.init({
+      duration: 1000, // Set the duration of the animation (in milliseconds)
+    });
+  }
+  componentDidUpdate() {
+    AOS.refresh();
+  }
+  
   render() {
     const settings = {
       className: "center",
@@ -114,7 +128,8 @@ export default class SwipeToSlide extends Component {
           background: "linear-gradient(to top, #000000 50%, #12104A 100%)",
         }}
       >
-        <Heading>Discover Something New</Heading>
+        <Heading data-aos="fade-up">Discover Something New</Heading>
+
         <Slider {...settings}>
           {/* Slides */}
           <Slide>

@@ -43,9 +43,8 @@ const CloseButton = styled.button`
   top: 17%;
   right: 38%;
   cursor: pointer;
-  color: black;
   font-size: 15px;
-  border-radius:25%;
+  border-radius:15px;
 `;
 
 
@@ -85,7 +84,7 @@ const PopupAdComponent = () => {
   return (
     <PopupContainer isOpen={isOpen}>
       <PopupAd>
-      <CloseButton onClick={handleCloseClick}>
+      <CloseButton style={{backgroundColor:"transparent",color:"white"}} onClick={handleCloseClick}>
           <FaTimes />
         </CloseButton>
         <Image src="images/lou.jpg" alt="Advertisement Image" />

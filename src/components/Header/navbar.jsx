@@ -56,7 +56,7 @@ const NavLink = styled(Link)`
 
 const SubscribeButton = styled(NavLink)`
   background-color: #e50914;
-  border-radius: 25px;
+  border-radius: 10px;
   height: 40px;
   width: 120px;
   display: flex;
