@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import Navbar from "../components/Header/navbar";
-import MovieSlider from "../components/section/reactf";
-import Benefit from '../components/section/benefit';
-import Footer from "../components/Footer/footer";
-import Ads from "../components/Ads/bottom-ads";
-import PopUpAds from "../components/Ads/popup-ads";
+import Navbar from "../../components/Header/navbar";
+import MovieSlider from "../../components/section/reactf";
+import Benefit from '../../components/section/benefit';
+import Footer from "../../components/Footer/footer";
+import Ads from "../../components/Ads/bottom-ads";
+import PopUpAds from "../../components/Ads/popup-ads";
 
 const PageWrapper = styled.div`
   background-image: url("/images/ssa.jpg");

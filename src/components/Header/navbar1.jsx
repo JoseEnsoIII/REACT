@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { FaBars, FaUser,FaSearch } from "react-icons/fa";
+import { FaBars, FaUser, FaSearch } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHome,
@@ -50,8 +50,11 @@ const SideMenuWrapper = styled.div`
   z-index: ${(props) => (props.isOpen ? "1000" : "-1")};
 
   /* Glassmorphism effect */
-  background: rgba(255, 255, 255, 0.15); /* Semi-transparent white background */
-  backdrop-filter: blur(10px); /* Apply blur effect */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  
+  /* Add horizontal scrolling */
+  overflow-x: auto;
 `;
 
 const HeaderButton = styled.div`
@@ -191,8 +194,8 @@ class Navbar extends Component {
             <FaBars style={{ width: "40px" }} />
           </HeaderButton>
           <Search>
-        <FaSearch style={{color:"white"}}/>
-      </Search>
+            <FaSearch style={{ color: "white" }} />
+          </Search>
           <NavButton>
             <ul>
               <li>
@@ -219,11 +222,11 @@ class Navbar extends Component {
             onClick={this.toggleSidebar}
             style={{
               position: "absolute",
-              top: "10px",
+              top: "20px",
               right: "10px",
-              borderRadius: "50%",
+              borderRadius: "10px",
               width: "40px",
-              height: "40px",
+              height: "30px",
               border: "none",
               background: "#666666",
               cursor: "pointer",
@@ -279,19 +282,7 @@ class Navbar extends Component {
               </a>
             </div>
 
-            <div style={{ marginBottom: "20px" }}>
-              <a
-                href="/top-imdb"
-                style={{
-                  color: "black",
-                  textDecoration: "none",
-                  fontSize: "20px",
-                  marginLeft: "5px",
-                }}
-              >
-                <FontAwesomeIcon icon={faStar} /> Top Rated
-              </a>
-            </div>
+
 
             <div style={{ marginBottom: "20px" }}>
               <a
@@ -304,6 +295,20 @@ class Navbar extends Component {
                 }}
               >
                 <FontAwesomeIcon icon={faMobileAlt} /> Anime
+              </a>
+
+            </div>
+            <div style={{ marginBottom: "20px" }}>
+              <a
+                href="/top-imdb"
+                style={{
+                  color: "black",
+                  textDecoration: "none",
+                  fontSize: "20px",
+                  marginLeft: "5px",
+                }}
+              >
+                <FontAwesomeIcon icon={faStar} /> Top Rated
               </a>
             </div>
 

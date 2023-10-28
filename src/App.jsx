@@ -3,23 +3,23 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LoadingSpinner from "../src/components/LoadingAnimation/loadinganime";
-const IntroPage = lazy(() => import("./pages/IntroPage"));
-const Home = lazy(() => import("./pages/Home"));
-const Series = lazy(() => import("./pages/series"));
-const Movie = lazy(() => import("./pages/movie"));
-const Anime = lazy(() => import("./pages/anime"));
-const Term = lazy(() => import("./pages/term"));
-const Contact = lazy(() => import("./pages/contact"));
+const IntroPage = lazy(() => import("./pages/Mainpage/IntroPage"));
+const Home = lazy(() => import("./pages/Mainpage/Home"));
+const Series = lazy(() => import("./pages/Mainpage/series"));
+const Movie = lazy(() => import("./pages/Mainpage/movie"));
+const Anime = lazy(() => import("./pages/Mainpage/anime"));
+const Term = lazy(() => import("./pages/notmain/term"));
+const Contact = lazy(() => import("./pages/notmain/contact"));
 const Login = lazy(() => import("../src/components/Login/Login"));
 const Register = lazy(() => import("./components/Register/Register"));
 const Forgot = lazy(() => import("./components/ForgotPass/Forgot_Pass"));
-const Player = lazy(() => import("../src/pages/Player"));
+const Player = lazy(() => import("./pages/notmain/Player"));
 const Dashboard = lazy(() => import("../src/components/Dashboard/Dashboard"));
-const TopMdbi = lazy(() => import("./pages/Topmdbi"));
-const BookTicket = lazy(() => import("../src/pages/BookTicket"));
-const Credit = lazy(() => import("./pages/credit"));
-const Signup = lazy(() => import("./pages/Sign-up"));
-const Payment = lazy(() => import("./pages/Payment"));
+const TopMdbi = lazy(() => import("./pages/Mainpage/Topmdbi"));
+const BookTicket = lazy(() => import("./pages/notmain/BookTicket"));
+const Credit = lazy(() => import("./pages/notmain/credit"));
+const Signup = lazy(() => import("./pages/notmain/Sign-up"));
+const Payment = lazy(() => import("./pages/notmain/Payment"));
 
 function App() {
   return (

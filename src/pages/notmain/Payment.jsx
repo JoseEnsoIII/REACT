@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Footer from '../components/Footer/footer';
-import Navbar from '../components/Header/navbar';
+import Footer from '../../components/Footer/footer';
+import Navbar from '../../components/Header/navbar';
 
 const CenteredContainer = styled.div`
   display: flex;

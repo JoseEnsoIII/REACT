@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import Navbar from "../components/Header/navbar1";
-import Footer from "../components/Footer/footer";
+import Navbar from "../../components/Header/navbar1";
+import Footer from "../../components/Footer/footer";
 import { FaGithub, FaFacebook, FaLinkedin } from "react-icons/fa";
-import Ads from "../components/Ads/bottom-ads";
-import PopUpAds from "../components/Ads/popup-ads";
+import Ads from "../../components/Ads/bottom-ads";
+import PopUpAds from "../../components/Ads/popup-ads";
 
 const Container = styled.div`
   display: flex;

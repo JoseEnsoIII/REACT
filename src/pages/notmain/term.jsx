@@ -1,9 +1,9 @@
 import React ,{useEffect} from 'react';
-import Navbar from '../components/Header/navbar1';
-import Footer from '../components/Footer/footer';
+import Navbar from '../../components/Header/navbar1';
+import Footer from '../../components/Footer/footer';
 import styled from 'styled-components';
-import Ads from "../components/Ads/bottom-ads";
-import PopUpAds from "../components/Ads/popup-ads";
+import Ads from "../../components/Ads/bottom-ads";
+import PopUpAds from "../../components/Ads/popup-ads";
 
 const PageContainer = styled.div`
   background-color: #212016;

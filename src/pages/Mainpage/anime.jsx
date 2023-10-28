@@ -4,16 +4,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "aos/dist/aos.css";
 import AOS from "aos";
-import Navbar from "../components/Header/navbar1";
-import Carousel from "../components/compo/nukacarousel";
-import TabbedHome from "../components/compo/TabbedHome";
-import FlexWrap from "../components/Cards/multiplecard";
-import Similar from "../components/section/Similar"
-import Anime from "../components/section/anime_section"
-import Ads from "../components/Ads/bottom-ads";
-import PopUpAds from "../components/Ads/popup-ads";
-import SectionAds from "../components/Ads/section-ads";
-import Footer from '../components/Footer/footer';
+import Navbar from "../../components/Header/navbar1";
+import Carousel from "../../components/compo/nukacarousel";
+import TabbedHome from "../../components/compo/TabbedHome";
+import FlexWrap from "../../components/Cards/multiplecard";
+import Similar from "../../components/section/Similar"
+import Anime from "../../components/section/anime_section"
+import Ads from "../../components/Ads/bottom-ads";
+import PopUpAds from "../../components/Ads/popup-ads";
+import SectionAds from "../../components/Ads/section-ads";
+import Footer from '../../components/Footer/footer';
 
 const MySlider = () => {
   // Renamed the locally defined Slider component
