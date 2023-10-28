@@ -295,7 +295,7 @@ class Navbar extends Component {
 
             <div style={{ marginBottom: "20px" }}>
               <a
-                href="/anime"
+                href="/top"
                 style={{
                   color: "black",
                   textDecoration: "none",

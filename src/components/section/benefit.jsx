@@ -21,11 +21,7 @@ const Card = styled.div`
   padding: 40px 30px 30px;
   color: #000;
   background: #fff;
-  box-shadow: 0 149px 60px rgba(0, 0, 0, 0.02),
-    0 84px 50px rgba(0, 0, 0, 0.08),
-    0 37px 37px rgba(0, 0, 0, 0.13),
-    0 9px 21px rgba(0, 0, 0, 0.15),
-    0 0 0 rgba(0, 0, 0, 0.16);
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   border: 4px solid #fff;
   border-radius: 20px;
   text-align: left;
@@ -141,8 +137,8 @@ const ThreeCardsComponent = () => {
           </ButtonContainer>
           <Modal isOpen={isModalOpen}>
             <CloseButton onClick={toggleModal}>&times;</CloseButton>
-            <CardParagraph>for 1$ no ads 1 month <br/> for 10$ 1 year</CardParagraph>
-            <SubscribeButton><a href="/payment">Subscribe Now</a></SubscribeButton>
+            <CardParagraph>for 1$ no ads 1 month</CardParagraph> <CardParagraph>for 10$ 1 year</CardParagraph> 
+            <SubscribeButton><a href="/payment" style={{textDecoration:"none",color:"white"}}>Subscribe Now</a></SubscribeButton>
           </Modal>
         </Card>
         <Card data-aos="fade-up">

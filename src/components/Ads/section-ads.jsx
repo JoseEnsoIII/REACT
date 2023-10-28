@@ -5,7 +5,7 @@ const SectionAds = () => {
   return (
     <AdsSection>
       <AdTextContainer>
-        <Button href="/" target="_blank" style={{ marginTop: "200px" }}>Visit Now</Button>
+        <Button href="/" target="_blank" style={{ marginTop: "200px" }}><a href="/" target="_blank" style={{color:"black",textDecoration:"none"}}>Visit Now</a></Button>
       </AdTextContainer>
     </AdsSection>
   );

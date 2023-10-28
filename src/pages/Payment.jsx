@@ -8,7 +8,7 @@ const CenteredContainer = styled.div`
   flex-direction: column;
   align-items: center; /* Center vertically */
   justify-content: center;
-  height: 170vh;
+  height: 180vh;
   width: 100vw;
   background-color:gray;
 `;
