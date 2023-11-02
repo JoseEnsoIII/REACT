@@ -10,8 +10,16 @@ const CardContainer = styled.div`
   align-items: center;
   height: 80vh;
   background-color: white;
-`;
 
+  @media (max-width: 360px), (max-width: 640px) {
+    margin-top:20%;
+  }
+`;
+const CardRow = styled.div`
+  display: flex; /* Make the cards appear in a row */
+  flex-wrap: wrap; /* Allow the cards to wrap to the next line if the screen is too narrow */
+  justify-content: center;
+`;
 const Card = styled.div`
   margin: 5px;
   position: relative;
@@ -30,6 +38,13 @@ const Card = styled.div`
   bottom: 50px;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 360px), (max-width: 640px) {
+    
+    height:350px;
+    width:200px;
+    margin: 10px; 
+  }
 `;
 
 const Heading = styled.h2`
@@ -38,11 +53,19 @@ const Heading = styled.h2`
   color: black;
   font-family: "Gotham", sans-serif;
   font-weight: bold;
+
+  @media (max-width: 360px), (max-width: 640px){
+  font-size:15px;
+  }
 `;
 
 const CardParagraph = styled.p`
   font-size: 15px;
   flex-grow: 1;
+
+  @media (max-width: 360px), (max-width: 640px){
+    font-size:10px;
+    }
 `;
 
 const SectionWithMargin = styled.section`
@@ -53,6 +76,10 @@ const SectionWithMargin = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 360px), (max-width: 640px) {
+    height: 1500px;
+  }
 `;
 
 const Modal = styled.div`
@@ -85,6 +112,11 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-top: auto; /* Position the buttons at the bottom */
+
+  @media (max-width: 360px), (max-width: 640px){
+    width:10px;
+    font-size:10px;
+    }
 `;
 
 const SubscribeButton = styled.button`
@@ -96,7 +128,18 @@ const SubscribeButton = styled.button`
   padding: 10px 20px;
   cursor: pointer;
 `;
-
+const StyledButton = styled.button`
+  background-color: ${(props) => props.backgroundColor};
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  margin: 5px;
+`;
 const ThreeCardsComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -114,6 +157,7 @@ const ThreeCardsComponent = () => {
         Benefits Watching on Our Website
       </h1>
       <CardContainer>
+      <CardRow>
         <Card data-aos="fade-up">
           <Heading>BingeWatch</Heading>
           <CardParagraph>Stream movies, TV Shows, and Anime Everywhere</CardParagraph>
@@ -131,9 +175,9 @@ const ThreeCardsComponent = () => {
           <CardParagraph>for Free Ads Lifetime</CardParagraph>
           <CardParagraph>You Can Download Movies, TV Shows, And More</CardParagraph>
           <ButtonContainer>
-            <button onClick={toggleModal} style={{ backgroundColor: "#e50914", border: "none", borderRadius: "5px", color: "white", fontSize: "16px", padding: "10px 20px", cursor: "pointer" }}>
+            <StyledButton onClick={toggleModal} style={{ backgroundColor: "#e50914", border: "none", borderRadius: "5px", color: "white", fontSize: "16px", padding: "10px 20px", cursor: "pointer" }}>
               Subscribe
-            </button>
+            </StyledButton>
           </ButtonContainer>
           <Modal isOpen={isModalOpen}>
             <CloseButton onClick={toggleModal}>&times;</CloseButton>
@@ -147,20 +191,21 @@ const ThreeCardsComponent = () => {
           <CardParagraph>Send Request to our Social Media</CardParagraph>
           <CardParagraph>Send Request to our Social Media</CardParagraph>
           <ButtonContainer>
-            <button  style={{ backgroundColor: "blue", border: "none", borderRadius: "5px", color: "white", fontSize: "16px", padding: "10px 20px", cursor: "pointer", margin: "5px" }}>
+            <StyledButton  style={{ backgroundColor: "blue", border: "none", borderRadius: "5px", color: "white", fontSize: "16px", padding: "10px 20px", cursor: "pointer", margin: "5px" }}>
               <FaFacebook />
-            </button>
-            <button  style={{ backgroundColor: "skyblue", border: "none", borderRadius: "5px", color: "white", fontSize: "16px", padding: "10px 20px", cursor: "pointer", margin: "5px" }}>
+            </StyledButton>
+            <StyledButton  style={{ backgroundColor: "skyblue", border: "none", borderRadius: "5px", color: "white", fontSize: "16px", padding: "10px 20px", cursor: "pointer", margin: "5px" }}>
               <FaInstagram />
-            </button>
-            <button  style={{ backgroundColor: "gray", border: "none", borderRadius: "5px", color: "white", fontSize: "16px", padding: "10px 20px", cursor: "pointer", margin: "5px" }}>
+            </StyledButton>
+            <StyledButton  style={{ backgroundColor: "gray", border: "none", borderRadius: "5px", color: "white", fontSize: "16px", padding: "10px 20px", cursor: "pointer", margin: "5px" }}>
               <FaTelegram />
-            </button>
-            <button  style={{ backgroundColor: "black", border: "none", borderRadius: "5px", color: "white", fontSize: "16px", padding: "10px 20px", cursor: "pointer", margin: "5px" }}>
+            </StyledButton>
+            <StyledButton  style={{ backgroundColor: "black", border: "none", borderRadius: "5px", color: "white", fontSize: "16px", padding: "10px 20px", cursor: "pointer", margin: "5px" }}>
               <FaTwitter />
-            </button>
+            </StyledButton>
           </ButtonContainer>
         </Card>
+        </CardRow>
       </CardContainer>
     </SectionWithMargin>
   );

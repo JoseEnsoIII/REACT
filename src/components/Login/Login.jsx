@@ -20,7 +20,7 @@ const Login = () => {
 
     const loginUser = (e) => {
         e.preventDefault();
-        Axios.post('http://localhost:3002/login', {
+        Axios.post('http://localhost:3003/login', {
             LoginUserName: loginUserName,
             LoginPassword: loginPassword
         }).then((response) => {
@@ -30,7 +30,7 @@ const Login = () => {
                 setLoginStatus(`Credentials Don't Exist!`)
             }
             else {
-                navigateTo('/dashboard')
+                navigateTo('/')
             }
         })
     }
@@ -100,7 +100,9 @@ const Login = () => {
                             <span>Login</span>
                             <AiOutlineSwapRight className="icon" />
                         </button>
-
+                        <span className="forgotPassword">
+                             <a href="/admin">Admin Login</a>
+                        </span>
                         <span className="forgotPassword">
                             Forgot your password? <a href="/forgot">Click Here</a>
                         </span>

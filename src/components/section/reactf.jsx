@@ -21,6 +21,7 @@ const Slide = styled.div`
   border-radius: 25px;
   transition: transform 0.3s ease, height 0.3s ease; /* Add transition for height */
   
+  
   a {
     text-decoration: none;
     font-family: "Gotham", sans-serif;
@@ -56,6 +57,15 @@ const Slide = styled.div`
       display: flex; /* Display the play button on hover */
     }
   }
+  @media (max-width: 360px), (max-width: 640px) {
+    height: 350px;
+
+    &:hover {
+      height: 350px; /* Adjust the height to your preference */
+      transform: translateY(-25px); /* Remove the transform */
+      text-decoration: underline;
+    }
+  }
 `;
 
 const SlideImage = styled.img`
@@ -65,6 +75,13 @@ const SlideImage = styled.img`
   border-top-right-radius: 25px; /* Rounded top-right corner */
   border-bottom-left-radius: 25px; /* Rounded top-left corner */
   border-bottom-right-radius: 25px; /* Rounded top-right corner */
+  
+  @media (max-width: 360px), (max-width: 640px) {
+    font-size: 10px;
+    margin: 5px;
+    width: 100%;
+  height: 350px;
+  }
 `;
 
 const SectionWrapper = styled.section`
@@ -72,6 +89,12 @@ const SectionWrapper = styled.section`
   height: 120vh;
   width: 100vw;
   position: relative;
+
+  @media (max-width: 360px), (max-width: 640px) {
+    font-size: 10px;
+    margin: 3px;
+    height: 900px;
+  }
 `;
 
 const Heading = styled.h2`

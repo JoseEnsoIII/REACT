@@ -20,12 +20,12 @@ const Register = () => {
 
     const createUser = (e) => {
         e.preventDefault()
-        Axios.post('http://localhost:3002/register', {
+        Axios.post('http://localhost:3003/register', {
             Email: email,
             UserName: userName,
             Password: password
         }).then(() => {
-            navigateTo('/');
+            navigateTo('/login');
             setEmail('');
             setUserName('');
             setPassword('');
@@ -46,7 +46,7 @@ const Register = () => {
 
                     <div className="footerDiv flex">
                         <span className="text">Have an account?</span>
-                        <Link to={'/'}>
+                        <Link to={'/login'}>
                             <button className="btn">Login</button>
                         </Link>
                     </div>

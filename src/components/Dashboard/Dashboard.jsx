@@ -1,17 +1,22 @@
-import React from 'react'
-import '../../App.css'
-import Sidebar from '../Dashboard/SideBarSection/Sidebar'
-import Body from '../Dashboard/BodySection/Body'
-
+import React, { useState } from 'react';
+import '../../App.css';
+import Sidebar from '../Dashboard/SideBarSection/Sidebar';
+import Body from './BodySection/Body'
 const Dashboard = () => {
-    return (
-        <div className="dashboard flex">
-            <div className="dashboardContainer flex">
-                <Sidebar/>
-                <Body/>
-            </div>
-        </div>
-    )
-}
+  const [activeTab, setActiveTab] = useState('dashboard');
 
-export default Dashboard
+  return (
+    <div className="dashboard flex">
+      <div className="dashboardContainer flex">
+        <Sidebar setActiveTab={setActiveTab} />
+        {activeTab === 'dashboard' && <Body />}
+        {activeTab === 'roles' && <RolesContent/>}
+        {activeTab === 'ads' && <AdsContent />}
+        {activeTab === 'upload' && <UploadContent handleUploadClick={handleUploadClick} />}
+        {activeTab === 'settings' && <SettingsContent />}
+      </div>
+    </div>
+  );
+};
+
+export default Dashboard;

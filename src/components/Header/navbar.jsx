@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { FaBars } from 'react-icons/fa';
 
 const StyledNavbar = styled.nav`
   position: sticky;
@@ -19,6 +20,9 @@ const StyledNavbar = styled.nav`
   backdrop-filter: blur(10px);
   transition: background-color 0.3s ease, color 0.3s ease;
   z-index: 999;
+  
+  
+  
 `;
 
 const TextLogo = styled.div`
@@ -28,6 +32,13 @@ const TextLogo = styled.div`
   margin-right: auto;
   border-radius: 10px;
   color: white;
+
+  @media (max-width: 360px), (max-width: 640px) {
+  font-size: 10px;
+  margin: 3px;
+  display: none;
+}
+
 `;
 
 const NavLinks = styled.ul`
@@ -45,13 +56,21 @@ const NavLinkItem = styled.li`
   font-family: "Montserrat", sans-serif;
   background-color: transparent;
   border-radius: 25%;
-  padding: 5px 10px;
+  padding: 3px 10px;
+
+  
 `;
 
 const NavLink = styled(Link)`
   color: white;
   text-decoration: none;
   font-size: 20px;
+
+  @media (max-width: 360px), (max-width: 640px) {
+  font-size: 10px;
+  display: none;
+}
+
 `;
 
 const SubscribeButton = styled(NavLink)`
@@ -63,6 +82,12 @@ const SubscribeButton = styled(NavLink)`
   align-items: center;
   justify-content: center;
   margin: 10px;
+
+  @media (max-width: 360px), (max-width: 640px) {
+    margin: 3px;
+    width: 60px;
+    display: none;
+  }
 `;
 
 const Modal = styled.div`
@@ -74,6 +99,8 @@ const Modal = styled.div`
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   z-index: 999;
+
+  
 `;
 
 const ModalContent = styled.div`
@@ -87,6 +114,13 @@ const ModalContent = styled.div`
   transform: translate(-50%, -50%);
   padding: 20px;
   text-align: center;
+
+  @media (max-width: 640px) {
+    width:200px;
+    font-size: 10px;
+    top: 10%;
+  left: 30%;
+  }
 `;
 
 const CloseButton = styled.span`
@@ -104,14 +138,64 @@ const LineText = styled.p`
   font-size: 16px;
   margin: 10px 0;
 `;
+const MenuIcon = styled(FaBars)`
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  position: sticky;
+  top: 0;
+  margin-right: 20%;
+  z-index: 100;
+  display:none;
 
+  @media (max-width: 640px) {
+    position: sticky;
+    font-size: 25px;
+    display: block;
+    margin-right: 20%;
+    border: 1px solid white;
+    height: 30px;
+    width: 40px;
+  }
+`;
+
+const Sidebar = styled.div`
+  position: absolute;
+  top: 100px;
+  right: -400px;
+  width: 200px;
+  height: 13%;
+  background: rgba(0, 0, 0, 0.8);
+  transition: right 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Adjusted to align links at the top */
+  z-index: 998;
+
+  &.open {
+    right: 0;
+  }
+`;
+
+const SidebarLink = styled(Link)`
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  margin: 10px;
+  align-self: flex-start; /* Align links at the top */
+`;
 const Navbar = () => {
   const [isModalOpen, setModalOpen] = useState(false);
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleModal = () => {
     setModalOpen(!isModalOpen);
   };
 
+  const toggleSidebar = () => {
+    setSidebarOpen(!isSidebarOpen);
+  };
   return (
     <div>
       <StyledNavbar>
@@ -128,6 +212,8 @@ const Navbar = () => {
         <NavLinkItem>
           <SubscribeButton onClick={toggleModal}>Subscribe</SubscribeButton>
         </NavLinkItem>
+        
+        <MenuIcon onClick={toggleSidebar} />
       </StyledNavbar>
 
       <Modal isOpen={isModalOpen}>
@@ -141,6 +227,13 @@ const Navbar = () => {
           <Link to="/payment">Proceed to Payment</Link>
         </ModalContent>
       </Modal>
+
+      <Sidebar className={isSidebarOpen ? 'open' : ''}>
+        <SidebarLink to="/home">Home</SidebarLink>
+        <SidebarLink to="/reg">Register</SidebarLink>
+        <SidebarLink to="/login">Login</SidebarLink>
+        <SidebarLink onClick={toggleModal} style={{color:"red", textDecoration:"none"}}>Subscribe</SidebarLink>
+      </Sidebar>
     </div>
   );
 };

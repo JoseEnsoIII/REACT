@@ -17,6 +17,13 @@ const PageWrapper = styled.div`
   flex-direction: column;
   align-items: center; /* Center horizontally */
   text-align: center; /* Center text within */
+
+  @media (max-width: 360px), (max-width: 640px) {
+    font-size: 10px;
+    margin: 3px;
+    height: 900px;
+    width:100%;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -34,6 +41,12 @@ const Heading = styled.h1`
   margin-top: -20px;
   font-family: "Gotham", sans-serif;
   font-weight: bold;
+
+  @media (max-width: 360px), (max-width: 640px) {
+    font-size: 30px;
+    margin: 3px;
+    
+  }
 `;
 
 const GetStartedLink = styled.a`

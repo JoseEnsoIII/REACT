@@ -12,6 +12,7 @@ const Term = lazy(() => import("./pages/notmain/term"));
 const Contact = lazy(() => import("./pages/notmain/contact"));
 const Login = lazy(() => import("../src/components/Login/Login"));
 const Register = lazy(() => import("./components/Register/Register"));
+const Admin = lazy(() => import("./components/Admin/Admin"));
 const Forgot = lazy(() => import("./components/ForgotPass/Forgot_Pass"));
 const Player = lazy(() => import("./pages/notmain/Player"));
 const Dashboard = lazy(() => import("../src/components/Dashboard/Dashboard"));
@@ -34,6 +35,7 @@ function App() {
         <Route path="/contact" element={<Suspense fallback={<LoadingSpinner />}>{" "}<Contact /></Suspense>} />
         <Route path="/login" element={<Suspense fallback={<LoadingSpinner />}>{" "}<Login /></Suspense>} />
         <Route path="/reg" element={<Suspense fallback={<LoadingSpinner />}>{" "}    <Register /></Suspense>} />
+        <Route path="/admin" element={<Suspense fallback={<LoadingSpinner />}>{" "}    <Admin /></Suspense>} />
         <Route path="/forgot" element={<Suspense fallback={<LoadingSpinner />}>{" "}    <Forgot /></Suspense>} />
         <Route path="/player" element={<Suspense fallback={<LoadingSpinner />}>{" "}<Player /></Suspense>} />
         <Route path="/dashboard" element={<Suspense fallback={<LoadingSpinner />}>{" "}<Dashboard /></Suspense>} />
