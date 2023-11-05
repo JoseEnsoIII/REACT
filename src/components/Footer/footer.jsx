@@ -19,7 +19,7 @@ const Container = styled.div`
   @media (max-width: 640px) {
     flex-direction: column;
     width: 100%;
-    height: 1005;
+    height: 45vh;
   }
 `;
 

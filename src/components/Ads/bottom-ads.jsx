@@ -20,7 +20,7 @@ const AdContainer = styled.div`
   @media (max-width: 640px) {
     height: 120px;
     width: 100%;
-    margin-left: 20%; /* Position to the left end */
+    margin-left: 50%; /* Position to the left end */
     position: Sticky;
     bottom:0;
     top: auto
@@ -38,7 +38,7 @@ const AdContent = styled.div`
 
   @media (max-width: 640px) {
   height:30px;
-  
+  width: 100%;
   }
 `;
 
