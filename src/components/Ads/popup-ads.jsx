@@ -20,6 +20,7 @@ const PopupContainer = styled.div`
   z-index: 1;
 
   @media (max-width: 640px) {
+    position: sticky;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,9 +74,9 @@ const CloseButton = styled.button`
   outline: none;
 
   @media (max-width: 640px) {
-    top: 110px; /* Adjust the top position for spacing on small screens */
-    left: 180%; /* Adjust the right position for spacing on small screens */
-    z-index: 999;
+    top: -20%; /* Adjust the top position for spacing on small screens */
+    left: 85%; /* Adjust the right position for spacing on small screens */
+    z-index: 1;
     background-color: transparent;
   }
 `;
