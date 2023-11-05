@@ -17,12 +17,14 @@ const PageWrapper = styled.div`
   flex-direction: column;
   align-items: center; /* Center horizontally */
   text-align: center; /* Center text within */
+  overflow-x: hidden;
 
   @media (max-width: 360px), (max-width: 640px) {
     font-size: 10px;
     margin: 3px;
     height: 900px;
     width:100%;
+    overflow-x: hidden;
   }
 `;
 
@@ -77,9 +79,11 @@ const IntroPage = () => {
       </PageWrapper>
       <MovieSlider /> 
       <Benefit />
+     
+     
+      <Footer /> 
       <PopUpAds />
-      <Ads />
-      <Footer />
+       <Ads />
     </section>
   );
 };

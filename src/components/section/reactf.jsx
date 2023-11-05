@@ -12,7 +12,7 @@ const Slide = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid white;
+  border: 1px solid transparent;
   margin: 200px 10px;
   margin-left: 20px; /* Add left gap */
   margin-right: 20px; /* Add right gap */
@@ -44,7 +44,7 @@ const Slide = styled.div`
     height: 40px;
     background-color: #e50914; /* Add a semi-transparent background */
     border-radius: 15px; /* Make it round */
-    border: 1px solid #e50914;
+    border: 1px solid transparent;
     font-family: "Gotham", sans-serif;
   }
 
@@ -58,10 +58,12 @@ const Slide = styled.div`
     }
   }
   @media (max-width: 360px), (max-width: 640px) {
-    height: 350px;
+    height: 210px;
+    border: 1px solid transparent;
+    width: 100%;
 
     &:hover {
-      height: 350px; /* Adjust the height to your preference */
+      height: 250px; /* Adjust the height to your preference */
       transform: translateY(-25px); /* Remove the transform */
       text-decoration: underline;
     }
@@ -80,7 +82,7 @@ const SlideImage = styled.img`
     font-size: 10px;
     margin: 5px;
     width: 100%;
-  height: 350px;
+  height: 200px;
   }
 `;
 
@@ -93,7 +95,7 @@ const SectionWrapper = styled.section`
   @media (max-width: 360px), (max-width: 640px) {
     font-size: 10px;
     margin: 3px;
-    height: 900px;
+    height: 50vh;
   }
 `;
 

@@ -62,9 +62,10 @@ const Home = () => {
       <Similar />
       <SectionAds />
       <Anime />
-      <PopUpAds />
-      <Ads />
+    
       <Footer />
+        <PopUpAds />
+      <Ads />
     </section>
   );
 };

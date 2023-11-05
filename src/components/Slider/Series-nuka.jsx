@@ -11,7 +11,7 @@ import {
   faShare,
 } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
-import Movietabs from '../Tabs/Movietabs'
+import MovieTabs from '../tabs/Movietabs'
 
 const customDotImages = [
   "/images/peacemaker.jpg", // Customize the paths as needed
@@ -328,7 +328,7 @@ function MyCarousel() {
       ))}
       
     </Carousel>
-    
+    <MovieTabs />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { FaBars } from 'react-icons/fa';
+import { FaFacebook, FaTelegram, FaInstagram,FaBars } from 'react-icons/fa';
 
 const StyledNavbar = styled.nav`
   position: sticky;
@@ -20,7 +20,11 @@ const StyledNavbar = styled.nav`
   backdrop-filter: blur(10px);
   transition: background-color 0.3s ease, color 0.3s ease;
   z-index: 999;
-  
+
+  @media (max-width: 360px), (max-width: 640px) {
+    background-color:black;
+  }
+
   
   
 `;
@@ -152,7 +156,7 @@ const MenuIcon = styled(FaBars)`
     position: sticky;
     font-size: 25px;
     display: block;
-    margin-right: 20%;
+    margin-right: 10%;
     border: 1px solid white;
     height: 30px;
     width: 40px;
@@ -164,7 +168,7 @@ const Sidebar = styled.div`
   top: 100px;
   right: -400px;
   width: 200px;
-  height: 13%;
+  height: 30%;
   background: rgba(0, 0, 0, 0.8);
   transition: right 0.3s ease;
   display: flex;
@@ -184,6 +188,15 @@ const SidebarLink = styled(Link)`
   font-size: 20px;
   margin: 10px;
   align-self: flex-start; /* Align links at the top */
+`;
+const SocialMediaIcon = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color:white;
+  & > * {
+    margin-right: 10px; // Adjust the spacing between icons as needed
+  }
 `;
 const Navbar = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -233,6 +246,15 @@ const Navbar = () => {
         <SidebarLink to="/reg">Register</SidebarLink>
         <SidebarLink to="/login">Login</SidebarLink>
         <SidebarLink onClick={toggleModal} style={{color:"red", textDecoration:"none"}}>Subscribe</SidebarLink>
+        <SidebarLink>Follow us  </SidebarLink>
+        <SidebarLink>
+        <SocialMediaIcon>
+      <FaFacebook size={30} color="white" />
+      <FaTelegram size={30} color="white" />
+      <FaInstagram size={30} color="white" />
+    </SocialMediaIcon>
+
+        </SidebarLink>
       </Sidebar>
     </div>
   );

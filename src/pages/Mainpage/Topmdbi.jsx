@@ -20,9 +20,10 @@ const TopMdbi = () => {
           <SectionAds />
           <Anime/>
       <SideBar />
+      
+      <Footer/>
       <PopUpAds />
       <Ads />
-      <Footer/>
     </div>
   );
 }

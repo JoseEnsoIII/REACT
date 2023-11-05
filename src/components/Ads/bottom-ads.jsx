@@ -16,6 +16,15 @@ const AdContainer = styled.div`
   flex-direction: column;
   align-items: center;
   z-index: 998;
+  
+  @media (max-width: 640px) {
+    height: 120px;
+    width: 100%;
+    margin-left: 20%; /* Position to the left end */
+    position: Sticky;
+    bottom:0;
+    top: auto
+  }
 `;
 
 const AdContent = styled.div`
@@ -26,6 +35,11 @@ const AdContent = styled.div`
   align-items: center;
   width: 100%;
   padding: 3px;
+
+  @media (max-width: 640px) {
+  height:30px;
+  
+  }
 `;
 
 const AdText = styled.p`
@@ -39,6 +53,11 @@ const AdText = styled.p`
   font-weight: bold;
   svg {
     margin-right: 5px; 
+  }
+
+  @media (max-width: 640px) {
+    font-size:10px;
+    margin:10px;
   }
 `;
 
@@ -61,12 +80,20 @@ const Timer = styled.div`
   justify-content: center; /* Center horizontally */
   margin-right:250px
   
+  
+  @media (max-width: 640px) {
+    font-size:10px;
+    font-family:Gotham;
+  }
 `;
 
 
 const AdImage = styled.img`
   width: 100%;
   height: auto;
+  @media (max-width: 640px) {
+    margin-top:-5px;
+  }
 `;
 
 function Ad() {
@@ -123,7 +150,7 @@ function Ad() {
 </AdText>
 
 
-            <Timer>Auto close in {formatTime(timeRemaining)}</Timer>
+            <Timer><AdText>Auto close in {formatTime(timeRemaining)}</AdText></Timer>
             <CloseButton onClick={handleCloseClick}>X</CloseButton>
           </AdContent>
           <AdImage
