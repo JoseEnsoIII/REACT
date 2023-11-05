@@ -95,7 +95,7 @@ const SectionWrapper = styled.section`
   @media (max-width: 360px), (max-width: 640px) {
     font-size: 10px;
     margin: 3px;
-    height: 50vh;
+    height: 100%;
   }
 `;
 
