@@ -124,11 +124,12 @@ function MyCarousel() {
           justifyContent: "center",
           padding: "5px",
           borderRadius: "10%",
-          width: "40px", // Adjust the width as needed
-          height: "60px", // Adjust the height as needed
-          boxShadow: "0 0 10px rgba(0, 0, 0, 0.5)", // Glassmorphism effect
+          width: "40px",
+          height: "60px",
+          boxShadow: "0 0 10px rgba(0, 0, 0, 0.5)",
           border: "1px solid black", // Fix this line by using ":" instead of ";"
         }}
+        
       >
         <FontAwesomeIcon
           icon={faArrowLeft}
@@ -144,7 +145,7 @@ function MyCarousel() {
         onClick={nextSlide}
         className="carousel-button"
         style={{
-          margin:"10px",
+          margin: "10px",
           right: "70px",
           background: "transparent",
           border: "none",
@@ -154,11 +155,11 @@ function MyCarousel() {
           justifyContent: "center",
           padding: "5px",
           borderRadius: "10%",
-          width: "40px", // Adjust the width as needed
-          height: "60px", // Adjust the height as needed
-          boxShadow: "0 0 10px rgba(0, 0, 0, 0.5)", // Glassmorphism effect
+          width: "40px",
+          height: "60px",
+          boxShadow: "0 0 10px rgba(0, 0, 0, 0.5)",
           border: "1px solid white", // Glassmorphism border
-        }}
+        }}        
       >
           <FontAwesomeIcon
             icon={faArrowRight}

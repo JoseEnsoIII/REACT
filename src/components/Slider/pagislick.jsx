@@ -160,7 +160,6 @@ function MyCarousel() {
                 cursor: "pointer",
                 margin: "5px",
                 opacity: currentSlide === index ? 1 : 0.5, // Highlight the active dot
-                border: "1px solid black",
               }}
               onClick={() => goToSlide(index)} // Make the dot clickable
             />

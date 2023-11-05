@@ -227,7 +227,6 @@ class Navbar extends Component {
               borderRadius: "10px",
               width: "40px",
               height: "30px",
-              border: "none",
               background: "#666666",
               cursor: "pointer",
               border: "1px solid black",
