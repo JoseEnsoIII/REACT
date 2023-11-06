@@ -10,8 +10,6 @@ import {
   faMobileAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import logoImage from '/images/OIP.jpg'; // Import your logo image
-
 
 const SidebarMenuBg = styled.div`
   position: fixed; /* Make the navigation bar sticky */
@@ -30,19 +28,16 @@ const SidebarMenuBg = styled.div`
 `;
 
 const Logo = styled(Link)`
-  /* ... (no changes) */
+  font-family: "Gotham", sans-serif;
+  font-size: 24px;
+  height: 80px;
   display: flex;
   align-items: center;
-
-  @media (max-width: 640px) {
-    background: url(${logoImage}) no-repeat center/cover;
-    width: 40px; 
-    height: 40px;
-    padding: 0;
-    text-indent: -9999px; 
-    margin-left: 3%; 
-    border-radius:50%;
-  }
+  margin-right: auto;
+  padding: 0 20px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none; // Remove the underline
 `;
 
 const SideMenuWrapper = styled.div`
@@ -74,7 +69,7 @@ const HeaderButton = styled.div`
   border-radius: 5px;
 
   @media (max-width: 640px) {
-    margin-right: 15%; // Hide the HeaderButton on smaller screens
+    margin-right: 25%; // Hide the HeaderButton on smaller screens
   }
 `;
 
