@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
 
 // Styled components for layout
 const Wrapper = styled.div`
@@ -52,61 +54,12 @@ const Strong = styled.strong`
   margin: 0;
 `;
 
-const EpisodeList = styled(Column)`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  flex: 1;
-  margin-right:50px;
-  border:1px solid black;
-  background-color:#404757;
-  max-width:250px;
-  max-height: 500px;
-  overflow-y: auto;
-`;
 
-const EpisodeItem = styled.div`
-  display: flex;
-  align-items: center;
-  margin: 5px 0;
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: #AAAAAA;
-  text-decoration: none;
-`;
 
-const EpisodeImage = styled.img`
-  width: 80px;
-  height: 80px;
-  margin-right: 10px;
-`;
-
-const PlayButton = styled.button`
-  background-color: #0073e6;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
-`;
-
-const episodes = [
-  { season: 'season1', episodeNumber: 1, imageSrc: '/images/lou.jpg', link: '/player' },
-  { season: 'season1', episodeNumber: 2, imageSrc: '/images/lou.jpg', link: '/player' },
-  { season: 'season2', episodeNumber: 1, imageSrc: '/images/lou.jpg', link: '/player' },
-  { season: 'season2', episodeNumber: 2, imageSrc: '/images/lou.jpg', link: '/player' },
-  { season: 'season2', episodeNumber: 3, imageSrc: '/images/lou.jpg', link: '/player' },
-  { season: 'season3', episodeNumber: 1, imageSrc: '/images/lou.jpg', link: '/player' },
-  { season: 'season3', episodeNumber: 2, imageSrc: '/images/lou.jpg', link: '/player' },
-  { season: 'season3', episodeNumber: 3, imageSrc: '/images/lou.jpg', link: '/player' },
-  // Add more episode data as needed
-];
 
 const MovieDetails = () => {
-  const [selectedSeason, setSelectedSeason] = useState('season1');
 
-  const text = `HD Trailer | IMDB | 1:20:60
+  const text = `HD | IMDB | 1:20:60
     Overview: At America's only college for superheroes, gifted students put their moral boundaries to the test, competing for the university's top ranking, and a chance to join The Seven, Vought International's elite superhero team. When the school's dark secrets come to light, they must decide what kind of heroes they want to become.
     Released: 2023-09-28
     Genre: Sci-Fi & Fantasy, Action & Adventure, Comedy, Drama
@@ -156,17 +109,24 @@ const MovieDetails = () => {
       <Wrapper>
         {/* Movie Poster */}
         <Poster>
-          <img
-            style={{ height: "300px", width: "200px" }}
-            src="/images/lou.jpg"
-            alt="Movie Poster"
-          />
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+            <img
+              style={{ height: "300px", width: "200px" }}
+              src="/images/lou.jpg"
+              alt="Movie Poster"
+            />
+             <p style={{ marginTop: "10px" }}>
+      <a href="" style={{ color: "white", textDecoration: "none" }}>
+        <FontAwesomeIcon icon={faPlayCircle} style={{marginRight:"10px"}}/>Watch Trailer 
+      </a>
+    </p>
+          </div>
         </Poster>
 
         {/* Movie Details */}
         <DetailsContainer>
   <Title>
-    <Strong>Expend4bles</Strong>
+    <Strong>Last of Us</Strong>
   </Title>
   <Content>
     {lines.map((line, index) => {
@@ -209,7 +169,7 @@ const MovieDetails = () => {
   </div>
   <div>
     <a href="link_to_buy_ticket" target="_blank" rel="noopener noreferrer">
-      <button style={{ border: "2px solid blue", margin: "0 10px", borderRadius: "25px" }}>Buy Ticket</button>
+      <button style={{ border: "2px solid blue", margin: "10px", borderRadius: "25px" }}>Buy Ticket</button>
     </a>
   </div>
   <div>
@@ -220,31 +180,7 @@ const MovieDetails = () => {
 </DetailsContainer>
 
 
-        <EpisodeList>
-          <select
-            value={selectedSeason}
-            onChange={(e) => setSelectedSeason(e.target.value)}
-          >
-            <option value="season1">Season 1</option>
-            <option value="season2">Season 2</option>
-            <option value="season3">Season 3</option>
-            {/* Add more season options as needed */}
-          </select>
-          {episodes.map((episode, index) => {
-            if (episode.season === selectedSeason) {
-              return (
-                <a key={index} href={episode.link}>
-                  <EpisodeItem>
-                    <EpisodeImage src={episode.imageSrc} alt={`Episode ${episode.episodeNumber}`} />
-                    Episode {episode.episodeNumber}
-                    
-                  </EpisodeItem>
-                </a>
-              );
-            }
-            return null;
-          })}
-        </EpisodeList>
+        
       </Wrapper>
     </section>
   );

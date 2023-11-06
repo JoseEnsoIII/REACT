@@ -12,12 +12,18 @@ const Slide = styled.div`
   align-items: center;
   justify-content: center;
   margin: 200px 10px;
-  margin-left: 20px;
-  margin-right: 20px;
+ 
   position: relative;
   cursor: pointer;
-  border-radius: 25px;
+  border:none;
+  padding:10px;
   transition: transform 0.3s ease, height 0.3s ease;
+ 
+  @media (max-width: 640px) {
+    margin-left:10px;
+    padding:10px;
+    border: 1px solid white;
+  }
   a {
     text-decoration: none;
     font-family: "Gotham", sans-serif;
@@ -53,6 +59,8 @@ const Slide = styled.div`
     transform: translateY(-25px);
     text-decoration: underline;
     
+  
+
     .play-button {
       display: flex;
       
@@ -61,15 +69,17 @@ const Slide = styled.div`
 
   @media (max-width: 640px) {
     margin-top: 350%;
-    height: 210px;
+    height: 200px;
+    border:none;
     
     width: 100%;
     transform: translateY(0);
 
     &:hover {
-      height: 250px;
+      height: 260px;
       transform: translateY(-25px);
       text-decoration: underline;
+      border:none;
     }
     &:active {
       
@@ -165,37 +175,37 @@ export default class SwipeToSlide extends Component {
         <Slider {...settings}>
           {/* Slides */}
           <Slide>
-            <SlideImage src="/images/saw.jpg" alt="number 1" />
+            <a href="/player"><SlideImage src="/images/saw.jpg" alt="number 1"  /></a>
             <a href="/player" className="play-button">
               <CustomIcon src="/images/play.svg" alt="Play Icon" /> Watch
             </a>
           </Slide>
           <Slide>
-            <SlideImage src="/images/mi.jpg" alt="number 1" />
+          <a href="/player"><SlideImage src="/images/mi.jpg" alt="number 1" style={{marginLeft:"10"}} /></a>
+            <a href="/player" className="play-button">
+              <CustomIcon src="/images/play.svg" alt="Play Icon" /> Watch
+            </a>
+          </Slide>
+          <Slide >
+          <a href="/player"><SlideImage src="/images/gt.jpg" alt="number 1"  /></a>
             <a href="/player" className="play-button">
               <CustomIcon src="/images/play.svg" alt="Play Icon" /> Watch
             </a>
           </Slide>
           <Slide>
-            <SlideImage src="/images/gt.jpg" alt="number 1" />
+          <a href="/player"> <SlideImage src="/images/sm.jpg" alt="number 1"  /></a>
             <a href="/player" className="play-button">
               <CustomIcon src="/images/play.svg" alt="Play Icon" /> Watch
             </a>
           </Slide>
           <Slide>
-            <SlideImage src="/images/sm.jpg" alt="number 1" />
+             <a href="/player"><SlideImage src="/images/fc.jpg" alt="number 1"  /></a>
             <a href="/player" className="play-button">
               <CustomIcon src="/images/play.svg" alt="Play Icon" /> Watch
             </a>
           </Slide>
           <Slide>
-            <SlideImage src="/images/fc.jpg" alt="number 1" />
-            <a href="/player" className="play-button">
-              <CustomIcon src="/images/play.svg" alt="Play Icon" /> Watch
-            </a>
-          </Slide>
-          <Slide>
-            <SlideImage src="/images/lou.jpg" alt="number 1" />
+             <a href="/player"><SlideImage src="/images/lou.jpg" alt="number 1"  /></a>
             <a href="/player" className="play-button">
               <CustomIcon src="/images/play.svg" alt="Play Icon" /> Watch
             </a>

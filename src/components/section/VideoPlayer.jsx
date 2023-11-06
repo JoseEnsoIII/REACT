@@ -1,98 +1,140 @@
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
-import { FaPlay, FaPause, FaVolumeMute, FaVolumeUp } from 'react-icons/fa';
 
-const StyledVideoPlayer = styled.div`
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 120vh;
+  background-color:gray;
+`;
+
+const VideoPlayerContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 500px;
-  padding: 50px;
-
-  video {
-    width: 90%;
-    height: 60%;
-    margin: 5px 0;
-  }
-
-  button {
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: #0077b6;
-    cursor: pointer;
-    margin: 10px 0;
-  }
-
-  input {
-    width: 50%;
-  }
-`;
-const MovieTitle = styled.div`
-  background-color: white;
-  font-family: 'Gotham', sans-serif;
-  font-size: 50px;
-  margin-right: 75%;
-   /* Adjust the width as needed */
+  text-align: center;
 `;
 
+const Video = styled.video`
+  width: 150%;
+  height: 45%;
+  margin-top:15%;
+`;
+
+const EpisodeList = styled.div`
+position:sticky;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+  margin-right:110%;
+  flex-direction: row;
+`;
+
+const SelectWrapper = styled.div`
+  margin-top: 10px;
+  margin-bottom: 10px;
+`;
+
+const EpisodeItem = styled.div`
+margin:20px;
+color: white;
+  text-align: center;
+`;
+
+const EpisodeImage = styled.img`
+  max-width: 150px;;
+  max-height: 150px;
+   color:black;
+`;
+
+const episodes = [
+  {
+    season: "season1",
+    episodeNumber: 1,
+    link: "/player",
+    imageSrc: "/images/lou.jpg",
+  },
+  {
+    season: "season1",
+    episodeNumber: 2,
+    link: "/player",
+    imageSrc: "/images/lou.jpg",
+  },
+  {
+    season: "season2",
+    episodeNumber: 1,
+    link: "/player",
+    imageSrc: "/images/lou.jpg",
+  },
+  {
+    season: "season2",
+    episodeNumber: 2,
+    link: "/player",
+    imageSrc: "/images/lou.jpg",
+  },
+  {
+    season: "season3",
+    episodeNumber: 1,
+    link: "/player",
+    imageSrc: "/images/lou.jpg",
+  },
+  {
+    season: "season3",
+    episodeNumber: 2,
+    link: "/player",
+    imageSrc: "/images/lou.jpg",
+  },
+  // Add more episodes as needed
+];
 
 function VideoPlayer({ videoSrc }) {
   const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
-  const [volume, setVolume] = useState(1);
-
-  const togglePlay = () => {
-    if (videoRef.current.paused) {
-      videoRef.current.play();
-      setIsPlaying(true);
-    } else {
-      videoRef.current.pause();
-      setIsPlaying(false);
-    }
-  };
-
-  const toggleMute = () => {
-    videoRef.current.muted = !isMuted;
-    setIsMuted(!isMuted);
-  };
-
-  const adjustVolume = (e) => {
-    const newVolume = e.target.value;
-    videoRef.current.volume = newVolume;
-    setVolume(newVolume);
-  };
+  const [selectedSeason, setSelectedSeason] = useState("season1");
 
   return (
-    <StyledVideoPlayer>
-        <MovieTitle>Movie Title</MovieTitle>
-      <video ref={videoRef} controls>
-        <source src={videoSrc} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-
-      <div>
-        <button onClick={togglePlay}>
-          {isPlaying ? <FaPause /> : <FaPlay />}
-        </button>
-
-        <button onClick={toggleMute}>
-          {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
-        </button>
-
-        <input
-          type="range"
-          min="0"
-          max="1"
-          step="0.1"
-          value={volume}
-          onChange={adjustVolume}
-        />
-      </div>
-    </StyledVideoPlayer>
+    <Container>
+      <VideoPlayerContainer style={{ height: "150vh" }}>
+        <Video ref={videoRef} controls>
+          <source src={videoSrc} type="video/mp4" />
+          Your browser does not support the video tag.
+        </Video>
+        <EpisodeList>
+          <SelectWrapper>
+            <select
+              value={selectedSeason}
+              onChange={(e) => setSelectedSeason(e.target.value)}
+              style={{marginTop:""}}
+            >
+              <option value="season1">Season 1</option>
+              <option value="season2">Season 2</option>
+              <option value="season3">Season 3</option>
+              {/* Add more season options as needed */}
+            </select><br/>
+          </SelectWrapper>
+          {episodes.map((episode, index) => {
+            if (episode.season === selectedSeason) {
+              return (
+                <a key={index} href={episode.link}>
+                  <EpisodeItem>
+                    <EpisodeImage
+                      src={episode.imageSrc}
+                      alt={`Episode ${episode.episodeNumber}`}
+                      sty
+                    />
+                    Episode {episode.episodeNumber}
+                  </EpisodeItem>
+                </a>
+              );
+            }
+            return null;
+          })}
+        </EpisodeList>
+      </VideoPlayerContainer>
+    </Container>
   );
 }
 
