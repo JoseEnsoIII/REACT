@@ -19,7 +19,10 @@ const Container = styled.div`
   @media (max-width: 640px) {
     flex-direction: column;
     width: 100%;
-    height: 50vh;
+    height: 105vh;
+    display: flex;
+    flex-wrap: wrap;
+    
   }
 `;
 
@@ -31,7 +34,8 @@ const Column = styled.div`
   font-size: 18px;
 
   @media (max-width: 640px) {
-    margin: 3px;
+    margin-top: 50px;
+    margin-right:6px;
     
   }
   &:first-child {
@@ -48,7 +52,7 @@ const Column = styled.div`
     color: black;
 
     @media (max-width: 640px) {
-      font-size: 15px;
+      font-size: 10px;
     }
   }
   h3 {
@@ -57,7 +61,7 @@ const Column = styled.div`
     color: black;
 
     @media (max-width: 640px) {
-      font-size: 12px;
+      font-size: 10px;
       margin-top: 15px;
       color: black;
     }
@@ -113,6 +117,7 @@ const SocialMediaList = styled.ul`
   justify-content: space-between;
 
   @media (max-width: 640px) {
+    margin:5px;
   }
 `;
 
@@ -234,6 +239,7 @@ function App() {
           </SocialMediaItem>
         </SocialMediaList>
       </Column>
+      
     </Container>
   );
 }

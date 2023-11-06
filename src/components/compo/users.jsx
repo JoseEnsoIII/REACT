@@ -35,7 +35,7 @@ export default class Users extends React.Component {
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) { // Change 'isLoaded' to 'dataFetched'
-      return <div>Loading...</div>;
+      return <div>...</div>;
     } else {
       return (
         <ol>
