@@ -63,10 +63,14 @@ const HeaderButton = styled.div`
   display: flex;
   align-items: center;
   margin: 5%;
-  margin-right: 18%;
+  margin-right: 20%; // Updated margin for smaller screens
   border: 1px solid black;
   height: 30px;
   border-radius: 5px;
+
+  @media (max-width: 640px) {
+    margin-right: 25%; // Hide the HeaderButton on smaller screens
+  }
 `;
 
 const Search = styled.div`
@@ -74,14 +78,7 @@ const Search = styled.div`
   align-items: center;
 `;
 
-const SearchIcon = styled(FontAwesomeIcon)`
-  background-color: #007bff;
-  color: white;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-`;
+
 
 const LoginLink = styled.a`
   color: white;
@@ -89,6 +86,10 @@ const LoginLink = styled.a`
   display: flex;
   align-items: center;
   margin-right: 15%;
+
+  @media (max-width: 640px) {
+    display: none; // Hide the NavButton on smaller screens
+  }
 `;
 
 const GenreGridContainer = styled.div`
@@ -106,61 +107,63 @@ const GenreTag = styled.a`
   border: 1px solid black;
 `;
 const NavButton = styled.div`
-  color: white;
-  display: flex;
-  align-items: center;
-  margin: 20px;
-  font-family: "Gotham", sans-serif;
-  font-size: 16px;
-  margin-right: 23%;
+color: white;
+display: flex;
+align-items: center;
+margin: 20px;
+font-family: "Gotham", sans-serif;
+font-size: 16px;
+margin-right: 23%;
 
-  ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    margin: 0;
-    justify-content: space-between;
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  margin: 0;
+  justify-content: space-between;
+}
+
+li {
+  margin: 0 25px;
+  font-size: 20px;
+  cursor: pointer;
+  &:last-child {
+    margin-right: 0;
   }
 
-  li {
-    margin: 0 25px;
-    font-size:20px;
-    cursor: pointer;
-    &:last-child {
-      margin-right: 0;
+  a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    transition: color 0.3s, transform 0.3s;
+
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: rgb(2,0,36);
+      background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 50%, rgba(0,212,255,1) 100%);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
     }
 
-    a {
-      text-decoration: none; /* Remove underline */
-      color: white; /* Set text color to white */
-      position: relative; /* Create space for the underline effect */
-      transition: color 0.3s, transform 0.3s; /* Add transition for smooth effect */
+    &:hover {
+      color: #ffff;
 
       &:before {
-        content: "";
-        position: absolute;
-        bottom: -3px; /* Adjust the distance of the underline from text */
-        left: 0;
-        width: 100%;
-        height: 3px; /* Adjust the underline thickness */
-        background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 50%, rgba(0,212,255,1) 100%);
-        transform: scaleX(0); /* Initially, set the width to 0 */
-        transform-origin: left; /* Make it expand from the left */
-        transition: transform 0.3s; /* Add transition for the expand effect */
-      }
-
-      &:hover {
-        color: #ffff;
-       
-        &:before {
-          transform: scaleX(1);
-        }
+        transform: scaleX(1);
       }
     }
   }
+}
 
-  }
+@media (max-width: 640px) {
+  display: none; // Hide the NavButton on smaller screens
+}
 `;
 
 class Navbar extends Component {

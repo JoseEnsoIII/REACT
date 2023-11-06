@@ -12,6 +12,8 @@ const Tabs = styled.div`
   margin-right: 20px;
   border-top: 1px solid white;
   background: linear-gradient(to top, #000000 50%, #12104a 100%);
+
+ 
 `;
 
 
@@ -21,6 +23,8 @@ const HeaderContainer = styled.div`
   font-family: "Gotham", sans-serif;
   font-size: 40px;
   color: white;
+  
+ 
 `;
 
 const TabsNav = styled.nav`
@@ -28,6 +32,11 @@ const TabsNav = styled.nav`
   justify-content: flex-end;
   margin-left: auto;
   color: white;
+
+   @media (max-width: 640px) {
+    margin-top:5%;
+   margin-right:25%;
+  }
 `;
 
 const TabsNavButton = styled.button`
@@ -51,10 +60,18 @@ const TabsNavButton = styled.button`
 
   &:last-child {
     margin-right: 10%; /* Margin only for the last tab on the right side */
+    
   }
 
   & + & {
     margin-left: -1px;
+  }
+  @media (max-width: 640px) {
+    font-size: 15px;
+    height: 50px;
+    margin-left:-30%;
+    margin:-5%;
+  }
   }
 `;
 

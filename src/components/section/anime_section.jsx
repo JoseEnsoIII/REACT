@@ -4,11 +4,18 @@ import { FaPlay } from 'react-icons/fa'; // Import the play icon
 
 const Heading = styled.h1`
   text-align: center;
-  font-fapeacemakerly: 'Gotham', sans-serif;
+  font-family: 'Gotham', sans-serif;
   color: white;
   font-size: 30px; /* Set the font size */
-  margin-left: -75%;
+  margin-left: -65%;
   font-weight:bold;
+
+  @media (max-width: 640px) {
+    margin-left: -45%;
+    font-weight:bold;
+    font-size: 20px;
+    margin-top: 10%;
+
 `;
 const CardWrapper = styled.div`
   position: relative;
@@ -17,20 +24,26 @@ const CardWrapper = styled.div`
   background: url(${(props) => props.imageUrl}) no-repeat center/cover;
   border-radius: 10px;
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);
-  margin: 10px;
+  margin: 15px;
   transition: 0.5s;
 
+  @media (max-width: 640px) {
+    width: 80px;
+  height: 100px;
+  margin: 5px;
+  }
+
   &:hover {
-    transition: 0.5s;
+    transition: 1s;
     .title {
       padding-bottom: 50px;
       opacity: 1;
-      transition: 0.5s;
+      transition: .3s;
       font-size: 10px;
     }
     .watch-button {
       opacity: 1;
-      transition: 0.5s;
+      transition: 0.3s;
       font-size: 10px;
     }
   }
@@ -41,7 +54,7 @@ const CardWrapper = styled.div`
     bottom: 0;
     left: 0;
     font-size: 26px;
-    font-weight: 300;
+    font-weight: 100;
     padding: 30px 0;
     background: linear-gradient(to top, #000, transparent);
     text-transform: uppercase;
@@ -70,10 +83,23 @@ const CardWrapper = styled.div`
   }
 `;
 
+const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media (max-width: 640px) {
+    height:120vh;
+  }
+`;
 const FlexContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
+  @media (max-width: 640px) {
+    margin-top:-10%;
+  }
 `;
 
 const Pagination = styled.div`
@@ -89,13 +115,13 @@ const PageButton = styled.button`
   border: 1px solid white;
   color: black;
   cursor: pointer;
-  margin: 0 5px;
   font-size: 18px;
-  font-family: "Gotham", sans-serif; /* Use the Gotham font */
+  font-family: "Gotham", sans-serif;
   padding: 5px 10px;
   border-radius: 5px;
   outline: none;
-  
+  height: 20px; /* Set the height to 20px */
+
   &:hover {
     background-color: transparent;
     color: blue;
@@ -107,6 +133,12 @@ const PageButton = styled.button`
     background-color: transparent;
     color: blue;
   `}
+
+  @media (max-width: 640px) {
+    font-size: 14px; /* Reduce font size for smaller screens */
+    height: 16px; /* Adjust height for smaller screens */
+    padding: 3px 8px; /* Adjust padding for smaller screens */
+  }
 `;
 function App() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -192,7 +224,7 @@ function App() {
   };
 
   return (
-    <div style={{backgroundColor: "black",height:"95vh" ,marginTop:"-15px" ,width:"100vw"}}>
+    <Container style={{backgroundColor: "black",height:"95vh" ,marginTop:"-15px" ,width:"100vw"}}>
         <Heading>| New Animes</Heading>
       <FlexContainer>
         {displayedCards.map((card, index) => (
@@ -215,7 +247,7 @@ function App() {
           </PageButton>
         ))}
       </Pagination>
-    </div>
+    </Container>
   );
 }
 

@@ -4,11 +4,18 @@ import { FaPlay } from 'react-icons/fa'; // Import the play icon
 
 const Heading = styled.h1`
   text-align: center;
-  font-fapeacemakerly: 'Gotham', sans-serif;
+  font-family: 'Gotham', sans-serif;
   color: white;
   font-size: 30px; /* Set the font size */
   margin-left: -65%;
   font-weight:bold;
+
+  @media (max-width: 640px) {
+    margin-left: -45%;
+    font-weight:bold;
+    font-size: 20px;
+    margin-top: 10%;
+
 `;
 const CardWrapper = styled.div`
   position: relative;
@@ -19,6 +26,12 @@ const CardWrapper = styled.div`
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);
   margin: 15px;
   transition: 0.5s;
+
+  @media (max-width: 640px) {
+    width: 80px;
+  height: 100px;
+  margin: 5px;
+  }
 
   &:hover {
     transition: 1s;
@@ -70,10 +83,23 @@ const CardWrapper = styled.div`
   }
 `;
 
+const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media (max-width: 640px) {
+    height:100vh;
+  }
+`;
 const FlexContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
+  @media (max-width: 640px) {
+    margin-top:-10%;
+  }
 `;
 
 const Pagination = styled.div`
@@ -81,6 +107,7 @@ const Pagination = styled.div`
   justify-content: center;
   margin-top: 20px;
 
+  
 `;
 
 const PageButton = styled.button`
@@ -90,7 +117,7 @@ const PageButton = styled.button`
   cursor: pointer;
   margin: 0 5px;
   font-size: 18px;
-  font-fapeacemakerly: "Gotham", sans-serif; /* Use the Gotham font */
+  font-family: "Gotham", sans-serif; /* Use the Gotham font */
   padding: 5px 10px;
   border-radius: 5px;
   outline: none;
@@ -106,8 +133,13 @@ const PageButton = styled.button`
     background-color: transparent;
     color: blue;
   `}
+  
+  @media (max-width: 640px) {
+    font-size: 14px; /* Reduce font size for smaller screens */
+    padding: 3px 8px; /* Adjust padding for smaller screens */
+    height: 30px; /* Set a specific height for the button */
+  }
 `;
-
 function Card() {
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 21; // Number of cards to display per page
@@ -240,7 +272,7 @@ function Card() {
   };
 
   return (
-    <div style={{height:"120vh",width:"100vw",backgroundColor:"transparent",marginTop:"-6%",marginLeft:"-2%"}}>
+    <Container style={{height:"120vh",width:"100vw",backgroundColor:"transparent",marginTop:"-6%",marginLeft:"-2%"}}>
        <Heading className="card-heading">| Trending Movies</Heading>
 
       <FlexContainer>
@@ -264,7 +296,7 @@ function Card() {
           </PageButton>
         ))}
       </Pagination>
-    </div>
+    </Container>
   );
 }
 

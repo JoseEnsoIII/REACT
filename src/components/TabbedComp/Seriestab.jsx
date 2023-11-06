@@ -4,11 +4,18 @@ import { FaPlay } from 'react-icons/fa'; // Import the play icon
 
 const Heading = styled.h1`
   text-align: center;
-  font-fapeacemakerly: 'Gotham', sans-serif;
+  font-family: 'Gotham', sans-serif;
   color: white;
   font-size: 30px; /* Set the font size */
   margin-left: -65%;
   font-weight:bold;
+
+  @media (max-width: 640px) {
+    margin-left: -45%;
+    font-weight:bold;
+    font-size: 20px;
+    margin-top: 10%;
+
 `;
 const CardWrapper = styled.div`
   position: relative;
@@ -20,17 +27,23 @@ const CardWrapper = styled.div`
   margin: 15px;
   transition: 0.5s;
 
+  @media (max-width: 640px) {
+    width: 80px;
+  height: 100px;
+  margin: 5px;
+  }
+
   &:hover {
-    transition: 0.5s;
+    transition: 1s;
     .title {
       padding-bottom: 50px;
       opacity: 1;
-      transition: 0.5s;
+      transition: .3s;
       font-size: 10px;
     }
     .watch-button {
       opacity: 1;
-      transition: 0.5s;
+      transition: 0.3s;
       font-size: 10px;
     }
   }
@@ -41,7 +54,7 @@ const CardWrapper = styled.div`
     bottom: 0;
     left: 0;
     font-size: 26px;
-    font-weight: 300;
+    font-weight: 100;
     padding: 30px 0;
     background: linear-gradient(to top, #000, transparent);
     text-transform: uppercase;
@@ -70,10 +83,23 @@ const CardWrapper = styled.div`
   }
 `;
 
+const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media (max-width: 640px) {
+    height:120vh;
+  }
+`;
 const FlexContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
+  @media (max-width: 640px) {
+    margin-top:-10%;
+  }
 `;
 
 const Pagination = styled.div`
@@ -90,7 +116,7 @@ const PageButton = styled.button`
   cursor: pointer;
   margin: 0 5px;
   font-size: 18px;
-  font-family: "Gotham", sans-serif; /* Use the Gotham font */
+  font-fapeacemakerly: "Gotham", sans-serif; /* Use the Gotham font */
   padding: 5px 10px;
   border-radius: 5px;
   outline: none;
@@ -240,7 +266,7 @@ function Card() {
   };
 
   return (
-    <div style={{height:"120vh",width:"100vw",backgroundColor:"transparent",marginTop:"-6%",marginLeft:"-2%"}}>
+    <Container style={{height:"120vh",width:"100vw",backgroundColor:"transparent",marginTop:"-6%",marginLeft:"-2%"}}>
         <Heading>| Trending Series</Heading>
       <FlexContainer>
         {displayedCards.map((card, index) => (
@@ -263,7 +289,7 @@ function Card() {
           </PageButton>
         ))}
       </Pagination>
-    </div>
+    </Container>
   );
 }
 

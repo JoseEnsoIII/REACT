@@ -5,12 +5,18 @@ import { FaPlay } from 'react-icons/fa'; // Import the play icon
 
 const Heading = styled.h1`
   text-align: center;
-  font-fapeacemakerly: 'Gotham', sans-serif;
+  font-family: 'Gotham', sans-serif;
   color: white;
   font-size: 30px; /* Set the font size */
-  margin-left: -79%;
+  margin-left: -65%;
   font-weight:bold;
-  margin-top : 40px;
+
+  @media (max-width: 640px) {
+    margin-left: -45%;
+    font-weight:bold;
+    font-size: 20px;
+    margin-top: 10%;
+
 `;
 const CardWrapper = styled.div`
   position: relative;
@@ -19,23 +25,27 @@ const CardWrapper = styled.div`
   background: url(${(props) => props.imageUrl}) no-repeat center/cover;
   border-radius: 10px;
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);
-  margin: 10px;
+  margin: 15px;
   transition: 0.5s;
 
+  @media (max-width: 640px) {
+    width: 80px;
+  height: 100px;
+  margin: 5px;
+  }
+
   &:hover {
-    transition: 0.5s;
+    transition: 1s;
     .title {
       padding-bottom: 50px;
       opacity: 1;
-      transition: 0.5s;
+      transition: .3s;
       font-size: 10px;
     }
     .watch-button {
       opacity: 1;
-      transition: 0.5s;
-      font-size: 15px;
-      color:red;
-      margin-bottom:-13px;
+      transition: 0.3s;
+      font-size: 10px;
     }
   }
 
@@ -44,8 +54,8 @@ const CardWrapper = styled.div`
     width: 100%;
     bottom: 0;
     left: 0;
-    font-size: 20px;
-    font-weight: 300;
+    font-size: 26px;
+    font-weight: 100;
     padding: 30px 0;
     background: linear-gradient(to top, #000, transparent);
     text-transform: uppercase;
@@ -74,10 +84,23 @@ const CardWrapper = styled.div`
   }
 `;
 
+const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media (max-width: 640px) {
+    height:100%;
+  }
+`;
 const FlexContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
+  @media (max-width: 640px) {
+    margin-top:-10%;
+  }
 `;
 
 const Pagination = styled.div`
@@ -222,7 +245,7 @@ function Card() {
   };
 
   return (
-    <div style={{ height: "90vh", width: "100vw", backgroundColor: "black",marginTop:"-40px" }}>
+    <Container style={{ height: "90vh", width: "100vw", backgroundColor: "black",marginTop:"-40px" }}>
     <Heading>| Similar </Heading>
     <FlexContainer>
       {displayedCards.map((card, index) => (
@@ -247,7 +270,7 @@ function Card() {
         </PageButton>
       ))}
     </Pagination>
-  </div>
+  </Container>
   );
 }
 

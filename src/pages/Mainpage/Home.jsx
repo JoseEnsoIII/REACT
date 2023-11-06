@@ -13,7 +13,7 @@ import Similar from "../../components/section/Similar";
 import Anime from "../../components/section/anime_section";
 import Footer from "../../components/Footer/footer";
 import Ads from "../../components/Ads/bottom-ads";
-import PopUpAds from "../../components/Ads/popup-ads";
+
 import SectionAds from "../../components/Ads/section-ads";
 
 const MySlider = () => {
@@ -64,7 +64,7 @@ const Home = () => {
       <Anime />
     
       <Footer />
-        <PopUpAds />
+       
       <Ads />
     </section>
   );
