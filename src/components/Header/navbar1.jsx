@@ -289,7 +289,7 @@ class Navbar extends Component {
 
             <div style={{ marginBottom: "20px" }}>
               <a
-                href="/top"
+                href="/anime"
                 style={{
                   color: "black",
                   textDecoration: "none",
@@ -311,7 +311,7 @@ class Navbar extends Component {
                   marginLeft: "5px",
                 }}
               >
-                <FontAwesomeIcon icon={faStar} /> Top Rated
+                <FontAwesomeIcon icon={faStar} /> Top IMDB
               </a>
             </div>
 
