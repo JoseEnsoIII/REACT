@@ -11,73 +11,68 @@ const Slide = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
- 
   margin: 200px 10px;
-  margin-left: 20px; /* Add left gap */
-  margin-right: 20px; /* Add right gap */
+  margin-left: 20px;
+  margin-right: 20px;
   position: relative;
   cursor: pointer;
   border-radius: 25px;
-  transition: transform 0.3s ease, height 0.3s ease; /* Add transition for height */
-
+  transition: transform 0.3s ease, height 0.3s ease;
   a {
     text-decoration: none;
     font-family: "Gotham", sans-serif;
     font-weight: bold;
   }
-  
+
   .play-button {
     position: absolute;
-    top: 93%; /* Adjust to 90% from the bottom */
+    top: 93%;
     left: 50%;
-    transform: translate(
-      -50%,
-      -50%
-    ); /* Center both horizontally and vertically */
+    transform: translate(-50%, -50%);
     display: none;
     align-items: center;
     justify-content: center;
     color: white;
     width: 100px;
     height: 40px;
-    background-color: #e50914; /* Add a semi-transparent background */
-    border-radius: 15px; /* Make it round */
-    border: 1px solid transparent;
+    background-color: #e50914;
+    border-radius: 15px;
     font-family: "Gotham", sans-serif;
 
     @media (max-width: 640px) {
-      top: 95%; /* Adjust the position for smaller screens */
-      width: 70px; /* Make the width 100% */
-      margin-left: 5px; /* Remove left margin */
-      margin-right: 0; /* Remove right margin */
-      border: 1px solid transparent; /* Add transparent border */
+      top: 95%;
+      width: 70px;
+      margin-left: 5px;
+      margin-right: 0;
+      
     }
   }
 
   &:hover {
-    height: 520px; /* Adjust the height to your preference */
-    transform: translateY(-25px); /* Push the card slightly up */
+    height: 520px;
+    transform: translateY(-25px);
     text-decoration: underline;
-
+    
     .play-button {
-      display: flex; /* Display the play button on hover */
-      border: 1px solid transparent;
+      display: flex;
+      
     }
   }
+
   @media (max-width: 640px) {
     margin-top: 350%;
     height: 210px;
-    border: 1px solid transparent;
+    
     width: 100%;
     transform: translateY(0);
 
     &:hover {
-      height: 250px; /* Adjust the height to your preference */
-      transform: translateY(-25px); /* Remove the transform */
+      height: 250px;
+      transform: translateY(-25px);
       text-decoration: underline;
     }
     &:active {
-      border: 1px solid transparent; /* Hide the border when the card is clicked */
+      
     }
   }
 `;
@@ -85,10 +80,10 @@ const Slide = styled.div`
 const SlideImage = styled.img`
   width: 100%;
   height: 450px;
-  border-top-left-radius: 25px; /* Rounded top-left corner */
-  border-top-right-radius: 25px; /* Rounded top-right corner */
-  border-bottom-left-radius: 25px; /* Rounded top-left corner */
-  border-bottom-right-radius: 25px; /* Rounded top-right corner */
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
 
   @media (max-width: 360px), (max-width: 640px) {
     font-size: 10px;
@@ -124,11 +119,10 @@ const Heading = styled.h2`
   z-index: 1;
 `;
 const CustomIcon = styled.img`
-  width: 20px; /* Adjust the width as needed */
-  height: 20px; /* Adjust the height as needed */
+  width: 20px;
+  height: 20px;
   margin-right: 5px;
   color: white;
-  
 `;
 
 export default class SwipeToSlide extends Component {

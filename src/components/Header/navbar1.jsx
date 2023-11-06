@@ -38,6 +38,10 @@ const Logo = styled(Link)`
   font-weight: bold;
   color: white;
   text-decoration: none; // Remove the underline
+  
+  @media (max-width: 640px) {
+  font-size:20px;
+  }
 `;
 
 const SideMenuWrapper = styled.div`
@@ -69,13 +73,17 @@ const HeaderButton = styled.div`
   border-radius: 5px;
 
   @media (max-width: 640px) {
-    margin-right: 25%; // Hide the HeaderButton on smaller screens
+    margin-right: 20%; // Hide the HeaderButton on smaller screens
   }
 `;
 
 const Search = styled.div`
   display: flex;
   align-items: center;
+
+  @media (max-width: 640px) {
+    display: none; // Hide the NavButton on smaller screens
+  }
 `;
 
 

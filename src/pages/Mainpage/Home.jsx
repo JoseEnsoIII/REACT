@@ -32,6 +32,7 @@ const MySlider = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     cssEase: "linear",
+    
   };
 
   return <SlickSlider {...settings}></SlickSlider>;
@@ -45,7 +46,7 @@ const Home = () => {
   return (
     <section
       className="slider4 mbr-embla cid-tEzwvrEiry"
-      style={{ backgroundColor: "#8E95A5", width: "100vw" }}
+      style={{ backgroundColor: "#8E95A5", width: "100vw", }}
       id="slider4-2j"
     >
       <Navbar />
