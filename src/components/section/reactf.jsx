@@ -1,6 +1,7 @@
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
+import axios from 'axios';
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -104,7 +105,9 @@ const SlideImage = styled.img`
 `;
 
 const SectionWrapper = styled.section`
-  background-color: black;
+background: linear-gradient(to top, #000000 50%, #12104A 100%);
+
+
   height: 120vh;
   width: 100vw;
   position: relative;
@@ -134,84 +137,67 @@ const CustomIcon = styled.img`
   margin-right: 5px;
   color: white;
 `;
+export default function SwipeToSlide() {
+  const [movies, setMovies] = useState([]); // State to store fetched movies
 
-export default class SwipeToSlide extends Component {
-  componentDidMount() {
+  useEffect(() => {
+    const fetchMovies = async () => {
+      try {
+        const response = await axios.get(
+          "https://api.themoviedb.org/3/movie/popular?api_key=b2d47bc45b9596fab31b362d1db590f9"
+        );
+        setMovies(response.data.results);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchMovies(); // Fetch movies when the component mounts
+  }, []);
+
+  useEffect(() => {
     AOS.init({
       duration: 1000, // Set the duration of the animation (in milliseconds)
     });
-  }
-  componentDidUpdate() {
+  }, []);
+
+  useEffect(() => {
     AOS.refresh();
-  }
+  }, []);
 
-  render() {
-    const settings = {
-      className: "center",
-      infinite: true,
-      centerPadding: "80px",
-      slidesToShow: 4,
-      swipeToSlide: true,
-      autoplay: true,
-      autoplaySpeed: 3000, // Autoplay every 3 seconds (3000 milliseconds)
-      speed: 500, // Animation speed (optional)
-      pauseOnHover: true, // Pause autoplay on hover (optional)
-      afterChange: function (index) {
-        console.log(
-          `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
-        );
-      },
-    };
+  const settings = {
+    className: "center",
+    infinite: true,
+    centerPadding: "80px",
+    slidesToShow: 4,
+    swipeToSlide: true,
+    autoplay: true,
+    autoplaySpeed: 3000, // Autoplay every 3 seconds (3000 milliseconds)
+    speed: 500, // Animation speed (optional)
+    pauseOnHover: true, // Pause autoplay on hover (optional)
+    afterChange: function (index) {
+      console.log(
+        `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
+      );
+    },
+  };
 
-    return (
-      <SectionWrapper
-        style={{
-          background: "#000000",
-          background: "linear-gradient(to top, #000000 50%, #12104A 100%)",
-        }}
-      >
-        <Heading data-aos="fade-up">Discover Something New</Heading>
+  return (
+    <SectionWrapper>
+      <Heading data-aos="fade-up">Discover Something New</Heading>
 
-        <Slider {...settings}>
-          {/* Slides */}
-          <Slide>
-            <a href="/player"><SlideImage src="/images/saw.jpg" alt="number 1"  /></a>
-            <a href="/player" className="play-button">
+      <Slider {...settings}>
+        {movies.map((movie, index) => (
+          <Slide key={index}>
+            <a href={`/player/${movie.id}`}>
+              <SlideImage src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
+            </a>
+            <a href={`/player/${movie.id}`} className="play-button">
               <CustomIcon src="/images/play.svg" alt="Play Icon" /> Watch
             </a>
           </Slide>
-          <Slide>
-          <a href="/player"><SlideImage src="/images/mi.jpg" alt="number 1" style={{marginLeft:"10"}} /></a>
-            <a href="/player" className="play-button">
-              <CustomIcon src="/images/play.svg" alt="Play Icon" /> Watch
-            </a>
-          </Slide>
-          <Slide >
-          <a href="/player"><SlideImage src="/images/gt.jpg" alt="number 1"  /></a>
-            <a href="/player" className="play-button">
-              <CustomIcon src="/images/play.svg" alt="Play Icon" /> Watch
-            </a>
-          </Slide>
-          <Slide>
-          <a href="/player"> <SlideImage src="/images/sm.jpg" alt="number 1"  /></a>
-            <a href="/player" className="play-button">
-              <CustomIcon src="/images/play.svg" alt="Play Icon" /> Watch
-            </a>
-          </Slide>
-          <Slide>
-             <a href="/player"><SlideImage src="/images/fc.jpg" alt="number 1"  /></a>
-            <a href="/player" className="play-button">
-              <CustomIcon src="/images/play.svg" alt="Play Icon" /> Watch
-            </a>
-          </Slide>
-          <Slide>
-             <a href="/player"><SlideImage src="/images/lou.jpg" alt="number 1"  /></a>
-            <a href="/player" className="play-button">
-              <CustomIcon src="/images/play.svg" alt="Play Icon" /> Watch
-            </a>
-          </Slide>
-        </Slider>
-      </SectionWrapper>
-    );
-  }
+        ))}
+      </Slider>
+    </SectionWrapper>
+  );
 }

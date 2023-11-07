@@ -1,22 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
-import { FaPlay } from 'react-icons/fa'; // Import the play icon
+import { FaPlay } from 'react-icons/fa';
 
 const Heading = styled.h1`
   text-align: center;
   font-family: 'Gotham', sans-serif;
   color: white;
-  font-size: 30px; /* Set the font size */
+  font-size: 30px;
   margin-left: -65%;
-  font-weight:bold;
+  font-weight: bold;
 
   @media (max-width: 640px) {
     margin-left: -45%;
-    font-weight:bold;
+    font-weight: bold;
     font-size: 20px;
     margin-top: 10%;
-
+  }
 `;
+
 const CardWrapper = styled.div`
   position: relative;
   width: 150px;
@@ -29,8 +31,8 @@ const CardWrapper = styled.div`
 
   @media (max-width: 640px) {
     width: 80px;
-  height: 100px;
-  margin: 5px;
+    height: 100px;
+    margin: 5px;
   }
 
   &:hover {
@@ -38,7 +40,7 @@ const CardWrapper = styled.div`
     .title {
       padding-bottom: 50px;
       opacity: 1;
-      transition: .3s;
+      transition: 0.3s;
       font-size: 10px;
     }
     .watch-button {
@@ -89,16 +91,17 @@ const Container = styled.div`
   justify-content: center;
 
   @media (max-width: 640px) {
-    height:100vh;
+    height: 100%;
   }
 `;
+
 const FlexContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 
   @media (max-width: 640px) {
-    margin-top:-10%;
+    margin-top: -10%;
   }
 `;
 
@@ -106,9 +109,7 @@ const Pagination = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 20px;
-
 `;
-
 
 const PageButton = styled.button`
   background-color: white;
@@ -117,11 +118,11 @@ const PageButton = styled.button`
   cursor: pointer;
   margin: 0 5px;
   font-size: 18px;
-  font-family: "Gotham", sans-serif; /* Use the Gotham font */
+  font-family: "Gotham", sans-serif;
   padding: 5px 10px;
   border-radius: 5px;
   outline: none;
-  
+
   &:hover {
     background-color: transparent;
     color: blue;
@@ -134,78 +135,33 @@ const PageButton = styled.button`
     color: blue;
   `}
 `;
-function App() {
+
+function Card() {
   const [currentPage, setCurrentPage] = useState(1);
+  const [movies, setMovies] = useState([]); // State for storing movie data
   const cardsPerPage = 16; // Number of cards to display per page
 
-  // Sample card data (contains 14 cards)
-  const cardData = [
-    
-    {
-        title: 'Stranger Things 1',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
-      },
-      {
-        title: 'Card 2',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
-      },
-      {
-        title: 'Stranger Things 1',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
-      },
-      {
-        title: 'Card 2',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
-      },
-      {
-        title: 'Stranger Things 1',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
-      },
-      {
-        title: 'Card 2',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
-      },
-      {
-        title: 'Stranger Things 1',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
-      },
-      {
-        title: 'Card 2',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
-      },
-      {
-        title: 'Stranger Things 1',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
-      },
-      {
-        title: 'Card 2',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
-      },
-      {
-        title: 'Stranger Things 1',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
-      },
-      {
-        title: 'Card 2',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
-      },
-      {
-        title: 'Stranger Things 1',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
-      },
-      {
-        title: 'Card 2',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
-      },
-      {
-        title: 'Stranger Things 1',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
-      },
-      {
-        title: 'Card 2',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
-      },
-  ];
+  useEffect(() => {
+    const fetchMovies = async () => {
+      try {
+        const response = await axios.get(
+          `https://api.themoviedb.org/3/tv/on_the_air?api_key=b2d47bc45b9596fab31b362d1db590f9`
+        );
+        setMovies(response.data.results);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchMovies();
+  }, []); // Fetch movies when the component mounts
+
+  // Modify the cardData to use the movies data
+  const cardData = movies.map((movie) => ({
+    title: movie.title,
+    imageUrl: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+    url: `#`, // Update with the correct URL for each movie
+  }));
 
   // Calculate the index range for the current page
   const startIndex = (currentPage - 1) * cardsPerPage;
@@ -218,16 +174,18 @@ function App() {
   };
 
   return (
-    <Container style={{backgroundColor: "black",height:"95vh" ,marginBottom:"20px" ,width:"100vw"}}>
-        <Heading>| New Series</Heading>
+    <Container style={{ height: "100vh", width: "100vw", backgroundColor: "black", marginTop: "-40px" }}>
+      <Heading>| New Movies </Heading>
       <FlexContainer>
         {displayedCards.map((card, index) => (
-          <CardWrapper key={index} imageUrl={card.imageUrl}>
-            <div className="title">{card.title}</div>
-            <button className="watch-button" href="/player">
-              <FaPlay className="play-icon" /> Watch
-            </button>
-          </CardWrapper>
+          <a key={index} href={card.url}>
+            <CardWrapper imageUrl={card.imageUrl}>
+              <div className="title">{card.title}</div>
+              <button className="watch-button">
+                <FaPlay className="play-icon" /> Watch
+              </button>
+            </CardWrapper>
+          </a>
         ))}
       </FlexContainer>
       <Pagination>
@@ -245,4 +203,4 @@ function App() {
   );
 }
 
-export default App;
+export default Card;

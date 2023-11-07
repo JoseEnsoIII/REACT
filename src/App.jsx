@@ -21,6 +21,7 @@ const BookTicket = lazy(() => import("./pages/notmain/BookTicket"));
 const Credit = lazy(() => import("./pages/notmain/credit"));
 const Signup = lazy(() => import("./pages/notmain/Sign-up"));
 const Payment = lazy(() => import("./pages/notmain/Payment"));
+const Search = lazy(() => import("./pages/notmain/Search_Movies"));
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
         <Route path="/ticket" element={<Suspense fallback={<LoadingSpinner />}>{" "}<BookTicket /></Suspense>} />
         <Route path="/signup" element={<Suspense fallback={<LoadingSpinner />}>{" "}<Signup /></Suspense>} />
         <Route path="/payment" element={<Suspense fallback={<LoadingSpinner />}>{" "}<Payment /></Suspense>} />
+        <Route path="/search" element={<Suspense fallback={<LoadingSpinner />}>{" "}<Search /></Suspense>} />
       </Routes>
     </BrowserRouter>
   );

@@ -6,7 +6,7 @@ import { FaPlay } from 'react-icons/fa';
 const Heading = styled.h1`
   text-align: center;
   font-family: 'Gotham', sans-serif;
-  color: black;
+  color: white;
   font-size: 30px;
   margin-left: -65%;
   font-weight: bold;
@@ -137,26 +137,25 @@ const PageButton = styled.button`
 `;
 
 function Card() {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [movies, setMovies] = useState([]); // State for storing movie data
-  const cardsPerPage = 16; // Number of cards to display per page
+    const [currentPage, setCurrentPage] = useState(1);
+    const [movies, setMovies] = useState([]); // State for storing movie data
+    const cardsPerPage = 30; // Number of cards to display per page
+  
+    useEffect(() => {
+      const fetchMovies = async () => {
+        try {
+          const response = await axios.get(
+            `https://api.themoviedb.org/3/trending/all/day?api_key=b2d47bc45b9596fab31b362d1db590f9`
+          );
+          setMovies(response.data.results);
+        } catch (error) {
+          console.error(error);
+        }
+      };
+  
+      fetchMovies();
+    }, []);
 
-  useEffect(() => {
-    const fetchMovies = async () => {
-      try {
-        const response = await axios.get(
-          `https://api.themoviedb.org/3/tv/series_id/videos?api_key=b2d47bc45b9596fab31b362d1db590f9`
-        );
-        setMovies(response.data.results);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchMovies();
-  }, []); // Fetch movies when the component mounts
-
-  // Modify the cardData to use the movies data
   const cardData = movies.map((movie) => ({
     title: movie.title,
     imageUrl: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
@@ -174,8 +173,8 @@ function Card() {
   };
 
   return (
-    <Container style={{ height: "100vh", width: "100vw", backgroundColor: "white", marginTop: "-40px" }}>
-      <Heading>| Similar </Heading>
+    <Container style={{ height: "150vh", width: "100vw", backgroundColor: "black", marginTop: "-40px" }}>
+      <Heading>| All Trending </Heading>
       <FlexContainer>
         {displayedCards.map((card, index) => (
           <a key={index} href={card.url}>

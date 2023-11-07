@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect} from 'react';
 import styled from 'styled-components';
 import { FaPlay } from 'react-icons/fa'; // Import the play icon
 
@@ -142,143 +142,44 @@ const PageButton = styled.button`
 `;
 function Card() {
   const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 21; // Number of cards to display per page
+  const cardsPerPage = 25; // Number of cards to display per page
+  const [movies, setMovies] = useState([]);  
+  useEffect(() => {
+    const fetchTrendingMovies = async () => {
+      try {
+        const response = await fetch(
+          'https://api.themoviedb.org/3/trending/movie/day?api_key=b2d47bc45b9596fab31b362d1db590f9'
+        );
+        if (response.ok) {
+          const data = await response.json();
+          setMovies(data.results);
+        } else {
+          console.error('Failed to fetch trending movies');
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
-  // Sample card data (contains 14 cards)
-  const cardData = [
-    
-    {
-        title: 'Saw X',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
-      },
-      {
-        title: 'Saw X',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
-      },
-      {
-        title: 'Saw X',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
-      },
-      {
-        title: 'Saw X',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
-      },
-      {
-        title: 'Saw X',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
-      },
-      {
-        title: 'Saw X',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
-      },
-      {
-        title: 'Saw X',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
-      },
-      {
-        title: 'Saw X',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
-      },
-      {
-        title: 'Saw X',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
-      },
-      {
-        title: 'Saw X',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
-      },
-      {
-        title: 'Saw X',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
-      },
-      {
-        title: 'Saw X',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
-      },
-      {
-        title: 'Saw X',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
-      },
-      {
-        title: 'Saw X',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
-      },
-      {
-        title: 'Saw X',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
-      },
-      {
-        title: 'Saw X',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
-      },
-      {
-        title: 'Saw X',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
-      },
-      {
-        title: 'Saw X',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
-      },
-      {
-        title: 'Saw X',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
-      },
-      {
-        title: 'Saw X',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
-      },
-      {
-        title: 'Saw X',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
-      },
-      {
-        title: 'Saw X',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
-      },
-      {
-        title: 'Saw X',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
-      },
-      {
-        title: 'Saw X',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
-      },
-      {
-        title: 'Saw X',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
-      },
-      {
-        title: 'Saw X',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
-      },
-      {
-        title: 'Saw X',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
-      },
-      {
-        title: 'Saw X',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
-      },
-  ];
+    fetchTrendingMovies(); // Fetch trending movies when the component mounts
+  }, []); // The empty dependency array ensures this effect runs once
 
-  // Calculate the index range for the current page
   const startIndex = (currentPage - 1) * cardsPerPage;
   const endIndex = startIndex + cardsPerPage;
-
-  const displayedCards = cardData.slice(startIndex, endIndex);
+  const displayedMovies = movies.slice(startIndex, endIndex);
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
 
   return (
-    <Container style={{height:"120vh",width:"100vw",backgroundColor:"transparent",marginTop:"-6%",marginLeft:"-2%"}}>
-       <Heading className="card-heading">| Trending Movies</Heading>
+    <Container style={{ height: '120vh', width: '100vw', backgroundColor: 'transparent', marginTop: '-6%', marginLeft: '-2%' }}>
+      <Heading className="card-heading">| Trending Movies</Heading>
 
       <FlexContainer>
-        {displayedCards.map((card, index) => (
-          <CardWrapper key={index} imageUrl={card.imageUrl}>
-            <div className="title">{card.title}</div>
+        {displayedMovies.map((movie, index) => (
+          <CardWrapper key={index} imageUrl={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}>
+            <div className="title">{movie.title}</div>
             <button className="watch-button" href="/player">
               <FaPlay className="play-icon" /> Watch
             </button>
@@ -286,7 +187,7 @@ function Card() {
         ))}
       </FlexContainer>
       <Pagination>
-        {Array.from({ length: Math.ceil(cardData.length / cardsPerPage) }, (_, i) => (
+        {Array.from({ length: Math.ceil(movies.length / cardsPerPage) }, (_, i) => (
           <PageButton
             key={i}
             onClick={() => handlePageChange(i + 1)}
@@ -298,6 +199,6 @@ function Card() {
       </Pagination>
     </Container>
   );
-}
+};
 
 export default Card;

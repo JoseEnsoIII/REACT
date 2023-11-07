@@ -6,7 +6,7 @@ import { FaPlay } from 'react-icons/fa';
 const Heading = styled.h1`
   text-align: center;
   font-family: 'Gotham', sans-serif;
-  color: black;
+  color: white;
   font-size: 30px;
   margin-left: -65%;
   font-weight: bold;
@@ -145,7 +145,7 @@ function Card() {
     const fetchMovies = async () => {
       try {
         const response = await axios.get(
-          `https://api.themoviedb.org/3/tv/series_id/videos?api_key=b2d47bc45b9596fab31b362d1db590f9`
+          `https://api.themoviedb.org/3/movie/popular?api_key=b2d47bc45b9596fab31b362d1db590f9`
         );
         setMovies(response.data.results);
       } catch (error) {
@@ -174,8 +174,8 @@ function Card() {
   };
 
   return (
-    <Container style={{ height: "100vh", width: "100vw", backgroundColor: "white", marginTop: "-40px" }}>
-      <Heading>| Similar </Heading>
+    <Container style={{ height: "100vh", width: "100vw", backgroundColor: "black", marginTop: "-40px" }}>
+      <Heading>| New Movies </Heading>
       <FlexContainer>
         {displayedCards.map((card, index) => (
           <a key={index} href={card.url}>
