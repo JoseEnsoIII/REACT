@@ -57,9 +57,9 @@ const Home = () => {
         slidesToShow={1}
       ></Carousel>
       <TabbedHome />
+      <SectionAds/>
      <Trending/>
       <Footer />
-       
       <Ads />
     </section>
   );
