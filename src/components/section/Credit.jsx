@@ -90,10 +90,11 @@ const PageButton = styled.button`
   cursor: pointer;
   margin: 0 5px;
   font-size: 18px;
-  font-family: "Gotham", sans-serif; /* Use the Gotham font */
+  font-family: "Gotham", sans-serif;
   padding: 5px 10px;
   border-radius: 5px;
   outline: none;
+  height:50px;
   
   &:hover {
     background-color: transparent;

@@ -6,6 +6,9 @@ import Ads from "../../components/Ads/bottom-ads";
 import PopUpAds from "../../components/Ads/popup-ads";
 //
 import RatedMovie from "../../components/IMDB/Rated_movie";
+import RatedAnime from "../../components/IMDB/Rated_anime";
+import RatedSeries from "../../components/IMDB/rated_series";
+
 
 const TopMdbi = () => {
   return (
@@ -13,6 +16,8 @@ const TopMdbi = () => {
       <Navbar />
       <Intro />
       <RatedMovie/>
+      <RatedAnime/>
+      <RatedSeries/>
       <Footer />
       <PopUpAds />
       <Ads />

@@ -122,7 +122,8 @@ const PageButton = styled.button`
   padding: 5px 10px;
   border-radius: 5px;
   outline: none;
-
+  height:50px;
+  
   &:hover {
     background-color: transparent;
     color: blue;
@@ -145,7 +146,7 @@ function Card() {
     const fetchMovies = async () => {
       try {
         const response = await axios.get(
-          `https://api.themoviedb.org/3/tv/on_the_air?api_key=b2d47bc45b9596fab31b362d1db590f9`
+          `~https://api.themoviedb.org/3/tv/on_the_air?api_key=b2d47bc45b9596fab31b362d1db590f9`
         );
         setMovies(response.data.results);
       } catch (error) {

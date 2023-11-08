@@ -6,7 +6,7 @@ import { FaPlay } from 'react-icons/fa';
 const Heading = styled.h1`
   text-align: center;
   font-family: 'Gotham', sans-serif;
-  color: black;
+  color: white;
   font-size: 30px;
   margin-left: -65%;
   font-weight: bold;
@@ -21,12 +21,12 @@ const Heading = styled.h1`
 
 const CardWrapper = styled.div`
   position: relative;
-  width: 150px;
+  width: 130px;
   height: 200px;
   background: url(${(props) => props.imageUrl}) no-repeat center/cover;
   border-radius: 10px;
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);
-  margin: 15px;
+  margin: 10px;
   transition: 0.5s;
 
   @media (max-width: 640px) {
@@ -122,6 +122,7 @@ const PageButton = styled.button`
   padding: 5px 10px;
   border-radius: 5px;
   outline: none;
+  height:50px;
 
   &:hover {
     background-color: transparent;
@@ -139,13 +140,13 @@ const PageButton = styled.button`
 function Card() {
   const [currentPage, setCurrentPage] = useState(1);
   const [movies, setMovies] = useState([]); // State for storing movie data
-  const cardsPerPage = 16; // Number of cards to display per page
+  const cardsPerPage = 24; // Number of cards to display per page
 
   useEffect(() => {
     const fetchMovies = async () => {
       try {
         const response = await axios.get(
-          `https://api.themoviedb.org/3/guest_session/{guest_session_id}/rated/movies?language=en-US&page=${currentPage}&sort_by=created_at.asc&api_key=b2d47bc45b9596fab31b362d1db590f9`
+          `https://api.themoviedb.org/3/tv/top_rated?api_key=b2d47bc45b9596fab31b362d1db590f9`
         );
         setMovies(response.data.results);
       } catch (error) {
@@ -154,13 +155,13 @@ function Card() {
     };
 
     fetchMovies();
-  }, [currentPage]); // Fetch movies when the page changes
+  }, []); // Fetch movies when the component mounts
 
   // Modify the cardData to use the movies data
   const cardData = movies.map((movie) => ({
     title: movie.title,
     imageUrl: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
-    url: `https://www.themoviedb.org/movie/${movie.id}`, // Update with the correct URL for each movie
+    url: `#`, // Update with the correct URL for each movie
   }));
 
   // Calculate the index range for the current page
@@ -174,8 +175,8 @@ function Card() {
   };
 
   return (
-    <Container style={{ height: "100vh", width: "100vw", backgroundColor: "white", marginTop: "-40px" }}>
-      <Heading>| Highest Rated Movie</Heading>
+    <Container style={{ height: "150vh", width: "100vw", backgroundColor: "black", marginTop: "-40px" }}>
+      <Heading>| Top Rated Movies </Heading>
       <FlexContainer>
         {displayedCards.map((card, index) => (
           <a key={index} href={card.url}>
@@ -191,7 +192,7 @@ function Card() {
       <Pagination>
         {Array.from({ length: Math.ceil(cardData.length / cardsPerPage) }, (_, i) => (
           <PageButton
-            key={i + 1}
+            key={i}
             onClick={() => handlePageChange(i + 1)}
             active={i + 1 === currentPage}
           >

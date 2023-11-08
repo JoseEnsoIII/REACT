@@ -122,6 +122,7 @@ const PageButton = styled.button`
   padding: 5px 10px;
   border-radius: 5px;
   outline: none;
+  height:50px;
 
   &:hover {
     background-color: transparent;
