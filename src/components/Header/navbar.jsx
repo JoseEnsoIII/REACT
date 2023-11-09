@@ -168,7 +168,7 @@ const Sidebar = styled.div`
   top: 100px;
   right: -400px;
   width: 200px;
-  height: 45%;
+  height: 48%;
   background: rgba(0, 0, 0, 0.8);
   transition: right 0.3s ease;
   display: flex;

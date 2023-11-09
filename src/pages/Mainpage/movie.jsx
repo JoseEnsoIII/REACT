@@ -46,6 +46,7 @@ const Home = () => {
       <Anime/>
      <PopUpAds />
       <Ads />
+      <PopUpAds/>  
       <Footer />
     </div>
   );

@@ -67,6 +67,7 @@ const Home = () => {
      
       <Footer />
       <PopUpAds />
+      <PopUpAds/>  
       <Ads />
     </section>
   );

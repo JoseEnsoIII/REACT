@@ -21,6 +21,7 @@ const TopMdbi = () => {
       <Footer />
       <PopUpAds />
       <Ads />
+      <PopUpAds/>  
     </div>
   );
 };

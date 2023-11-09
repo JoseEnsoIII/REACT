@@ -11,56 +11,64 @@ import styled from "styled-components";
 
 const PopupContainer = styled.div`
   display: ${(props) => (props.isOpen ? "block" : "none")};
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  position: fixed; /* Use a fixed position to make it sticky */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center the element */
+  width: 400px; /* Set your preferred width */
+  height: 300px; /* Set your preferred height */
   background: rgba(0, 0, 0, 0.6);
-  z-index: 1;
+  z-index: 1000; /* Use a higher z-index to make it appear above other content */
 
   @media (max-width: 640px) {
-    position: sticky;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 200px;
     height: 200px;
-    border: 1px solid #000; 
-    box-shadow: 5px 5px 10px #888; 
-    margin: 0 auto; 
-    top: 20%;
-    left:20%;
-    z-index: 1;
+    background-color: white;
+     border:1px solid black;;
+  }
 `;
 
 const PopupAd = styled.div`
   background: white;
-  width: 400px;
-  height: 300px;
-  margin: 100px auto;
-  padding-bottom: 75px; /* Padding only on the bottom */
+  width: 100%; /* Adjust the width to fill the container */
+  height: 100%; /* Adjust the height to fill the container */
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 640px) {
+    width: 100%; /* Adjust the width for mobile */
+    height: 160%; /* Adjust the height for mobile */
+    /* Other mobile styles as needed */
+    z-index: 1000;
+    background-color: white;
+   
+  }
 `;
+
 
 const Image = styled.img`
   width: 100%; /* Set the image width to cover the container */
   height: 100%; /* Set the image height to cover the container */
+  @media (max-width: 640px) {
+    width: 100%; /* Adjust the width for mobile */
+    height: 100%;
+  }
 `;
 
 const Text = styled.p`
   margin: 8px 0;
   font-family: "Gotham", sans-serif;
   font-weight: bold;
+  background-color: white;
 
   @media (max-width: 640px) { 
     font-family: "Gotham", sans-serif;
     font-weight: bold;
     font-size:10px;
+    background-color: white;
   }
 `;
 
@@ -74,7 +82,7 @@ const CloseButton = styled.button`
   outline: none;
 
   @media (max-width: 640px) {
-    top: -20%; /* Adjust the top position for spacing on small screens */
+    top: 5%; /* Adjust the top position for spacing on small screens */
     left: 85%; /* Adjust the right position for spacing on small screens */
     z-index: 1;
     background-color: transparent;
@@ -94,6 +102,7 @@ const Icon = styled.div`
   @media (max-width: 640px) { 
     font-weight: bold;
     font-size: 20px;
+    color:black;
   }
 `;
 

@@ -5,6 +5,7 @@ import MovieSlider from "../../components/section/reactf";
 import Benefit from '../../components/section/benefit';
 import Footer from "../../components/Footer/footer";
 import Ads from "../../components/Ads/bottom-ads";
+import PopUpAds from "../../components/Ads/popup-ads";
 
 
 const PageWrapper = styled.div`
@@ -22,7 +23,6 @@ const PageWrapper = styled.div`
   @media (max-width: 360px), (max-width: 640px) {
     font-size: 10px;
     margin: 3px;
-    
     width:100%;
     overflow-x: hidden;
   }
@@ -79,10 +79,8 @@ const IntroPage = () => {
       </PageWrapper>
       <MovieSlider /> 
       <Benefit />
-     
-     
-      <Footer /> 
-      
+      <Footer />
+      <PopUpAds/>  
        <Ads />
     </section>
   );

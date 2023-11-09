@@ -12,6 +12,8 @@ import Trending from "../../components/section/Home_all_trending";
 
 import Footer from "../../components/Footer/footer";
 import Ads from "../../components/Ads/bottom-ads";
+import PopUpAds from "../../components/Ads/popup-ads";
+
 import SectionAds from "../../components/Ads/section-ads";
 
 const MySlider = () => {
@@ -61,6 +63,7 @@ const Home = () => {
      <Trending/>
       <Footer />
       <Ads />
+      <PopUpAds/>  
     </section>
   );
 };

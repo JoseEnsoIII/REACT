@@ -146,7 +146,7 @@ function Card() {
     const fetchMovies = async () => {
       try {
         const response = await axios.get(
-          `https://api.themoviedb.org/3/tv/top_rated?api_key=b2d47bc45b9596fab31b362d1db590f9`
+          `ccccccccccccccccc                                                                                                                                                                                                                          c?api_key=b2d47bc45b9596fab31b362d1db590f9`
         );
         setMovies(response.data.results);
       } catch (error) {

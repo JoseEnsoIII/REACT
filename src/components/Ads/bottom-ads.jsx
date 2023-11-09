@@ -22,7 +22,7 @@ const AdContainer = styled.div`
     width: 100%;
     margin-left: 50%; /* Position to the left end */
     position: Sticky;
-    bottom:0;
+    bottom:-4%;
     top: auto
   }
 `;

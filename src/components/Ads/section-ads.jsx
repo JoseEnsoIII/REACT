@@ -48,12 +48,14 @@ const Button = styled.button`
   font-weight: bold;
   font-size: 15px;
   margin: 10px;
+  width: 100%%; /* Set the width to 20% for all screen sizes */
 
   @media (max-width: 640px) {
-    width: 20%;
     font-size: 10px;
     padding: 5px 5px;
+    margin:25%;
   }
 `;
+
 
 export default SectionAds;
