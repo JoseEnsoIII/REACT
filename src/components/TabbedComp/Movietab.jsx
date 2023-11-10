@@ -6,17 +6,19 @@ const Heading = styled.h1`
   text-align: center;
   font-family: 'Gotham', sans-serif;
   color: white;
-  font-size: 30px; /* Set the font size */
-  margin-left: -65%;
-  font-weight:bold;
+  font-size: 30px;
+  margin-left: -80%;
+  margin-top:3%;
+  font-weight: bold;
 
   @media (max-width: 640px) {
-    margin-left: -45%;
-    font-weight:bold;
+    margin-left: -60%;
+    font-weight: bold;
     font-size: 20px;
     margin-top: 10%;
-
+  }
 `;
+
 const CardWrapper = styled.div`
   position: relative;
   width: 150px;
@@ -29,8 +31,9 @@ const CardWrapper = styled.div`
 
   @media (max-width: 640px) {
     width: 80px;
-  height: 100px;
-  margin: 5px;
+    height: 100px;
+    margin: 5px;
+    font-size:10px;
   }
 
   &:hover {
@@ -38,7 +41,7 @@ const CardWrapper = styled.div`
     .title {
       padding-bottom: 50px;
       opacity: 1;
-      transition: .3s;
+      transition: 0.3s;
       font-size: 10px;
     }
     .watch-button {
@@ -48,21 +51,26 @@ const CardWrapper = styled.div`
     }
   }
 
-  .title {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    font-size: 26px;
-    font-weight: 100;
-    padding: 30px 0;
-    background: linear-gradient(to top, #000, transparent);
-    text-transform: uppercase;
-    text-align: center;
-    opacity: 0;
-    transition: 0.5s;
-    color: white;
+ .title {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  font-size: 26px;
+  font-weight: 100;
+  padding: 30px 0;
+  background: linear-gradient(to top, #000, transparent);
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 0;
+  transition: 0.5s;
+  color: white;
+
+  @media (max-width: 640px) {
+    font-size: 10px; /* Add this line to change the font size to 10px on smaller screens */
   }
+}
+
 
   .watch-button {
     position: absolute;
@@ -89,16 +97,17 @@ const Container = styled.div`
   justify-content: center;
 
   @media (max-width: 640px) {
-    height:100vh;
+    height: 100%;
   }
 `;
+
 const FlexContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 
   @media (max-width: 640px) {
-    margin-top:-10%;
+    margin-top: -10%;
   }
 `;
 
@@ -106,8 +115,6 @@ const Pagination = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 20px;
-
-  
 `;
 
 const PageButton = styled.button`
@@ -134,7 +141,7 @@ const PageButton = styled.button`
     background-color: transparent;
     color: blue;
   `}
-  
+
   @media (max-width: 640px) {
     font-size: 14px; /* Reduce font size for smaller screens */
     padding: 3px 8px; /* Adjust padding for smaller screens */

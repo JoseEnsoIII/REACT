@@ -8,6 +8,7 @@ import {
   faTv,
   faStar,
   faMobileAlt,
+  faUsers
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
@@ -320,6 +321,19 @@ class Navbar extends Component {
                 }}
               >
                 <FontAwesomeIcon icon={faStar} /> Top IMDB
+              </a>
+            </div>
+            <div style={{ marginBottom: "20px" }}>
+              <a
+                href="/login"
+                style={{
+                  color: "Red",
+                  textDecoration: "none",
+                  fontSize: "20px",
+                  marginLeft: "5px",
+                }}
+              >
+                <FontAwesomeIcon icon={faUsers} /> Login
               </a>
             </div>
 

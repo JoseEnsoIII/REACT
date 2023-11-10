@@ -9,7 +9,7 @@ import SideBar from "../../components/Header/sidenav";
 import Carousel from "../../components/compo/nukacarousel";
 import TabbedHome from "../../components/compo/TabbedHome";
 import Trending from "../../components/section/Home_all_trending";
-
+import Anime from '../../components/section/anime_section'
 import Footer from "../../components/Footer/footer";
 import Ads from "../../components/Ads/bottom-ads";
 import PopUpAds from "../../components/Ads/popup-ads";
@@ -61,6 +61,7 @@ const Home = () => {
       <TabbedHome />
       <SectionAds/>
      <Trending/>
+     <Anime/>
       <Footer />
       <Ads />
       <PopUpAds/>  

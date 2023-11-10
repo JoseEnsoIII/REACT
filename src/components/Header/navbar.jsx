@@ -132,6 +132,10 @@ const CloseButton = styled.span`
   top: 10px;
   right: 10px;
   cursor: pointer;
+
+  @media (max-width: 640px) {
+    
+  }
 `;
 
 const Text = styled.p`

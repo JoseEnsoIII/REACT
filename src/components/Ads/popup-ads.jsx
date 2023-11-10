@@ -29,10 +29,10 @@ const PopupContainer = styled.div`
 `;
 
 const PopupAd = styled.div`
-  background: white;
+background-color: white; /* Set the background color to white outside of the media query */
   width: 100%; /* Adjust the width to fill the container */
   height: 100%; /* Adjust the height to fill the container */
-  border-radius: 5px;
+
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
@@ -44,7 +44,7 @@ const PopupAd = styled.div`
     /* Other mobile styles as needed */
     z-index: 1000;
     background-color: white;
-   
+    align-items: center;
   }
 `;
 
@@ -52,6 +52,7 @@ const PopupAd = styled.div`
 const Image = styled.img`
   width: 100%; /* Set the image width to cover the container */
   height: 100%; /* Set the image height to cover the container */
+  
   @media (max-width: 640px) {
     width: 100%; /* Adjust the width for mobile */
     height: 100%;
@@ -74,8 +75,8 @@ const Text = styled.p`
 
 const CloseButton = styled.button`
   position: absolute;
-  top: 17%;
-  right: 38%;
+  top: 5%;
+  right: 5%;
   cursor: pointer;
   font-size: 20px;
   border: none; /* Remove the border */
@@ -98,6 +99,7 @@ const SocialIcons = styled.div`
 const Icon = styled.div`
   font-size: 20px;
   cursor: pointer;
+  color:white;
 
   @media (max-width: 640px) { 
     font-weight: bold;

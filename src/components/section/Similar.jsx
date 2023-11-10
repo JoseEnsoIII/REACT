@@ -6,13 +6,14 @@ import { FaPlay } from 'react-icons/fa';
 const Heading = styled.h1`
   text-align: center;
   font-family: 'Gotham', sans-serif;
-  color: black;
+  color: white;
   font-size: 30px;
-  margin-left: -65%;
+  margin-left: -80%;
+  margin-top:3%;
   font-weight: bold;
 
   @media (max-width: 640px) {
-    margin-left: -45%;
+    margin-left: -60%;
     font-weight: bold;
     font-size: 20px;
     margin-top: 10%;
@@ -33,6 +34,7 @@ const CardWrapper = styled.div`
     width: 80px;
     height: 100px;
     margin: 5px;
+    font-size:10px;
   }
 
   &:hover {
@@ -50,21 +52,26 @@ const CardWrapper = styled.div`
     }
   }
 
-  .title {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    font-size: 26px;
-    font-weight: 100;
-    padding: 30px 0;
-    background: linear-gradient(to top, #000, transparent);
-    text-transform: uppercase;
-    text-align: center;
-    opacity: 0;
-    transition: 0.5s;
-    color: white;
+ .title {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  font-size: 26px;
+  font-weight: 100;
+  padding: 30px 0;
+  background: linear-gradient(to top, #000, transparent);
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 0;
+  transition: 0.5s;
+  color: white;
+
+  @media (max-width: 640px) {
+    font-size: 10px; /* Add this line to change the font size to 10px on smaller screens */
   }
+}
+
 
   .watch-button {
     position: absolute;
@@ -123,7 +130,7 @@ const PageButton = styled.button`
   border-radius: 5px;
   outline: none;
   height:50px;
-
+  
   &:hover {
     background-color: transparent;
     color: blue;
@@ -175,7 +182,7 @@ function Card() {
   };
 
   return (
-    <Container style={{ height: "100vh", width: "100vw", backgroundColor: "white", marginTop: "-40px" }}>
+    <Container style={{ height: "120vh", width: "100vw", backgroundColor: "white", marginTop: "-40px" }}>
       <Heading>| Similar </Heading>
       <FlexContainer>
         {displayedCards.map((card, index) => (
