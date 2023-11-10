@@ -22,6 +22,7 @@ const Container = styled.div`
     height: 105vh;
     display: flex;
     flex-wrap: wrap;
+    margin-top:-45%;
     
   }
 `;
@@ -34,7 +35,7 @@ const Column = styled.div`
   font-size: 18px;
 
   @media (max-width: 640px) {
-    margin-top: 50px;
+    margin-top: -10px;
     margin-right:6px;
     
   }

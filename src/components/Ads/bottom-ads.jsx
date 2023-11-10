@@ -20,10 +20,13 @@ const AdContainer = styled.div`
   @media (max-width: 640px) {
     height: 120px;
     width: 100%;
-    margin-left: 50%; /* Position to the left end */
+    margin-left: 50%; 
+
     position: Sticky;
     bottom:-4%;
     top: auto
+    position: sticky;
+    z-index: 999;
   }
 `;
 

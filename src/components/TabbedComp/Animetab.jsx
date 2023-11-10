@@ -7,7 +7,7 @@ const Heading = styled.h1`
   font-family: 'Gotham', sans-serif;
   color: white;
   font-size: 30px;
-  margin-left: -80%;
+  margin-left: -75%;
   margin-top:3%;
   font-weight: bold;
 
@@ -151,7 +151,7 @@ const PageButton = styled.button`
 `;
 function Card() {
   const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 21; // Number of cards to display per page
+  const cardsPerPage = 16; // Number of cards to display per page
   const [movies, setMovies] = useState([]);  
   useEffect(() => {
     const fetchTrendingMovies = async () => {

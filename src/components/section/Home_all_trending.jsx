@@ -98,7 +98,11 @@ const Container = styled.div`
   justify-content: center;
 
   @media (max-width: 640px) {
-    height: 100%;
+    height:100%;
+  }
+  @media (max-width: 400px) {
+    height: 60vh;
+    margin-bottom:45%
   }
 `;
 
@@ -108,7 +112,10 @@ const FlexContainer = styled.div`
   justify-content: center;
 
   @media (max-width: 640px) {
-    margin-top: -10%;
+    margin-top: 30%;
+  }
+  @media (max-width: 400px) {
+    margin-top:5%;
   }
 `;
 
@@ -116,6 +123,14 @@ const Pagination = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 20px;
+
+  @media (max-width: 640px) {
+ 
+  }
+
+  @media (max-width: 400px) {
+    /* Add your styles for 400px or less here */
+  }
 `;
 
 const PageButton = styled.button`
@@ -135,6 +150,14 @@ const PageButton = styled.button`
     background-color: transparent;
     color: blue;
   }
+  @media (max-width: 640px) {
+    font-size: 13px;
+    height:45px
+  }
+  @media (max-width: 400px) {
+    font-size: 10px;
+    height:20px;
+  }
 
   ${(props) =>
     props.active &&
@@ -147,7 +170,7 @@ const PageButton = styled.button`
 function Card() {
     const [currentPage, setCurrentPage] = useState(1);
     const [movies, setMovies] = useState([]); // State for storing movie data
-    const cardsPerPage = 30; // Number of cards to display per page
+    const cardsPerPage = 16; // Number of cards to display per page
   
     useEffect(() => {
       const fetchMovies = async () => {
