@@ -183,7 +183,7 @@ function Card() {
 
   return (
     <Container style={{ height: "120vh", width: "100vw", backgroundColor: "black", marginTop: "-40px" }}>
-      <Heading>| New Movies </Heading>
+      <Heading>| New Show </Heading>
       <FlexContainer>
         {displayedCards.map((card, index) => (
           <a key={index} href={card.url}>

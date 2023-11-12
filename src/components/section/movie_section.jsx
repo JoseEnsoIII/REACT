@@ -1,22 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import styled from 'styled-components';
-import { FaPlay } from 'react-icons/fa';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import styled from "styled-components";
+import { FaStar, FaPlay } from "react-icons/fa";
 
 const Heading = styled.h1`
   text-align: center;
-  font-family: 'Gotham', sans-serif;
+  font-family: "Gotham", sans-serif;
   color: white;
   font-size: 30px;
   margin-left: -80%;
-  margin-top:3%;
+  margin-top: 3%;
   font-weight: bold;
 
   @media (max-width: 640px) {
-    margin-left: -60%;
-    font-weight: bold;
-    font-size: 20px;
-    margin-top: 10%;
+    @apply ml-[-60%] text-2xl mt-10 font-bold;
   }
 `;
 
@@ -31,10 +28,7 @@ const CardWrapper = styled.div`
   transition: 0.5s;
 
   @media (max-width: 640px) {
-    width: 80px;
-    height: 100px;
-    margin: 5px;
-    font-size:10px;
+    @apply w-80 h-100 m-5 text-sm;
   }
 
   &:hover {
@@ -52,26 +46,25 @@ const CardWrapper = styled.div`
     }
   }
 
- .title {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  font-size: 26px;
-  font-weight: 100;
-  padding: 30px 0;
-  background: linear-gradient(to top, #000, transparent);
-  text-transform: uppercase;
-  text-align: center;
-  opacity: 0;
-  transition: 0.5s;
-  color: white;
+  .title {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    font-size: 26px;
+    font-weight: 100;
+    padding: 30px 0;
+    background: linear-gradient(to top, #000, transparent);
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0;
+    transition: 0.5s;
+    color: white;
 
-  @media (max-width: 640px) {
-    font-size: 10px; /* Add this line to change the font size to 10px on smaller screens */
+    @media (max-width: 640px) {
+      @apply text-sm;
+    }
   }
-}
-
 
   .watch-button {
     position: absolute;
@@ -85,10 +78,10 @@ const CardWrapper = styled.div`
     cursor: pointer;
     opacity: 0;
     transition: 0.5s;
-  }
 
-  .play-icon {
-    margin-right: 5px;
+    @media (max-width: 640px) {
+      @apply text-sm;
+    }
   }
 `;
 
@@ -98,11 +91,10 @@ const Container = styled.div`
   justify-content: center;
 
   @media (max-width: 640px) {
-    height:100%;
+    @apply h-screen;
   }
   @media (max-width: 400px) {
-    height: 60vh;
-    margin-bottom:45%
+    @apply h-60vh mb-[-45%];
   }
 `;
 
@@ -112,10 +104,10 @@ const FlexContainer = styled.div`
   justify-content: center;
 
   @media (max-width: 640px) {
-    margin-top: 30%;
+    @apply mt-30%;
   }
   @media (max-width: 400px) {
-    margin-top:5%;
+    @apply mt-5%;
   }
 `;
 
@@ -125,11 +117,6 @@ const Pagination = styled.div`
   margin-top: 20px;
 
   @media (max-width: 640px) {
-
-  }
-
-  @media (max-width: 400px) {
-    /* Add your styles for 400px or less here */
   }
 `;
 
@@ -144,19 +131,17 @@ const PageButton = styled.button`
   padding: 5px 10px;
   border-radius: 5px;
   outline: none;
-  height:50px;
-  
+  height: 50px;
+
   &:hover {
     background-color: transparent;
     color: blue;
   }
   @media (max-width: 640px) {
-    font-size: 13px;
-    height:45px
+    @apply text-sm h-45;
   }
   @media (max-width: 400px) {
-    font-size: 10px;
-    height:20px;
+    @apply text-xs h-20;
   }
 
   ${(props) =>
@@ -167,10 +152,26 @@ const PageButton = styled.button`
   `}
 `;
 
+const StarIcon = styled(FaStar)`
+  color: yellow;
+  font-size: 10px;
+`;
+const Rating = styled.div`
+  margin-left: 70%;
+  margin-top: 25%;
+  color: yellow;
+  font-size: 14px;
+  text-decoration: none;
+
+  @media (max-width: 640px) {
+    @apply ml-70 mt-25 text-yellow-500 text-sm;
+  }
+`;
+
 function Card() {
   const [currentPage, setCurrentPage] = useState(1);
-  const [movies, setMovies] = useState([]); // State for storing movie data
-  const cardsPerPage = 16; // Number of cards to display per page
+  const [movies, setMovies] = useState([]);
+  const cardsPerPage = 16;
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -185,16 +186,19 @@ function Card() {
     };
 
     fetchMovies();
-  }, []); // Fetch movies when the component mounts
+  }, []);
 
-  // Modify the cardData to use the movies data
   const cardData = movies.map((movie) => ({
     title: movie.title,
     imageUrl: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
-    url: `#`, // Update with the correct URL for each movie
+    url: `#`,
+    rating: movie.vote_average,
   }));
 
-  // Calculate the index range for the current page
+  const sortedCardData = cardData.slice().sort((a, b) => b.rating - a.rating);
+  const top10PercentIndex = Math.ceil(cardData.length * 0.1);
+  const top10PercentCards = sortedCardData.slice(0, top10PercentIndex);
+
   const startIndex = (currentPage - 1) * cardsPerPage;
   const endIndex = startIndex + cardsPerPage;
 
@@ -205,13 +209,23 @@ function Card() {
   };
 
   return (
-    <Container style={{ height: "120vh", width: "100vw", backgroundColor: "black", marginTop: "-40px" }}>
-      <Heading>| New Movies </Heading>
+    <Container
+      style={{
+        height: "120vh",
+        width: "100vw",
+        backgroundColor: "black",
+        marginTop: "-40px",
+      }}
+    >
+      <Heading>| New Movies1 </Heading>
       <FlexContainer>
         {displayedCards.map((card, index) => (
           <a key={index} href={card.url}>
             <CardWrapper imageUrl={card.imageUrl}>
               <div className="title">{card.title}</div>
+              <Rating>
+                <StarIcon /> {card.rating.toFixed(1)}
+              </Rating>
               <button className="watch-button">
                 <FaPlay className="play-icon" /> Watch
               </button>
@@ -220,15 +234,18 @@ function Card() {
         ))}
       </FlexContainer>
       <Pagination>
-        {Array.from({ length: Math.ceil(cardData.length / cardsPerPage) }, (_, i) => (
-          <PageButton
-            key={i}
-            onClick={() => handlePageChange(i + 1)}
-            active={i + 1 === currentPage}
-          >
-            {i + 1}
-          </PageButton>
-        ))}
+        {Array.from(
+          { length: Math.ceil(cardData.length / cardsPerPage) },
+          (_, i) => (
+            <PageButton
+              key={i}
+              onClick={() => handlePageChange(i + 1)}
+              active={i + 1 === currentPage}
+            >
+              {i + 1}
+            </PageButton>
+          )
+        )}
       </Pagination>
     </Container>
   );
