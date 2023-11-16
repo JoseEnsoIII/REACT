@@ -9,7 +9,7 @@ import SideBar from "../../components/Header/sidenav";
 import Carousel from "../../components/compo/nukacarousel";
 import TabbedHome from "../../components/compo/TabbedHome";
 import Trending from "../../components/Section/AllTrending";
-import Anime from '../../components/Section/AnimeSection'
+import Anime from '../../components/Section/AnimeSection';
 import Footer from "../../components/Footer/footer";
 
 //ads

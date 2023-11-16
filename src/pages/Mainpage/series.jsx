@@ -9,7 +9,7 @@ import Carousel from "../../components/compo/nukacarousel";
 import TabbedHome from "../../components/compo/TabbedHome";
 import FlexWrap from "../../components/Cards/multiplecard";
 import Similar from "../../components/section/MovieSection"
-import Anime from "../../components/section/AnimeSection"
+import Anime from '../../components/Section/AnimeSection';
 import SectionAds from "../../components/Ads/section-ads";
 import Footer from '../../components/Footer/footer';
 //ads
