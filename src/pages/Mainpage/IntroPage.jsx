@@ -23,7 +23,7 @@ const PageWrapper = styled.div`
   @media (max-width: 360px), (max-width: 640px) {
     font-size: 10px;
     margin: 3px;
-    width:100%;
+    width:100%;      
     overflow-x: hidden;
   }
 `;
