@@ -4,7 +4,7 @@ import Navbar from "../../components/Header/navbar";
 import VideoPlayer from "../../components/Section/VideoPlayer"
 import MovieDetails from "../../components/Section/moviedetails";
 import Similar from "../../components/Section/Similar"
-import Parallax from "../../components/Section/Parallax"
+import Recommendation from '../../components/Section/Recommendation'
 import Footer from "../../components/Footer/footer";
 import Ads from "../../components/Ads/bottom-ads";
 import PopUpAds from "../../components/Ads/popup-ads";
@@ -30,7 +30,8 @@ const FullScreenVideo = ({ videoSrc }) => {
      <VideoPlayer/>
       <MovieDetails />
       <Similar/>
-      <Parallax/>
+      <Recommendation/>
+
       <PopUpAds />
       <Ads />
       <Footer />

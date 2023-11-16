@@ -1,13 +1,4 @@
-import React from "react";
-import styled from "styled-components";
-import Navbar from "../../components/Header/navbar";
-
-import Footer from "./../../components/Footer/footer";
-import Ads from "../../components/Ads/bottom-ads";
-import PopUpAds from "../../components/Ads/popup-ads";
-
-
-const PageWrapper = styled.div`
+import{s as t,j as e}from"./index-ef4458a9.js";import{N as i}from"./navbar-78d032f4.js";import{A as o}from"./footer-c9aca682.js";import{P as r,A as n}from"./popup-ads-b34ade85.js";import"./index.esm-f965c28b.js";import"./iconBase-464e3dd3.js";const s=t.div`
   background-image: url("/images/ssa.jpg");
   background-size: cover;
   background-position: center;
@@ -25,18 +16,14 @@ const PageWrapper = styled.div`
     width:100%;      
     overflow-x: hidden;
   }
-`;
-
-const ContentWrapper = styled.div`
+`,a=t.div`
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center; /* Center vertically */
   align-items: center; /* Center horizontally */
   text-align: center; /* Center text within */
-`;
-
-const Heading = styled.h1`
+`,d=t.h1`
   color: white;
   font-size: 50px;
   margin-top: -20px;
@@ -48,9 +35,7 @@ const Heading = styled.h1`
     margin: 3px;
     
   }
-`;
-
-const GetStartedLink = styled.a`
+`,x=t.a`
   background-color: #e50914;
   color: white;
   font-size: 18px;
@@ -62,25 +47,4 @@ const GetStartedLink = styled.a`
   cursor: pointer;
   font-family: "Gotham", sans-serif;
   font-weight: bold;
-`;
-
-const IntroPage = () => {
-  return (
-    <section>
-      <PageWrapper>
-        <Navbar />
-        <ContentWrapper>
-          <Heading>
-            Unlimited movies, TV shows, and <br /> more
-          </Heading>
-          <GetStartedLink href="/home">Get Started</GetStartedLink>
-        </ContentWrapper>
-      </PageWrapper>
-      <Footer />
-      <PopUpAds/>  
-       <Ads />
-    </section>
-  );
-};
-
-export default IntroPage;
+`,g=()=>e.jsxs("section",{children:[e.jsxs(s,{children:[e.jsx(i,{}),e.jsxs(a,{children:[e.jsxs(d,{children:["Unlimited movies, TV shows, and ",e.jsx("br",{})," more"]}),e.jsx(x,{href:"/home",children:"Get Started"})]})]}),e.jsx(o,{}),e.jsx(r,{}),e.jsx(n,{})]});export{g as default};
