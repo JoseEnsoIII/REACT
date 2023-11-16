@@ -296,7 +296,7 @@ class Navbar extends Component {
               borderRadius: "10px",
               width: "40px",
               height: "30px",
-              background: "#666666",
+              background: "#Import section",
               cursor: "pointer",
               border: "1px solid black",
               fontSize: "15px",
