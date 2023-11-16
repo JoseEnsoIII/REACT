@@ -157,7 +157,7 @@ const PageButton = styled.button`
   @media (max-width: 400px) {
     font-size: 10px;
     height:20px;
-  }
+  }  
 
   ${(props) =>
     props.active &&
