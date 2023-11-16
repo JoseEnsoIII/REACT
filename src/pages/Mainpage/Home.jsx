@@ -8,8 +8,8 @@ import Navbar from "../../components/Header/navbar1";
 import SideBar from "../../components/Header/sidenav";
 import Carousel from "../../components/compo/nukacarousel";
 import TabbedHome from "../../components/compo/TabbedHome";
-import Trending from "../../components/section/AllTrending";
-import Anime from '../../components/section/AnimeSection'
+import Trending from "../../components/Section/AllTrending";
+import Anime from '../../components/Section/AnimeSection'
 import Footer from "../../components/Footer/footer";
 
 //ads
