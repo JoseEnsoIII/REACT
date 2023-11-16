@@ -9,7 +9,7 @@ const Heading = styled.h1`
   color: white;
   font-size: 30px;
   margin-left: -80%;
-  margin-top:5%;
+  margin-top:8%;
   font-weight: bold;
 
   @media (max-width: 320px) {
@@ -53,12 +53,12 @@ const Heading = styled.h1`
 
 const CardWrapper = styled.div`
   position: relative;
-  width: 150px;
-  height: 200px;
+  width: 180px;
+  height: 250px;
   background: url(${(props) => props.imageUrl}) no-repeat center/cover;
   border-radius: 10px;
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);
-  margin: 15px 15px 0 15px; /* Updated margin to include only top and left/right margins */
+  margin: 10px 10px -40px 10px; /* Updated margin to include only top and left/right margins */
   transition: 0.5s;
 
   @media (max-width: 1200px) {
@@ -163,7 +163,7 @@ const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 100%; /* Set the width to 100% by default */
+  width: 100%;
   
   @media (max-width: 320px) {
     height: 50vh; 
@@ -209,7 +209,7 @@ const FlexContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 0%;
+  margin-top: -5%;
 
   @media (max-width: 320px) {
     margin-top: -85%;
@@ -418,7 +418,7 @@ const cardData = movies.map((movie) => ({
   };
 
   return (
-    <Container style={{ height: "150vh", width: "100vw", backgroundColor: "black", marginTop: "-40px" }}>
+    <Container style={{ height: "180vh", width: "100vw", backgroundColor: "black", marginTop: "-40px" }}>
       <Heading>| New Anime </Heading>
       <FlexContainer>
         {displayedCards.map((card, index) => (
