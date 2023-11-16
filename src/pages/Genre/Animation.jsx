@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Navbar from '../../components/Header/navbar1';
-import Anime from '../../components/Section/anime_section'
-import Nuka from '../../components/Section/NukaSlider';
+import Anime from '../../components/section/AnimeSection'
+import Nuka from '../../components/section/NukaSlider';
 import Footer from '../../components/Footer/footer';
 
 // Create a styled component for the Section

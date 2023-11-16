@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import Navbar from "../../components/Header/navbar";
-
-import Footer from "./../../components/Footer/footer";
+import MovieSlider from '../../components/section/benefit';
+import Benefit from '../../components/section/benefit';
+import Footer from "../../components/Footer/footer";
 import Ads from "../../components/Ads/bottom-ads";
 import PopUpAds from "../../components/Ads/popup-ads";
 
@@ -22,7 +23,7 @@ const PageWrapper = styled.div`
   @media (max-width: 360px), (max-width: 640px) {
     font-size: 10px;
     margin: 3px;
-    width:100%;      
+    width:100%;
     overflow-x: hidden;
   }
 `;
@@ -76,6 +77,8 @@ const IntroPage = () => {
           <GetStartedLink href="/home">Get Started</GetStartedLink>
         </ContentWrapper>
       </PageWrapper>
+      <MovieSlider /> 
+      <Benefit />
       <Footer />
       <PopUpAds/>  
        <Ads />

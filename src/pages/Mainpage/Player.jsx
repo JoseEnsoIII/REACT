@@ -1,10 +1,10 @@
 import React, { useRef, useState } from "react";
 import styled, { css } from "styled-components";
 import Navbar from "../../components/Header/navbar";
-import VideoPlayer from "../../components/section/VideoPlayer"
-import MovieDetails from "../../components/section/moviedetails";
-import Similar from "../../components/section/Similar"
-import Recommendation from '../../components/section/Recommendation'
+import VideoPlayer from "../../componentsImport sectionVideoPlayer"
+import MovieDetails from "../../componentsImport sectionmoviedetails";
+import Similar from "../../componentsImport sectionSimilar"
+import Recommendation from '../../componentsImport sectionRecommendation'
 import Footer from "../../components/Footer/footer";
 import Ads from "../../components/Ads/bottom-ads";
 import PopUpAds from "../../components/Ads/popup-ads";
