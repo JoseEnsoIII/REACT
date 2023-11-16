@@ -2,6 +2,8 @@ import React from "react";
 import Navbar from "../../components/Header/navbar1";
 import Intro from "../../components/Cards/Intro_slider";
 import Footer from "../../components/Footer/footer";
+
+//ads
 import Ads from "../../components/Ads/bottom-ads";
 import PopUpAds from "../../components/Ads/popup-ads";
 //

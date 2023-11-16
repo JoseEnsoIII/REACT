@@ -11,6 +11,8 @@ import FlexWrap from "../../components/Cards/multiplecard";
 import Similar from "../../components/Section/Similar"
 import Anime from "../../components/Section/anime_section"
 import Ads from "../../components/Ads/bottom-ads";
+
+//ads
 import PopUpAds from "../../components/Ads/popup-ads";
 import SectionAds from "../../components/Ads/section-ads";
 import Footer from '../../components/Footer/footer';

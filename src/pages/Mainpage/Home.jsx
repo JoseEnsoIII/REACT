@@ -11,9 +11,10 @@ import TabbedHome from "../../components/compo/TabbedHome";
 import Trending from "../../components/Section/Home_all_trending";
 import Anime from '../../components/Section/anime_section'
 import Footer from "../../components/Footer/footer";
+
+//ads
 import Ads from "../../components/Ads/bottom-ads";
 import PopUpAds from "../../components/Ads/popup-ads";
-
 import SectionAds from "../../components/Ads/section-ads";
 
 const MySlider = () => {

@@ -12,6 +12,7 @@ import Similar from "../../components/Section/movie_section"
 import Anime from "../../components/Section/anime_section"
 import SectionAds from "../../components/Ads/section-ads";
 import Footer from '../../components/Footer/footer';
+//ads
 import Ads from "../../components/Ads/bottom-ads";
 import PopUpAds from "../../components/Ads/popup-ads";
 
