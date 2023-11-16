@@ -9,14 +9,45 @@ const Heading = styled.h1`
   color: white;
   font-size: 30px;
   margin-left: -80%;
-  margin-top:3%;
+  margin-top:5%;
   font-weight: bold;
+
+  @media (max-width: 320px) {
+    // Styles for screens up to 320px width
+    margin-left: -30%;
+    font-size: 15px;
+    margin-top: 20%;
+    
+  }
 
   @media (max-width: 640px) {
     margin-left: -60%;
     font-weight: bold;
     font-size: 20px;
-    margin-top: 10%;
+    margin-top: 15%;
+  }
+  @media (max-width: 400px) {
+    // Styles for screens up to 400px width
+    font-size: 15px;
+    margin-top:15%;
+  }
+  @media  (max-width: 640px) {
+    // Styles for screens between 641px and 768px width
+    font-size: 30px;
+  }
+  @media (min-width: 641px) and (max-width: 768px) {
+    // Styles for screens between 641px and 768px width
+    font-size: 30px;
+  }
+
+  @media (min-width: 769px) and (max-width: 992px) {
+    // Styles for screens between 769px and 992px width
+    font-size: 28px;
+  }
+
+  @media (min-width: 993px) and (max-width: 1200px) {
+    // Styles for screens between 993px and 1200px width
+    font-size: 30px;
   }
 `;
 
@@ -27,14 +58,49 @@ const CardWrapper = styled.div`
   background: url(${(props) => props.imageUrl}) no-repeat center/cover;
   border-radius: 10px;
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);
-  margin: 15px;
+  margin: 15px 15px 0 15px; /* Updated margin to include only top and left/right margins */
   transition: 0.5s;
 
+  @media (max-width: 1200px) {
+    width: 120px;
+    height: 150px;
+    margin: 10px;
+  }
+
+  @media (max-width: 992px) {
+    width: 120px;
+    height: 150px;
+    margin: 8px;
+    margin:10px 10px -15px 10px;
+  }
+
+  @media (max-width: 768px) {
+    width: 120px;
+    height: 150px;
+    margin: 6px;
+    margin: 5px 5px -35px 5px;
+  }
   @media (max-width: 640px) {
-    width: 80px;
-    height: 100px;
-    margin: 5px;
-    font-size:10px;
+    width: 120px;
+    height: 150px;
+    margin: 6px;
+    margin: 5px 5px -150px 5px;
+  }
+  @media (max-width: 520px) {
+    width: 120px;
+    height: 150px;
+    margin: 5px 5px -85px 5px;
+  }
+  @media (max-width: 400px) {
+    width: 120px;
+    height: 150px;
+    margin: 5px 5px -55px 5px;
+  }
+
+  @media (max-width: 320px) {
+    width: 120px;
+    height: 150px;
+    margin: 5px 5px -55px 5px;
   }
 
   &:hover {
@@ -90,73 +156,183 @@ const CardWrapper = styled.div`
   .play-icon {
     margin-right: 5px;
   }
+  
 `;
 
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
-  @media (max-width: 640px) {
-    height:100%;
+  width: 100%; /* Set the width to 100% by default */
+  
+  @media (max-width: 320px) {
+    height: 50vh; 
+    margin-top:-40%
   }
+
   @media (max-width: 400px) {
-    height: 60vh;
-    margin-bottom:45%
+    height: 60vh; 
+    width:auto;
+  }
+  @media (max-width: 520px) {
+    height: 60vh; 
+    width:auto;
+  }
+  @media (max-width: 640px) {
+    height: 50vh; /* Set height to 50% of the viewport height for screens up to 640px width */
+  }
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    width: 80%;
+    height: auto; /* Set height to auto for screens between 641px and 768px width */
+  }
+
+  @media (min-width: 769px) and (max-width: 992px) {
+    width: 70%;
+    height: auto; 
+    margin-top:10%;
+  }
+
+  @media (min-width: 993px) and (max-width: 1200px) {
+    width: 60%;
+    height: auto; /* Set height to auto for screens between 993px and 1200px width */
+  }
+
+  @media (min-width: 1201px) {
+    height: 120vh; /* Set height to 120% of the viewport height for screens larger than 1200px width */
   }
 `;
+
+
 
 const FlexContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 0%;
 
-  @media (max-width: 640px) {
-    margin-top: 30%;
+  @media (max-width: 320px) {
+    margin-top: -85%;
   }
-  @media (max-width: 400px) {
-    margin-top:5%;
+  @media (min-width: 319px)and (max-width: 400px) {
+    margin-top: -55%;
+  }
+ 
+  @media (min-width: 401px) and (max-width: 640px) {
+    margin-top: -45%;
+  }
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    margin-top: -25%;
+  }
+
+  @media (min-width: 769px) and (max-width: 998px) {
+    margin-top: -15%;
+  }
+
+  @media (min-width: 999px) and (max-width: 1200px) {
+    margin-top: -15%;
   }
 `;
+
+
+
 
 const Pagination = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: -5%; /* Set initial margin-top to 5% */
 
-  @media (max-width: 640px) {
-
+  @media (max-width: 320px) {
+    margin-top: 5%; /* Styles for screens up to 320px width */
   }
 
-  @media (max-width: 400px) {
-    /* Add your styles for 400px or less here */
+  @media (min-width: 321px) and (max-width: 400px) {
+    margin-top: 5%; /* Styles for screens between 321px and 400px width */
+  }
+
+  @media (min-width: 401px) and (max-width: 640px) {
+    margin-top: 5%; /* Styles for screens between 401px and 640px width */
+  }
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    margin-top: 5%; /* Styles for screens between 641px and 768px width */
+  }
+
+  @media (min-width: 769px) and (max-width: 992px) {
+    margin-top: 5%; /* Styles for screens between 769px and 992px width */
+  }
+
+  @media (min-width: 993px) and (max-width: 1200px) {
+    margin-top: 5%; /* Styles for screens between 993px and 1200px width */
+  }
+
+  @media (min-width: 1201px) {
+    margin-top: 5%; /* Styles for screens larger than 1200px width */
   }
 `;
+
 
 const PageButton = styled.button`
   background-color: white;
   border: 1px solid white;
   color: black;
   cursor: pointer;
-  margin: 0 5px;
+  margin-top:5%;
   font-size: 18px;
   font-family: "Gotham", sans-serif;
-  padding: 5px 10px;
+  padding: 3px 10px;
   border-radius: 5px;
   outline: none;
-  height:50px;
+  height: 20px;
   
   &:hover {
     background-color: transparent;
     color: blue;
   }
+
   @media (max-width: 640px) {
     font-size: 13px;
-    height:45px
+    height: 45px;
+  }
+  @media (max-width: 320px) {
+    font-size: 10px;
+    height: 20px;
+    margin:3px;
   }
   @media (max-width: 400px) {
     font-size: 10px;
-    height:20px;
+    height: 20px;
+    margin:3px;
+  }
+  @media (max-width: 520px) {
+    font-size: 10px;
+    height: 20px;
+    margin:3px;
+  }
+
+  @media (min-width: 401px) and (max-width: 768px) {
+    font-size: 14px;
+    height: 40px;
+    margin:3px;
+  }
+
+  @media (min-width: 769px) and (max-width: 992px) {
+    font-size: 16px;
+    height: 50px;
+    margin:3px;
+  }
+
+  @media (min-width: 993px) and (max-width: 1200px) {
+    font-size: 20px;
+    height: 60px;
+    margin:3px;
+  }
+
+  @media (min-width: 1201px) {
+    font-size: 22px;
+    height: 70px;
+    margin:3px;
   }
 
   ${(props) =>
@@ -165,12 +341,48 @@ const PageButton = styled.button`
     background-color: transparent;
     color: blue;
   `}
+
 `;
 
 function Card() {
   const [currentPage, setCurrentPage] = useState(1);
   const [movies, setMovies] = useState([]); // State for storing movie data
-  const cardsPerPage = 16; // Number of cards to display per page
+  const [cardsPerPage, setCardsPerPage] = useState(16);
+
+  useEffect(() => {
+    const updateCardsPerPage = () => {
+      const screenWidth = window.innerWidth;
+
+      if (screenWidth < 320) {
+        setCardsPerPage(8); // Update with the desired value for screens less than 320px
+      } else if (screenWidth < 400) {
+        setCardsPerPage(12); // Update with the desired value for screens between 320px and 399px
+      }  else if (screenWidth < 520) {
+          setCardsPerPage(9);
+      } else if (screenWidth < 640) {
+        setCardsPerPage(12);
+      } else if (screenWidth < 768) {
+        setCardsPerPage(25); // Update with the desired value for screens between 400px and 767px
+      } else if (screenWidth < 992) {
+        setCardsPerPage(25); // Update with the desired value for screens between 768px and 991px
+      } else if (screenWidth < 1200) {
+        setCardsPerPage(20); // Update with the desired value for screens between 992px and 1199px
+      } else {
+        setCardsPerPage(24); // Update with the desired value for screens 1200px and above
+      }
+    };
+
+    // Initial update
+    updateCardsPerPage();
+
+    // Update on window resize
+    window.addEventListener('resize', updateCardsPerPage);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', updateCardsPerPage);
+    };
+  }, []);
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -206,7 +418,7 @@ const cardData = movies.map((movie) => ({
   };
 
   return (
-    <Container style={{ height: "120vh", width: "100vw", backgroundColor: "black", marginTop: "-40px" }}>
+    <Container style={{ height: "150vh", width: "100vw", backgroundColor: "black", marginTop: "-40px" }}>
       <Heading>| New Anime </Heading>
       <FlexContainer>
         {displayedCards.map((card, index) => (

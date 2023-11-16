@@ -9,12 +9,30 @@ const FooterContainer = styled.footer`
   display: flex;
   flex-wrap: wrap;
   justify-content: center; /* Center the columns horizontally */
+
+  @media (min-width: sm) {
+    padding: 20px;
+  }
+
+  @media (min-width: md) {
+    padding: 30px;
+  }
 `;
 
 const FooterColumn = styled.div`
   flex: 1;
   flex-basis: calc(25% - 20px); /* Divide equally into 4 columns with spacing */
   margin: 10px;
+
+  @media (min-width: sm) {
+    flex-basis: calc(25% - 30px);
+    margin: 15px;
+  }
+
+  @media (min-width: md) {
+    flex-basis: calc(25% - 40px);
+    margin: 20px;
+  }
 `;
 
 const FooterLinks = styled.ul`

@@ -48,19 +48,34 @@ const Logo = styled(Link)`
 const SideMenuWrapper = styled.div`
   position: fixed;
   top: 0;
-  left: ${(props) => (props.isOpen ? "0" : "-300px")};
+  right: 15%;
   width: 300px;
   height: 100%;
-  transition: left 0.3s ease-in-out;
+  transition: right 0.3s ease-in-out;
   z-index: ${(props) => (props.isOpen ? "1000" : "-1")};
+  background: rgba(255, 255, 255, 0.1); /* Adjust the background color and opacity */
+  backdrop-filter: blur(10px); /* Adjust the blur amount for the glassmorphism effect */
+  border-radius: 10px; /* Add border-radius for rounded corners */
+  /* ... other styles */
 
-  /* Glassmorphism effect */
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  
-  /* Add horizontal scrolling */
-  overflow-x: auto;
+  @media (max-width: 1200px) {
+    width: 280px;
+  }
+
+  @media (max-width: 992px) {
+    width: 250px;
+  }
+
+  @media (max-width: 768px) {
+    width: 200px;
+    right: 0;
+  }
+
+  @media (max-width: 320px) {
+    width: 180px;
+  }
 `;
+
 
 const HeaderButton = styled.div`
   color: white;
@@ -73,15 +88,37 @@ const HeaderButton = styled.div`
   height: 30px;
   border-radius: 5px;
 
+  @media (max-width: 1200px) {
+    margin-right: 5%;
+  }
+
+  @media (max-width: 992px) {
+    margin-right: 5%;
+  }
+
+  @media (max-width: 768px) {
+    margin-right: 5%;
+  }
+
   @media (max-width: 640px) {
-    margin-right: 20%; // Hide the HeaderButton on smaller screens
+    margin-right: 5%; // Hide the HeaderButton on smaller screens
+  }
+
+  @media (max-width: 320px) {
+    margin-right: 5%;// Hide the HeaderButton on screens less than 320px
   }
 `;
+
 
 const Search = styled.div`
   display: flex;
   align-items: center;
 
+  @media (max-width: 1000px) {
+    margin-right: 0;
+    display:none;
+  }
+  
   @media (max-width: 640px) {
     display: none; // Hide the NavButton on smaller screens
   }
@@ -96,10 +133,26 @@ const LoginLink = styled.a`
   align-items: center;
   margin-right: 15%;
 
+  @media (max-width: 1200px) {
+    margin-right: 10%;
+   
+  }
+
+  @media (max-width: 992px) {
+    margin-right: 10%;
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    margin-right: 10%;
+    display: none;
+  }
+
   @media (max-width: 640px) {
-    display: none; // Hide the NavButton on smaller screens
+    display: none; // Hide the LoginLink on smaller screens
   }
 `;
+
 
 const GenreGridContainer = styled.div`
   display: flex;
@@ -168,6 +221,10 @@ li {
       }
     }
   }
+}
+@media (max-width: 1000px) {
+  margin-right: 0;
+  display:none;
 }
 
 @media (max-width: 640px) {

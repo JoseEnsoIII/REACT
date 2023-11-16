@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaTelegram, FaLinkedin } from "react-icons/fa";
 
 import backgroundImage from "/images/op1.jpg";
 
@@ -229,7 +229,7 @@ function App() {
           </SocialMediaItem>
           <SocialMediaItem>
             <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
-              <FaInstagram />
+              <FaTelegram />
             </a>
           </SocialMediaItem>
           <br />
@@ -238,6 +238,7 @@ function App() {
               <FaLinkedin />
             </a>
           </SocialMediaItem>
+          
         </SocialMediaList>
       </Column>
       
