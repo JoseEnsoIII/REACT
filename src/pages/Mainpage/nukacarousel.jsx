@@ -127,7 +127,7 @@ function MyCarousel() {
           width: "40px",
           height: "60px",
           boxShadow: "0 0 10px rgba(0, 0, 0, 0.5)",
-          border: "1px solid black", // Fix this line by using ":" instead of ";"
+          border: Import section // Fix this line by using ":" instead of ";"
         }}
         
       >
@@ -183,7 +183,7 @@ function MyCarousel() {
                 cursor: "pointer",
                 margin: "5px",
                 opacity: currentSlide === index ? 1 : 0.5, // Highlight the active dot
-                border: "1px solid black", // Remove the duplicated 'border' property
+                border: Import section // Remove the duplicated 'border' property
               }}
               onClick={() => goToSlide(index)} // Make the dot clickable
             />
@@ -239,7 +239,7 @@ function MyCarousel() {
                       alignItems: "center", // Center vertically
                       justifyContent: "center", // Center horizontally
                       borderRadius: "100px", // Rounded border
-                      border:"1px solid black",
+                      border:Import section
                     }}
                   >
                     {item.genre}
