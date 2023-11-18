@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import styled, { css } from "styled-components";
 import Navbar from "../../components/Header/navbar";
 import VideoPlayer from "../../components/section/VideoPlayer";
-import Similar from "../../components/section/Similar";
+import Similar from "../../components/SectionPage/Similar";
 import Footer from "../../components/Footer/footer";
 import Ads from "../../components/Ads/bottom-ads";
 import PopUpAds from "../../components/Ads/popup-ads";

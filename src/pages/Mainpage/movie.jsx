@@ -8,8 +8,8 @@ import Navbar from "../../components/Header/navbar1";
 import Carousel from "../../components/compo/nukacarousel";
 import TabbedHome from "../../components/compo/TabbedHome";
 import FlexWrap from "../../components/Cards/multiplecard";
-import Similar from "../../components/section/Similar"
-import Anime from '../../components/Section/AnimeSection';
+import Similar from "../../components/SectionPage/Similar"
+import Anime from '../../components/SectionPage/AnimeSection';
 import SectionAds from "../../components/Ads/section-ads";
 import Footer from '../../components/Footer/footer';
 
