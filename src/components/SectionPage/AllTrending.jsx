@@ -13,7 +13,7 @@ export const sizes = {
 
 const Container = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap;      
   height:150%;
   justify-content: space-around;
   padding: 20px;
