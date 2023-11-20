@@ -1,154 +1,102 @@
-import React from "react";
-import styled from "styled-components";
-import { FaFacebook, FaTwitter, FaTelegram, FaLinkedin } from "react-icons/fa";
+import styled from 'styled-components';
+import { FaFacebook, FaTwitter, FaTelegram, FaLinkedin } from 'react-icons/fa';
 
-import backgroundImage from "/images/op1.jpg";
+const facebookUrl = 'https://www.facebook.com/';
+const twitterUrl = 'https://twitter.com/';
+const instagramUrl = 'https://www.instagram.com/';
+const linkedinUrl = 'https://www.linkedin.com/';
 
+// Define responsive sizes
+const sizes = {
+  sm: '640px',
+  md: '768px',
+  lg: '1024px',
+  xl: '1280px',
+  '2xl': '1536px',
+};
+
+// Define styled components
 const Container = styled.div`
-  margin-top: -60px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 5px;
-  background-image: url(${backgroundImage});
-  background-size: cover;
-  background-position: 80% center;
-  background-repeat: no-repeat;
-  background-color: black;
-
-  @media (max-width: 640px) {
-    flex-direction: column;
-    width: 100%;
-    height: 80vh;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top:-45%;
-    
-  }
+  justify-content: space-around;
+  padding: 20px;
+  background-color:WHITE;
 `;
 
 const Column = styled.div`
   flex: 1;
-  max-width: calc(20% - 20px);
-  padding: 10px;
+  min-width: 250px;
   margin: 10px;
-  font-size: 18px;
 
-  @media (max-width: 640px) {
-    margin: -10px 2px 0 px;
-
-    
-  }
-  &:first-child {
-    margin-left: 30px;
-
-    @media (max-width: 640px) {
-      margin-left: 5px;
-    }
-  }
-
-  h2 {
-    font-size: 30px;
-    margin-top: 15px;
-    color: black;
-
-    @media (max-width: 640px) {
-      font-size: 8px;
-    }
-  }
+  h2,
   h3 {
-    font-size: 18px;
-    margin-top: 15px;
-    color: black;
-
-    @media (max-width: 640px) {
-      font-size: 8px;
-      margin-top: 15px;
-      color: black;
-    }
+    color: #333;
   }
 
   ul {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
-  }
-
-  li {
-    margin-bottom: 15px;
-    color: black;
-
-    @media (max-width: 640px) {
-      margin-bottom: 3px;
-      font-size: 8px;
-    }
-  }
-
-  p {
-    color: black;
-
-    @media (max-width: 640px) {
-      color: black;
-      font-size: 8px;
-    }
   }
 
   a {
     text-decoration: none;
-    color: black;
+    color: #666;
+  }
+`;
 
-    &:hover {
-      text-decoration: underline green;
+const SocialMediaList = styled.div`
+  display: flex;
+  gap: 10px;
+`;
 
-      @media (max-width: 640px) { 
-         font-size: 8px;
-        &:hover {
-          text-decoration: underline green;
-          font-size: 8px;
-        }
-      
-      }
+const SocialMediaItem = styled.div`
+  font-size: 24px;
+  color: #333;
+
+  a {
+    color: #333;
+  }
+`;
+
+// Your component
+const ResponsiveFooter = styled.div`
+  @media (max-width: ${sizes.sm}) {
+    ${Container} {
+      flex-direction: column;
+    }
+  }
+
+  @media (min-width: ${sizes.sm}) and (max-width: ${sizes.md}) {
+    ${Column} {
+      flex-basis: 45%;
+    }
+  }
+
+  @media (min-width: ${sizes.md}) and (max-width: ${sizes.lg}) {
+    ${Column} {
+      flex-basis: 30%;
+    }
+  }
+
+  @media (min-width: ${sizes.lg}) {
+    ${Column} {
+      flex-basis: 20%;
     }
   }
 `;
 
-const SocialMediaList = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-  @media (max-width: 640px) {
-    margin:5px;
-  }
-`;
-
-const SocialMediaItem = styled.li`
-  font-size: 20px;
-  flex: 1;
-  @media (max-width: 640px) {
-    font-size: 10px;
-  }
-  &:first-child {
-    margin-top: 0;
-  }
-`;
-
-function App() {
-  const facebookUrl = "https://www.facebook.com/";
-  const twitterUrl = "https://twitter.com/";
-  const instagramUrl = "https://www.instagram.com/";
-  const linkedinUrl = "https://www.linkedin.com/";
-
+// Example usage
+const YourComponent = () => {
   return (
-    <Container>
+    <ResponsiveFooter>
+       <Container>
       <Column>
         <h2>
           <strong>ReactFlix</strong>
         </h2>
         <p>
-         is a Free Movies streaming app with zero
+          is a Free Movies streaming app with zero
           ads. We let you watch movies online without having to register or pay,
           with over 10,000 movies and TV-Series. You can also download full
           movies from MoviesCloud and watch them later if you want
@@ -169,51 +117,14 @@ function App() {
             <a href="/legal">Legal</a>
           </li>
           <li>
-            <a href="/contact">Contact us:</a>
+            <a href="/contact">Contact us</a>
           </li>
           <li>
             <a href="/faq">FAQs</a>
           </li>
         </ul>
       </Column>
-      <Column>
-        <h3>
-          <strong>SHOW</strong>
-        </h3>
-        <ul>
-          <li>
-            <a href="/movie">Movies</a>
-          </li>
-          <li>
-            <a href="/series">TV Shows</a>
-          </li>
-          <li>
-            <a href="/anime">Anime</a>
-          </li>
-        </ul>
-      </Column>
-      <Column>
-        <h3>
-          <strong>GENRE</strong>
-        </h3>
-        <ul>
-          <li>
-            <a href="/horror">Horror</a>
-          </li>
-          <li>
-            <a href="/sci-fi">Sci-Fi</a>
-          </li>
-          <li>
-            <a href="/romance">Romance</a>
-          </li>
-          <li>
-            <a href="/actions">Actions</a>
-          </li>
-          <li>
-            <a href="/adventure">Adventure</a>
-          </li>
-        </ul>
-      </Column>
+
       <Column>
         <h3>
           <strong>SOCIAL MEDIA</strong>
@@ -239,12 +150,11 @@ function App() {
               <FaLinkedin />
             </a>
           </SocialMediaItem>
-          
         </SocialMediaList>
       </Column>
-      
-    </Container>
+    </Container> 
+    </ResponsiveFooter>
   );
-}
+};
 
-export default App;
+export default YourComponent;

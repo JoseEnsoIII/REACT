@@ -16,10 +16,10 @@ const Container = styled.div`
   flex-wrap: wrap;      
   height:150%;
   justify-content: space-around;
-  padding: 20px;
+  padding: 20px;w
   border: 1px solid white;
   background-color:black;
-  margin-top:-1%;
+
 
   @media (max-width: ${sizes.sm}) {
     justify-content: center;

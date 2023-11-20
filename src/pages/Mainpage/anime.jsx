@@ -8,14 +8,14 @@ import Navbar from "../../components/Header/navbar1";
 import Carousel from "../../components/compo/nukacarousel";
 import TabbedHome from "../../components/compo/TabbedHome";
 import FlexWrap from "../../components/Cards/multiplecard";
-import Similar from "../../components/SectionPage/Similar"
-import Anime from '../../components/SectionPage/AnimeSection';
+import Similar from "../../components/SectionPage/Similar";
+import Anime from "../../components/SectionPage/AnimeSection";
 import Ads from "../../components/Ads/bottom-ads";
 
 //ads
 import PopUpAds from "../../components/Ads/popup-ads";
-import SectionAds from "../../components/Ads/section-ads";
-import Footer from '../../components/Footer/footer';
+
+import Footer from "../../components/Footer/footer";
 
 const MySlider = () => {
   // Renamed the locally defined Slider component
@@ -35,11 +35,7 @@ const MySlider = () => {
     cssEase: "linear",
   };
 
-  return (
-    <SlickSlider {...settings}>
-      
-    </SlickSlider>
-  );
+  return <SlickSlider {...settings}></SlickSlider>;
 };
 
 const Home = () => {
@@ -60,15 +56,15 @@ const Home = () => {
         speed={1000}
         slidesToShow={1}
       ></Carousel>
-      
-     <TabbedHome />
-     <FlexWrap />
-     <Similar/>
-      <SectionAds/>
-      <Anime/>
+
+      <TabbedHome />
+      <FlexWrap />
+      <Similar />
+
+      <Anime />
       <Footer />
+
       <PopUpAds />
-      <PopUpAds/>  
       <Ads />
     </section>
   );

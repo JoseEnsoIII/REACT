@@ -15,7 +15,7 @@ import Footer from "../../components/Footer/footer";
 //ads
 import Ads from "../../components/Ads/bottom-ads";
 import PopUpAds from "../../components/Ads/popup-ads";
-import SectionAds from "../../components/Ads/section-ads";
+
 
 const MySlider = () => {
   // Renamed the locally defined Slider component
@@ -60,7 +60,6 @@ const Home = () => {
         slidesToShow={1}
       ></Carousel>
       <TabbedHome />
-      <SectionAds/>
      <Trending/>
      <Anime/>
       <Footer />

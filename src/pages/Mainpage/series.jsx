@@ -10,7 +10,6 @@ import TabbedHome from "../../components/compo/TabbedHome";
 import FlexWrap from "../../components/Cards/multiplecard";
 import Similar from "../../components/SectionPage/Similar"
 import Anime from '../../components/SectionPage/AnimeSection';
-import SectionAds from "../../components/Ads/section-ads";
 import Footer from '../../components/Footer/footer';
 //ads
 import Ads from "../../components/Ads/bottom-ads";
@@ -63,7 +62,6 @@ const Home = () => {
      <TabbedHome />
      <FlexWrap />
      <Similar/>
-      <SectionAds/>
       <Anime/>
      
       <Footer />

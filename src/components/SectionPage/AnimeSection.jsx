@@ -19,7 +19,6 @@ const Container = styled.div`
   padding: 20px;
   border: 1px solid white;
   background-color:black;
-  margin-top:-1%;
 
   @media (max-width: ${sizes.sm}) {
     justify-content: center;

@@ -1,214 +1,205 @@
-import React, { useState ,useEffect} from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { FaPlay } from 'react-icons/fa'; // Import the play icon
+import { FaStar } from 'react-icons/fa';
+import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 
-const Heading = styled.h1`
-  text-align: center;
-  font-family: 'Gotham', sans-serif;
-  color: white;
-  font-size: 30px;
-  margin-left: -75%;
-  margin-top:3%;
-  font-weight: bold;
-
-  @media (max-width: 640px) {
-    margin-left: -60%;
-    font-weight: bold;
-    font-size: 20px;
-    margin-top: 10%;
-  }
-`;
-
-const CardWrapper = styled.div`
-  position: relative;
-  width: 150px;
-  height: 200px;
-  background: url(${(props) => props.imageUrl}) no-repeat center/cover;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);
-  margin: 15px;
-  transition: 0.5s;
-
-  @media (max-width: 640px) {
-    width: 80px;
-    height: 100px;
-    margin: 5px;
-    font-size:10px;
-  }
-
-  &:hover {
-    transition: 1s;
-    .title {
-      padding-bottom: 50px;
-      opacity: 1;
-      transition: 0.3s;
-      font-size: 10px;
-    }
-    .watch-button {
-      opacity: 1;
-      transition: 0.3s;
-      font-size: 10px;
-    }
-  }
-
- .title {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  font-size: 26px;
-  font-weight: 100;
-  padding: 30px 0;
-  background: linear-gradient(to top, #000, transparent);
-  text-transform: uppercase;
-  text-align: center;
-  opacity: 0;
-  transition: 0.5s;
-  color: white;
-
-  @media (max-width: 640px) {
-    font-size: 10px; /* Add this line to change the font size to 10px on smaller screens */
-  }
-}
-
-
-  .watch-button {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: transparent;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    opacity: 0;
-    transition: 0.5s;
-  }
-
-  .play-icon {
-    margin-right: 5px;
-  }
-`;
+export const sizes = {
+  sm: '640px',
+  md: '768px',
+  lg: '1024px',
+  xl: '1280px',
+  '2xl': '1536px',
+};
 
 const Container = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: wrap;      
+  height: 120%;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: transparent;
+  margin-top: -8%;
 
-  @media (max-width: 640px) {
-    height: 100%;
+  @media (max-width: ${sizes.sm}) {
+    justify-content: center;
+  }
+
+  @media (min-width: ${sizes.md}) {
+    justify-content: space-between;
   }
 `;
 
-const FlexContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+const MovieCard = styled.div`
+  width: 130px;
+  height:auto;
+  margin: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
 
-  @media (max-width: 640px) {
-    margin-top: -10%;
+  img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
   }
+
+  .details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    padding: 10px;
+    color: white;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .score {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: black;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .additional-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+  }
+
+  .star-icon {
+    color: gold;
+  }
+`;
+
+const Heading = styled.div`
+  width: 100%;
+  margin: 20px 10% 20px 0;
+  font-family: 'Gotham', sans-serif;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
 `;
 
 const Pagination = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 20px;
-  
 `;
 
-const PageButton = styled.button`
-  background-color: white;
-  border: 1px solid white;
-  color: black;
+const PaginationButton = styled.button`
+  background: none;
+  border: none;
+  font-size: 24px;
+  margin: 0 10px;
   cursor: pointer;
-  margin: 0 5px;
-  font-size: 18px;
-  font-family: "Gotham", sans-serif;
-  padding: 5px 10px;
-  border-radius: 5px;
-  outline: none;
-  height:50px;
-  
-  &:hover {
-    background-color: transparent;
-    color: blue;
-  }
+  color: white;
 
-  ${(props) =>
-    props.active &&
-    `
-    background-color: transparent;
-    color: blue;
-  `}
-
-  
-  @media (max-width: 640px) {
-    font-size: 14px; /* Reduce font size for smaller screens */
-    padding: 3px 8px; /* Adjust padding for smaller screens */
-    height: 30px; /* Set a specific height for the button */
+  &:disabled {
+    color: #777;
+    cursor: not-allowed;
   }
 `;
-function Card() {
+
+const PaginationInfo = styled.span`
+  color: white;
+  font-size: 16px;
+  margin: 0 10px;
+`;
+
+const Button = styled.button`
+  background-color: transparent;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+
+  &:hover {
+    background-color: red;
+  }
+`;
+
+const PopularMovies = () => {
+  const [movies, setMovies] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 16; // Number of cards to display per page
-  const [movies, setMovies] = useState([]);  
+  const [totalPages, setTotalPages] = useState(1);
+  const cardsPerPage = 18;
+
   useEffect(() => {
-    const fetchTrendingMovies = async () => {
+    const fetchMovies = async () => {
       try {
+        const apiKey = 'b2d47bc45b9596fab31b362d1db590f9';
         const response = await fetch(
-          'https://api.themoviedb.org/3/trending/tv/day?api_key=b2d47bc45b9596fab31b362d1db590f9'
+          `https://api.themoviedb.org/3/trending/tv/day?api_key=${apiKey}&page=${currentPage}`
         );
-        if (response.ok) {
-          const data = await response.json();
-          setMovies(data.results);
-        } else {
-          console.error('Failed to fetch trending movies');
-        }
+        const data = await response.json();
+        setMovies(data.results);
+        setTotalPages(data.total_pages);
       } catch (error) {
-        console.error(error);
+        console.error('Error fetching movies:', error);
       }
     };
 
-    fetchTrendingMovies(); // Fetch trending movies when the component mounts
-  }, []); // The empty dependency array ensures this effect runs once
+    fetchMovies();
+  }, [currentPage]);
 
-  const startIndex = (currentPage - 1) * cardsPerPage;
-  const endIndex = startIndex + cardsPerPage;
-  const displayedMovies = movies.slice(startIndex, endIndex);
-
-  const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber);
+  const handleNextPage = () => {
+    const nextPage = currentPage + 1;
+    const lastPage = Math.ceil(movies.length / cardsPerPage);
+  
+    if (nextPage <= lastPage) {
+      setCurrentPage(nextPage);
+    }
   };
+  
+
+  const handlePrevPage = () => {
+    const prevPage = currentPage - 1;
+  
+    if (prevPage >= 1) {
+      setCurrentPage(prevPage);
+    }
+  };
+  
 
   return (
-    <Container style={{ height: '120vh', width: '100vw', backgroundColor: 'transparent', marginTop: '-6%', marginLeft: '-2%' }}>
-      <Heading className="card-heading">| Trending Movies</Heading>
-
-      <FlexContainer>
-        {displayedMovies.map((movie, index) => (
-          <CardWrapper key={index} imageUrl={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}>
-            <div className="title">{movie.title}</div>
-            <button className="watch-button" href="/player">
-              <FaPlay className="play-icon" /> Watch
-            </button>
-          </CardWrapper>
-        ))}
-      </FlexContainer>
+    <Container>
+      <Heading>| Trending Movies and Shows</Heading>
+      {movies.map((movie) => (
+        <MovieCard key={movie.id}>
+          <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt={movie.title} />
+           <div className="score">
+              <FaStar className="star-icon" />
+              {movie.vote_average}
+            </div><div className="details">
+            <h3>{movie.title}</h3>
+           
+            <Button>Play</Button>
+          </div>
+        </MovieCard>
+      ))}
       <Pagination>
-        {Array.from({ length: Math.ceil(movies.length / cardsPerPage) }, (_, i) => (
-          <PageButton
-            key={i}
-            onClick={() => handlePageChange(i + 1)}
-            active={i + 1 === currentPage}
-          >
-            {i + 1}
-          </PageButton>
-        ))}
+        <PaginationButton onClick={handlePrevPage} disabled={currentPage === 1}>
+          <BiChevronLeft />
+        </PaginationButton>
+        <PaginationInfo>Page {currentPage} of {totalPages}</PaginationInfo>
+        <PaginationButton onClick={handleNextPage} disabled={currentPage === totalPages}>
+          <BiChevronRight />
+        </PaginationButton>
       </Pagination>
     </Container>
   );
 };
 
-export default Card;
+export default PopularMovies;
