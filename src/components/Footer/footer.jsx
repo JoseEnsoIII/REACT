@@ -19,7 +19,7 @@ const Container = styled.div`
   @media (max-width: 640px) {
     flex-direction: column;
     width: 100%;
-    height: 105vh;
+    height: 80vh;
     display: flex;
     flex-wrap: wrap;
     margin-top:-45%;
@@ -35,8 +35,8 @@ const Column = styled.div`
   font-size: 18px;
 
   @media (max-width: 640px) {
-    margin-top: -10px;
-    margin-right:6px;
+    margin: -10px 2px 0 px;
+
     
   }
   &:first-child {
@@ -53,7 +53,7 @@ const Column = styled.div`
     color: black;
 
     @media (max-width: 640px) {
-      font-size: 10px;
+      font-size: 8px;
     }
   }
   h3 {
@@ -62,7 +62,7 @@ const Column = styled.div`
     color: black;
 
     @media (max-width: 640px) {
-      font-size: 10px;
+      font-size: 8px;
       margin-top: 15px;
       color: black;
     }
@@ -79,7 +79,7 @@ const Column = styled.div`
 
     @media (max-width: 640px) {
       margin-bottom: 3px;
-      font-size: 10px;
+      font-size: 8px;
     }
   }
 
@@ -88,7 +88,7 @@ const Column = styled.div`
 
     @media (max-width: 640px) {
       color: black;
-      font-size: 10px;
+      font-size: 8px;
     }
   }
 
@@ -100,9 +100,11 @@ const Column = styled.div`
       text-decoration: underline green;
 
       @media (max-width: 640px) { 
-         font-size: 10px;
+         font-size: 8px;
         &:hover {
-          text-decoration: underline green;}
+          text-decoration: underline green;
+          font-size: 8px;
+        }
       
       }
     }
@@ -232,7 +234,6 @@ function App() {
               <FaTelegram />
             </a>
           </SocialMediaItem>
-          <br />
           <SocialMediaItem>
             <a href={linkedinUrl} target="_blank" rel="noopener noreferrer">
               <FaLinkedin />

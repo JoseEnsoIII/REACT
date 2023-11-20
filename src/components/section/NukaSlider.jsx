@@ -49,6 +49,7 @@ const CarouselContainer = styled.div`
   @media screen and (max-width: 320px) {
     max-width: 100%;
     width: auto;
+    
     height: 50vh; /* Adjust the height for screens up to 320px wide */
   }
 
@@ -86,6 +87,10 @@ const MainImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+
+  @media screen and (max-width: 320px) {
+    height:100%
+  }
 `;
 
 const PrevButton = styled.div`

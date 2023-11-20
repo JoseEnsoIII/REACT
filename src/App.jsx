@@ -23,6 +23,7 @@ const Signup = lazy(() => import("./pages/notmain/Sign-up"));
 const Payment = lazy(() => import("./pages/notmain/Payment"));
 const Search = lazy(() => import("./pages/notmain/Search_Movies"));
 const Animation = lazy(() => import("./pages/Genre/Animation"));
+const MovieDyna = lazy(() => import("../src/components/section/MovieDyna"));
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
         <Route path="/payment" element={<Suspense fallback={<LoadingSpinner />}>{" "}<Payment /></Suspense>} />
         <Route path="/search" element={<Suspense fallback={<LoadingSpinner />}>{" "}<Search /></Suspense>} />
         <Route path="/animation" element={<Suspense fallback={<LoadingSpinner />}>{" "}<Animation /></Suspense>} />
+        <Route path="/movie/:id" component={MovieDyna} />
       </Routes>
     </BrowserRouter>
   );

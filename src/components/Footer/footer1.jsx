@@ -1,6 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
+export const sizes = {
+  sm: '640px',
+  md: '768px',
+  lg: '1024px',
+  xl: '1280px',
+  '2xl': '1536px',
+};
+
 const FooterContainer = styled.footer`
   background-color: #333;
   color: #fff;
@@ -10,11 +18,11 @@ const FooterContainer = styled.footer`
   flex-wrap: wrap;
   justify-content: center; /* Center the columns horizontally */
 
-  @media (min-width: sm) {
+  @media (min-width: ${sizes.sm}) {
     padding: 20px;
   }
 
-  @media (min-width: md) {
+  @media (min-width: ${sizes.md}) {
     padding: 30px;
   }
 `;
