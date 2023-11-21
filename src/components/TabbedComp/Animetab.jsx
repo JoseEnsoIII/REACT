@@ -175,30 +175,32 @@ const PopularMovies = () => {
 
   return (
     <Container>
-      <Heading>| Trending Movies and Shows</Heading>
-      {movies.map((movie) => (
-        <MovieCard key={movie.id}>
-          <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt={movie.title} />
-           <div className="score">
-              <FaStar className="star-icon" />
-              {movie.vote_average}
-            </div><div className="details">
-            <h3>{movie.title}</h3>
-           
-            <Button>Play</Button>
+    <Heading>| Trending Anime</Heading>
+    {movies.map((movie) => (
+      <MovieCard key={movie.id}>
+        <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt={movie.title} />
+         
+          <div className="details">
+            <div className="score">
+            <FaStar className="star-icon" />
+            {movie.vote_average}
           </div>
-        </MovieCard>
-      ))}
-      <Pagination>
-        <PaginationButton onClick={handlePrevPage} disabled={currentPage === 1}>
-          <BiChevronLeft />
-        </PaginationButton>
-        <PaginationInfo>Page {currentPage} of {totalPages}</PaginationInfo>
-        <PaginationButton onClick={handleNextPage} disabled={currentPage === totalPages}>
-          <BiChevronRight />
-        </PaginationButton>
-      </Pagination>
-    </Container>
+          <h3>{movie.title}</h3>
+         
+          <Button>Play</Button>
+        </div>
+      </MovieCard>
+    ))}
+    <Pagination>
+      <PaginationButton onClick={handlePrevPage} disabled={currentPage === 1}>
+        <BiChevronLeft />
+      </PaginationButton>
+      <PaginationInfo>Page {currentPage} of {totalPages}</PaginationInfo>
+      <PaginationButton onClick={handleNextPage} disabled={currentPage === totalPages}>
+        <BiChevronRight />
+      </PaginationButton>
+    </Pagination>
+  </Container>
   );
 };
 

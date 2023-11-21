@@ -175,14 +175,16 @@ const PopularMovies = () => {
 
   return (
     <Container>
-      <Heading>| New Movies</Heading>
+      <Heading>| Trending Movies</Heading>
       {movies.map((movie) => (
         <MovieCard key={movie.id}>
           <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt={movie.title} />
-           <div className="score">
+           
+            <div className="details">
+              <div className="score">
               <FaStar className="star-icon" />
               {movie.vote_average}
-            </div><div className="details">
+            </div>
             <h3>{movie.title}</h3>
            
             <Button>Play</Button>

@@ -175,7 +175,7 @@ const PopularMovies = () => {
 
   return (
     <Container>
-      <Heading>| Trending Movies and Shows</Heading>
+      <Heading>| Trending Tv Shows</Heading>
       {movies.map((movie) => (
         <MovieCard key={movie.id}>
           <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt={movie.title} />
