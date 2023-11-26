@@ -10,6 +10,7 @@ import Carousel from "../../components/compo/nukacarousel";
 import TabbedHome from "../../components/compo/TabbedHome";
 import Trending from "../../components/SectionPage/AllTrending";
 import Anime from '../../components/SectionPage/AnimeSection';
+import ComingSoon from '../../components/SectionPage/Coming_Soon'
 import Footer from "../../components/Footer/footer";
 
 //ads
@@ -51,8 +52,6 @@ const Home = () => {
       id="slider4-2j"
     >
       <Navbar />
-      <SideBar />
-
       <Carousel
         autoplay={true}
         wrapAround={true}
@@ -62,6 +61,7 @@ const Home = () => {
       <TabbedHome />
      <Trending/>
      <Anime/>
+     <ComingSoon/>
       <Footer />
       <Ads />
       <PopUpAds/>  
